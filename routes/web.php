@@ -23,4 +23,3 @@ Route::group(['middleware' => ['AuthCheck']], function(){
 Route::get('/home', function () {
     return view('home');
 });
-
