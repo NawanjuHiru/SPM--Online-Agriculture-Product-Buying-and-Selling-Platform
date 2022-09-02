@@ -12,8 +12,8 @@ Route::post('/auth/check',[UserController::class, 'check']) -> name('auth.check'
 Route::get('/auth/logout',[UserController::class, 'logout']) -> name('auth.logout');
 
 Route::group(['middleware' => ['AuthCheck']], function(){
-    Route::get('/auth/login',[UserController::class, 'login']) -> name('auth.login');
     Route::get('/auth/register',[UserController::class, 'register']) -> name('auth.register');
+    Route::get('/auth/login',[UserController::class, 'login']) -> name('auth.login');
     Route::get('/auth/forgetPassword',[UserController::class, 'forgetPassword']) -> name('auth.forgetPassword');
 });
 

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="widthe=device-width, initial-scale.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Login</title>
+        <title>User | Sign Up</title>
         <link rel="stylesheet" href="" integrity="">
     </head>
     <body>
@@ -41,7 +41,7 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <input type="number" class="form-control" name="mobileNumber" placeholder="Mobile Number" value="{{ old('mobileNumber') }}">
+                            <input type="integer" class="form-control" name="mobileNumber" placeholder="Mobile Number" value="{{ old('mobileNumber') }}">
                             <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                         </div>
                         <br>
@@ -54,6 +54,7 @@
                             <input type="password" class="form-control" name="password" placeholder="Password" value="{{ old('password') }}">
                             <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                         </div>
+                        <br>
                         <button type="submit" class="btn btn-block btn-primary">Sign Up</button>
                         <br>
                         <a href="{{ route('auth.login') }}">Already a member? Sign in</a>

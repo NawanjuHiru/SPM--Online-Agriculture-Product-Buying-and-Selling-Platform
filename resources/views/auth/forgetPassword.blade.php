@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="widthe=device-width, initial-scale.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Login</title>
+        <title>User | Reset Password</title>
         <link rel="stylesheet" href="" integrity="">
     </head>
     <body>

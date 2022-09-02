@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="widthe=device-width, initial-scale.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Login</title>
+        <title>User | Sign In</title>
         <link rel="stylesheet" href="" integrity="">
     </head>
     <body>
@@ -26,12 +26,12 @@
                     @csrf
                         <div class="form-group">
                             <input type="text" class="form-control" name="userName" placeholder="Username" value="{{ old('username') }}">
-                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>>
+                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                         </div>
                         <br>
                         <div class="form-group">
                             <input type="password" class="form-control" name="password" placeholder="Password" value="{{ old('password') }}">
-                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>>
+                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                         </div>
                         <button type="submit" class="btn btn-block btn-primary">Login</button>
                         <br>

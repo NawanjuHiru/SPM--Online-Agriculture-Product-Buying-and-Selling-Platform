@@ -21,12 +21,11 @@ class UserController extends Controller
     function save(Request $request) {
         //validate request
         $request -> validate([
-            'userName' => 'required',
+            'username' => 'required',
             'email' => 'required|email|unique:user',
             'mobileNumber' => 'required',
             'address' => 'required',
-            'password' => 'required|min:5|max:12',
-            'isAvtive' => '1'
+            'password' => 'required|min:5|max:12'
         ]); 
 
         //insert data into database
@@ -36,7 +35,6 @@ class UserController extends Controller
         $user -> mobileNumber = $request -> mobileNumber;
         $user -> address = $request -> address;
         $user -> password = Hash::make($request -> password);
-        $user -> isActive = $request -> isActive;
         $save -> $user -> save();
 
         if ($save) {

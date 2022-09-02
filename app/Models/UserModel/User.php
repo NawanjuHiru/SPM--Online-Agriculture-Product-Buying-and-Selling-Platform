@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\UserModel;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -16,8 +17,18 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'user';
+    protected $primaryKey = 'user_id';
+    public $incrementing = true;
+    public $timestamps = true;
     protected $fillable = [
-        'Username', 'email', 'mobileNumber', 'address', 'password', 'isActive'
+        'Username', 
+        'email', 
+        'mobileNumber', 
+        'address', 
+        'password', 
+        'created_at',
+        'updated_at',
     ];
 
     /**
@@ -34,7 +45,11 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $casts = [
+    /* protected $casts = [
         'email_verified_at' => 'datetime',
-    ];
+    ]; */
+
+    public function profile() {
+        return $this ->  hasOne(Profile::class, 'user_id');
+    }
 }
