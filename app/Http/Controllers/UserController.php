@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\UserController\UserController;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\UserModel\User;
-use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controllers
+class UserController extends Controller
 {
     function login() {
         return view('auth.login');
@@ -27,7 +25,8 @@ class UserController extends Controllers
             'email' => 'required|email|unique:user',
             'mobileNumber' => 'required',
             'address' => 'required',
-            'password' => 'required|min:5|max:12'
+            'password' => 'required|min:5|max:12',
+            'isAvtive' => '1'
         ]); 
 
         //insert data into database
@@ -37,6 +36,7 @@ class UserController extends Controllers
         $user -> mobileNumber = $request -> mobileNumber;
         $user -> address = $request -> address;
         $user -> password = Hash::make($request -> password);
+        $user -> isActive = $request -> isActive;
         $save -> $user -> save();
 
         if ($save) {
