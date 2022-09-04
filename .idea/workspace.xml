@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="773735f4-9d9c-4cd1-a48a-316587e2acea" name="Changes" comment="testing">
+    <list default="true" id="773735f4-9d9c-4cd1-a48a-316587e2acea" name="Changes" comment="home blade code changes">
+      <change afterPath="$PROJECT_DIR$/public/css/order_management/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SPM--Online-Agriculture-Product-Buying-and-Selling-Platform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPM--Online-Agriculture-Product-Buying-and-Selling-Platform.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/order_management/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +33,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -137,6 +145,21 @@
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/league/fractal" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
     </include_path>
   </component>
   <component name="ProjectId" id="2E8ISnYeYot3XipEMxemViOFrsF" />
@@ -147,23 +170,28 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/wamp64/www/sliit/SPM--Online-Agriculture-Product-Buying-and-Selling-Platform",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/wamp64/www/sliit/SPM--Online-Agriculture-Product-Buying-and-Selling-Platform/resources/views/order_management&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\wamp64\www\sliit\SPM--Online-Agriculture-Product-Buying-and-Selling-Platform\resources\views\order_management" />
       <recent name="D:\wamp64\www\sliit\SPM--Online-Agriculture-Product-Buying-and-Selling-Platform\app\Models" />
       <recent name="D:\wamp64\www\sliit\SPM--Online-Agriculture-Product-Buying-and-Selling-Platform\app\Http\Controllers" />
       <recent name="D:\wamp64\www\sliit\SPM--Online-Agriculture-Product-Buying-and-Selling-Platform\resources\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\wamp64\www\sliit\SPM--Online-Agriculture-Product-Buying-and-Selling-Platform\public\css\order_management" />
+      <recent name="D:\wamp64\www\sliit\SPM--Online-Agriculture-Product-Buying-and-Selling-Platform\resources\views\order_management" />
+      <recent name="D:\wamp64\www\sliit\SPM--Online-Agriculture-Product-Buying-and-Selling-Platform\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -185,7 +213,14 @@
       <workItem from="1661973108463" duration="5000" />
       <workItem from="1662035993236" duration="273000" />
       <workItem from="1662036285301" duration="2047000" />
-      <workItem from="1662038365273" duration="1028000" />
+      <workItem from="1662038365273" duration="13612000" />
+      <workItem from="1662074707706" duration="1522000" />
+      <workItem from="1662091465077" duration="805000" />
+      <workItem from="1662093171602" duration="1883000" />
+      <workItem from="1662147937176" duration="4988000" />
+      <workItem from="1662183826225" duration="10289000" />
+      <workItem from="1662271644975" duration="11106000" />
+      <workItem from="1662300823980" duration="19112000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1661971062478</created>
@@ -201,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661971836077</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="home blade code changes">
+      <created>1662039481706</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662039481706</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +263,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing" />
+    <MESSAGE value="home blade code changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="home blade code changes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
