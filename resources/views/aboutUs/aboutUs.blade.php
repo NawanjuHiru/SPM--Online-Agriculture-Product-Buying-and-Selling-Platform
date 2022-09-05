@@ -87,7 +87,7 @@
                 <div class="row g-3">
                     <div class="col">
                         <form method="post" style="width: 100%">
-                            <h2 class="text-left" style="color:#6EBD6C;">About Us</h2>
+                            <h2 class="text-left">About Us</h2>
                             <p class="text-left">Lets get to know about us.</p>
                             <div class="text-left">
                                 system is an online Agriculture product buying and selling platform
