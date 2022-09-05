@@ -13,6 +13,9 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/review', function () {
+    return view('review_management.review');
+});
 
 
 //Route::resource('/news',NewsController::class);
