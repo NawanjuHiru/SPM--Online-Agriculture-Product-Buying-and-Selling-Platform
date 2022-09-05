@@ -68,12 +68,12 @@ class UserController extends Controller
             }
         }
 
-        /*function logout() {
+        function logout() {
             if(session() -> has('LoggedUser')) {
                 session() -> pull('LoggedUser');
                 return redirect('/auth/login');
             }
-        } */
+        }
     }
 
     function profile(){
