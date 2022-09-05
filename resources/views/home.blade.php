@@ -16,7 +16,7 @@
 
 <body style="overflow-x:hidden">
     @extends('order_management.layout')
-    @section('title', 'check out')
+    @section('title', 'Home')
     @section('content')
         <div classname="" style="margin-left:100px">
             <img src="http://unblast.com/wp-content/uploads/2020/05/Farming-Vector-Illustration.jpg" alt="Home Image"
