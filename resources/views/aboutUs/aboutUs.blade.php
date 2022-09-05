@@ -98,12 +98,11 @@
                                 is mainly focused on Sri Lankan agriculture sector.
                                 </p>
                                 <p class="card-text"> From this website Farmers will be able to get their needed products
-                                    for
-                                    their
-                                    plantation and agricultural activities< This website also support the buyers who need to
-                                        buy the needed equipments and products for their purposes.Any Client can sell their
-                                        products in this website. This will be very helpful for client involve in
-                                        agricultural sector to fullfill their needs and wants. </div>
+                                    for their plantation and agricultural activities This website also support the buyers
+                                    who need to buy the needed equipments and products for their purposes.Any Client can
+                                    sell their products in this website. This will be very helpful for client involve in
+                                    agricultural sector to fullfill their needs and wants.
+                            </div>
                         </form>
                     </div>
                     <div class="col" style="margin-top: 10px">
