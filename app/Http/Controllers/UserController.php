@@ -78,6 +78,10 @@ class UserController extends Controller
         return view('auth.profile');
     }
 
+    function updateUser(){
+        return view('auth.updateUser');
+    }
+
     public function forgetPassword() {
         return view('auth.forgetPassword');
     }

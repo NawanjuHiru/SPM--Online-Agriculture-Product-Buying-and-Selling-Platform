@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="widthe=device-width, initial-scale.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>User | Profile</title>
+        <title>User | UpdateProfile</title>
         <link rel="stylesheet" href="{{ asset('css/user_management/user.css') }}">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,34 +53,39 @@
 
         @yield('content')
 
-        <div class="card" style="background-color: #d7d7df">
+        <div class="card1" style="background-color: #d7d7df">
             <div class="row">
                 <div class="column1" margin-left="100">
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="{{ asset('/images/User/profile.jpg') }}" id="profile" width="120" height="120" border-radius="3" readonly>
-                    <br><br>
-                    <button class="btn">Add Product To Sale</button>
-                    <button class="btn">View My Products</button>
-                    <button class="btn">My Orders</button>
-                    <button class="btn">Delivery Status</button>
+                    &nbsp;&nbsp;
+                    <img src="{{ asset('/images/User/updateprofile.jpg') }}" id="profile" width="460" height="450" border-radius="3" readonly>
+                    <br>
                 </div>
                 <div class="column2" margin-right="110"><br>
-                    <h1 style="font-family: Arial">User Profile</h1><br>
+                    <h1 style="font-family: Arial">Update Profile</h1><br>
                     <form action="" method="POST">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username" placeholder="Username" value="{{-- {{ $user -> username) }} --}}" width="50">
+                            <input type="text" class="form-control" name="username" placeholder="Username" value="{{ old('username') }}">
+                            <span class="text-danger">@error('username'){{ $message }} @enderror</span>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="email" placeholder="Email" value="{{-- {{ $user -> email }} --}}">
+                            <input type="text" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
+                            <span class="text-danger">@error('email'){{ $message }} @enderror</span>
                         </div>
                         <div class="form-group">
-                            <input type="integer" class="form-control" name="mobileNumber" placeholder="Mobile Number" value="{{-- {{ $user -> mobileNumber }} --}}">
+                            <input type="integer" class="form-control" name="mobileNumber" placeholder="Mobile Number" value="{{ old('mobileNumber') }}">
+                            <span class="text-danger">@error('mobileNumber'){{ $message }} @enderror</span>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="address" placeholder="Address" value="{{-- {{ $user -> address }} --}}">
+                            <input type="text" class="form-control" name="address" placeholder="Address" value="{{ old('address') }}">
+                            <span class="text-danger">@error('address'){{ $message }} @enderror</span>
                         </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
+                            <span class="text-danger">@error('password'){{ $message }} @enderror</span>
+                        </div>
+                        <br>
                         <button class="btn1" style="background-color: #07be16">Update</button>
-                        <button class="btn1" style="background-color: #c50c0c">Delete</button><br>
+                        <button class="btn1" style="background-color: #3b18d6">Back</button><br>
                     </form>
                 </div>
             </div>

@@ -17,6 +17,7 @@ Route::post('/auth/forgetPassword',[UserController::class, 'sendResetLink']) -> 
 Route::get('/auth/resetPassword/(token)',[UserController::class, 'resetPassword']) -> name('auth.resetPassword');
 Route::post('/auth/resetPassword',[UserController::class, 'resetPassword']) -> name('auth.resetPassword');
 Route::get('/auth/profile',[UserController::class, 'profile']) -> name('auth.profile');
+Route::get('/auth/updateUser',[UserController::class, 'updateUser']) -> name('auth.updateUser');
 //Route::get('/auth/logout',[UserController::class, 'logout']) -> name('auth.logout');
 
 Route::group(['middleware' => ['AuthCheck']], function(){
