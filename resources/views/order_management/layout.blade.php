@@ -43,7 +43,7 @@
                 <a class="nav-link" href="" style="color: white;margin-top:10px">Products</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" style="color: white;margin-top:10px">About Us</a>
+                <a class="nav-link" href="/aboutus" style="color: white;margin-top:10px">About Us</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#" style="color: white;margin-top:10px">Contact Us</a>
