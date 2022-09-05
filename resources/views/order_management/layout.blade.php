@@ -32,12 +32,12 @@
     <nav class="topnav-right" style="background-color: #6EBD6C; height:60px">
         <ul class="nav justify-content-end" style="">
             <li class="nav-item" style="margin-right:800px;">
-                <a href="/home" style="text-decoration: none">
+                <a href="/" style="text-decoration: none">
                     <h2 style="color: white;margin-top:10px">Agri Online</h2>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="/home" style="color: white;margin-top:10px">Home</a>
+                <a class="nav-link active" href="/" style="color: white;margin-top:10px">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="" style="color: white;margin-top:10px">Products</a>
@@ -85,7 +85,7 @@
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="/home" class="text-white" style="text-decoration: none;">Home</a>
+                            <a href="/" class="text-white" style="text-decoration: none;">Home</a>
                         </li>
                         <li>
                             <a href="#!" class="text-white" style="text-decoration: none;">Product</a>
