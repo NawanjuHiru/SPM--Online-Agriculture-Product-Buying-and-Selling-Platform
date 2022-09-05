@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\order_management\NewsController;
+use App\Http\Controllers\order_management\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('order_management.layout');
 });
+
 
 Route::post('/auth/save',[UserController::class, 'save']) -> name('auth.save');
 Route::post('/auth/check',[UserController::class, 'check']) -> name('auth.check');
@@ -24,3 +27,20 @@ Route::group(['middleware' => ['AuthCheck']], function(){
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+
+
+//Route::resource('/news',NewsController::class);
+Route::post('/get_news_list', [NewsController::class, 'getNewsList']);
+Route::post('/get_order_list', [OrderController::class, 'getOrderList']);
+//Route::resource('/orders',OrderController::class);
+
+
+Route::resources([
+    'news' => NewsController::class,
+    'orders' => OrderController::class,
+]);
