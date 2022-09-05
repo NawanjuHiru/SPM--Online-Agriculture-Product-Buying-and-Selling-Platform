@@ -25,6 +25,10 @@ Route::get('/refund', function () {
     return view('refund_management.refund');
 });
 
+Route::get('/aboutus', function () {
+    return view('aboutUs.aboutUs');
+});
+
 //Route::resource('/news',NewsController::class);
 Route::post('/get_news_list', [NewsController::class, 'getNewsList']);
 Route::post('/get_order_list', [OrderController::class, 'getOrderList']);
