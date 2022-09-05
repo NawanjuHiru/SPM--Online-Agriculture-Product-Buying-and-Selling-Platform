@@ -29,6 +29,10 @@ Route::get('/aboutus', function () {
     return view('aboutUs.aboutUs');
 });
 
+Route::get('/contactus', function () {
+    return view('contactUs.contactUs');
+});
+
 //Route::resource('/news',NewsController::class);
 Route::post('/get_news_list', [NewsController::class, 'getNewsList']);
 Route::post('/get_order_list', [OrderController::class, 'getOrderList']);

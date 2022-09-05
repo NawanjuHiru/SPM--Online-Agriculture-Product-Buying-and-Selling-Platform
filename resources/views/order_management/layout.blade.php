@@ -46,7 +46,7 @@
                 <a class="nav-link" href="/aboutus" style="color: white;margin-top:10px">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" style="color: white;margin-top:10px">Contact Us</a>
+                <a class="nav-link" href="/contactus" style="color: white;margin-top:10px">Contact Us</a>
             </li>
             <li class="nav-item" style="margin-right: 10px">
                 <button type="button" class="btn "
@@ -91,10 +91,10 @@
                             <a href="#!" class="text-white" style="text-decoration: none;">Product</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white" style="text-decoration: none;">About Us</a>
+                            <a href="/aboutus" class="text-white" style="text-decoration: none;">About Us</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white" style="text-decoration: none;">Contact Us</a>
+                            <a href="/contactus" class="text-white" style="text-decoration: none;">Contact Us</a>
                         </li>
                     </ul>
                 </div>
