@@ -14,7 +14,7 @@ Route::post('/auth/save',[UserController::class, 'save']) -> name('auth.save');
 Route::post('/auth/check',[UserController::class, 'check']) -> name('auth.check');
 Route::get('/auth/forgetPassword',[UserController::class, 'forgetPassword']) -> name('auth.forgetPassword');
 Route::post('/auth/forgetPassword',[UserController::class, 'sendResetLink']) -> name('auth.sendResetLink');
-Route::get('/auth/resetPassword/(token)',[UserController::class, 'resetPassword']) -> name('auth.resetPassword');
+Route::get('/auth/resetPassword/{token}',[UserController::class, 'resetPasswordForm']) -> name('auth.resetPasswordForm');
 Route::post('/auth/resetPassword',[UserController::class, 'resetPassword']) -> name('auth.resetPassword');
 Route::get('/auth/profile',[UserController::class, 'profile']) -> name('auth.profile');
 Route::get('/auth/updateUser',[UserController::class, 'updateUser']) -> name('auth.updateUser');

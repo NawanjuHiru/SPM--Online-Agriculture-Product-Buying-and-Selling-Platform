@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use DB;
+use Illuminate\Notifications\Notification;
+use Illuminate\Notifications\Messages\MailMessage;
 
 class UserController extends Controller
 {
@@ -110,7 +112,35 @@ class UserController extends Controller
         return back() -> with('success', 'We have e-mailed your password reset link.');
        }
 
-       public function resetPassword(Request $request, $token = null){
+       public function resetPasswordForm(Request $request, $token = null){
         return view('auth.resetPassword') -> with(['token' => $token, 'email' => $request -> email]);
+       }
+
+       public function resetPassword(Request $request){
+        $request -> validate([
+            'email' => 'required|email|exists:user,email',
+            'password' => 'required|min:5|max:12',
+        ]);
+
+        $check_token = \DB::table('password_resets') -> where([
+            'email' => $request -> email,
+            'token' => $request -> token,
+        ]) -> first();
+
+        if(!$check_token){
+            return back() -> withInput() -> with('fail', 'Invalid Token');
+        } else {
+            User::where('email', $request -> email) -> update([
+                'password' => Hash::make($request -> password)
+            ]);
+
+            \DB::table('password_resets') -> where([
+                'email' => $request -> email
+            ]) -> delete();
+
+            return redirect() -> route('auth.login') -> with('info', 'Your password has been changed. You can login with new password.')
+            -> with($request -> email);
+        }
+
        }
 }
