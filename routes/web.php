@@ -21,6 +21,10 @@ Route::get('/delivery', function () {
     return view('delivery_management.delivery');
 });
 
+Route::get('/refund', function () {
+    return view('refund_management.refund');
+});
+
 //Route::resource('/news',NewsController::class);
 Route::post('/get_news_list', [NewsController::class, 'getNewsList']);
 Route::post('/get_order_list', [OrderController::class, 'getOrderList']);
