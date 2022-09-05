@@ -17,6 +17,9 @@ Route::get('/review', function () {
     return view('review_management.review');
 });
 
+Route::get('/delivery', function () {
+    return view('delivery_management.delivery');
+});
 
 //Route::resource('/news',NewsController::class);
 Route::post('/get_news_list', [NewsController::class, 'getNewsList']);
