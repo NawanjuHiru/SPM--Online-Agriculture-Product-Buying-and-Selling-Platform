@@ -12,8 +12,9 @@
             <div class="row" style="margin-top:45px">
                 <div class="col-md-4 com-md-offset-4">
                     <h4>Sign in</h4>
+                    <br><br>
+                    <p>Sign in to your account</p>
                     <br>
-                    <p>Sign in to your admin account</p>
                     <br>
                     <form action="{{ route('auth.check') }}" method="POST">
 
@@ -25,16 +26,19 @@
 
                     @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" name="userName" placeholder="Username" value="{{ old('username') }}">
-                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>
+                            <input type="text" class="form-control" name="username" placeholder="Username" value="{{ old('username') }}">
+                            <span class="text-danger">@error('username'){{ $message }} @enderror</span>
                         </div>
                         <br>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password" value="{{ old('password') }}">
-                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>
+                            <input type="password" class="form-control" name="password" placeholder="Password"">
+                            <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                         </div>
-                        <button type="submit" class="btn btn-block btn-primary">Login</button>
                         <br>
+                        <a href="{{ route('auth.forgetPassword') }}">Forget Password? Reset</a>
+                        <br><br>
+                        <button type="submit" class="btn btn-block btn-primary">Sign In</button>
+                        <br><br>
                         <a href="{{ route('auth.register') }}">Create an account</a>
                     </form>
                 </div>

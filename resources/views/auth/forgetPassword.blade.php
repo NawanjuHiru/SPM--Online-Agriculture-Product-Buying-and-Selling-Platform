@@ -4,30 +4,36 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="widthe=device-width, initial-scale.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>User | Reset Password</title>
+        <title>User | Forget Password</title>
         <link rel="stylesheet" href="" integrity="">
     </head>
     <body>
         <div class="container">
             <div class="row" style="margin-top:45px">
                 <div class="col-md-4 com-md-offset-4">
-                    <h4>Sign in</h4>
+                    <h4>Forget Password</h4>
                     <br>
-                    <p>Reset or update passwod</p>
-                    <br>
-                    <form action="" method="POST">
+                    <form action="{{ route('auth.sendResetLink') }}" method="POST">
+                    @if (Session::get('fail'))
+                    <div class="alert alert-danger">
+                        {{ Session::get('fail') }}
+                    </div>
+                    @endif
+                    @if (Session::get('success'))
+                    <div class="alert alert-success">
+                        {{ Session::get('success') }}
+                    </div>
+                    @endif
+                    @csrf
+                    <p> Enter your email address and we will send you a link to reset your password.</p>
                         <div class="form-group">
                             <input type="text" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
-                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>>
+                            <span class="text-danger">@error('email'){{ $message }} @enderror</span>
                         </div>
                         <br>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="New Password" value="{{ old('password') }}">
-                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>>
-                        </div>
-                        <button type="submit" class="btn btn-block btn-primary">Reset Password</button>
+                        <button type="submit" class="btn btn-block btn-primary">Send Password Link</button>
                         <br>
-                        <a href="{{ route('auth.login') }}">Sign in</a>
+                        <a href="{{ route('auth.login') }}">Sign In</a>
                     </form>
                 </div>
             </div>

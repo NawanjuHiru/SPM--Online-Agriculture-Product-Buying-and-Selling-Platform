@@ -31,32 +31,32 @@
 
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" name="userName" placeholder="Username" value="{{ old('username') }}">
-                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>
+                            <input type="text" class="form-control" name="username" placeholder="Username" value="{{ old('username') }}">
+                            <span class="text-danger">@error('username'){{ $message }} @enderror</span>
                         </div>
                         <br>
                         <div class="form-group">
                             <input type="text" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
-                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>
+                            <span class="text-danger">@error('email'){{ $message }} @enderror</span>
                         </div>
                         <br>
                         <div class="form-group">
                             <input type="integer" class="form-control" name="mobileNumber" placeholder="Mobile Number" value="{{ old('mobileNumber') }}">
-                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>
+                            <span class="text-danger">@error('mobileNumber'){{ $message }} @enderror</span>
                         </div>
                         <br>
                         <div class="form-group">
                             <input type="text" class="form-control" name="address" placeholder="Address" value="{{ old('address') }}">
-                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>
+                            <span class="text-danger">@error('address'){{ $message }} @enderror</span>
                         </div>
                         <br>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password" value="{{ old('password') }}">
-                            <span class="text-danger">@error('name'){{ $message }} @enderror</span>
+                            <input type="password" class="form-control" name="password" placeholder="Password">
+                            <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                         </div>
                         <br>
                         <button type="submit" class="btn btn-block btn-primary">Sign Up</button>
-                        <br>
+                        <br><br>
                         <a href="{{ route('auth.login') }}">Already a member? Sign in</a>
                     </form>
                 </div>
