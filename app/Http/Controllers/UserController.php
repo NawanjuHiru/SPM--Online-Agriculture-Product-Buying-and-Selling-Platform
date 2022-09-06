@@ -26,9 +26,9 @@ class UserController extends Controller
         return view('auth.userList',['user' => $user]);
     }
 
-    public function destroy($user_id) {
+    /* public function destroy($user_id) {
         DB::delete('delete from user where id = ?',[$user_id]);
-    }
+    } */
 
     function save(Request $request) {
         //validate request
@@ -197,4 +197,16 @@ class UserController extends Controller
         return view('order_management.retrieve_order')->with('order_details',$orderdatas); */
     }
     
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $user_id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($user_id)
+    {
+        $order=User::find($user_id);
+        $order->delete();
+        return response()->Json(['status'=>'success','msg'=>'Deleted successfully']);
+    }
 }

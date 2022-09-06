@@ -21,7 +21,7 @@ Route::group(['middleware' => ['AuthCheck']], function(){
     Route::get('/auth/register',[UserController::class, 'register']) -> name('auth.register');
     Route::get('/auth/login',[UserController::class, 'login']) -> name('auth.login');
     Route::get('/auth/profile',[UserController::class, 'profile']) -> name('auth.profile');
-    Route::get('/auth/profile/{user_id}',[UserController::class, 'profileShow']) -> name('auth.profile');
+    Route::get('/auth/profile/{user_id}',[UserController::class, 'profileShow']) -> name('auth.profileShow');
     Route::get('/auth/updateUser',[UserController::class, 'updateUser']) -> name('auth.updateUser');
     Route::get('/auth/edit/{user_id}',[UserController::class, 'updateUser']) -> name('auth.updateUser');
     Route::post('/auth/edit/{user_id}',[UserController::class, 'updateUser']) -> name('auth.updateUser');
