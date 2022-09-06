@@ -62,7 +62,7 @@
                 </div>
                 <div class="column2" margin-right="110"><br>
                     <h1 style="font-family: Arial">Update Profile</h1><br>
-                    <form action="" method="POST">
+                    <form action="{{url('/users/'.$userdata->user_id)}}" method="POST">
                         <div class="form-group">
                             <input type="text" class="form-control" name="username" placeholder="Username" value="{{ old('username') }}">
                             <span class="text-danger">@error('username'){{ $message }} @enderror</span>

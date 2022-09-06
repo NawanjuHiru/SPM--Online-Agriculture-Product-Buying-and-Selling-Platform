@@ -21,6 +21,15 @@ class UserController extends Controller
         return view('auth.register');
     }
 
+    public function index(){
+        $users = DB::select('select * from user');
+        return view('auth.userList',['user' => $user]);
+    }
+
+    public function destroy($user_id) {
+        DB::delete('delete from user where id = ?',[$user_id]);
+    }
+
     function save(Request $request) {
         //validate request
         $request -> validate([
@@ -76,8 +85,8 @@ class UserController extends Controller
         }
     }
 
-    function profile(){
-        return view('auth.profile');
+    function profileShow($user_id){
+        return view('auth.profile', compact('profile'));
     }
 
     function updateUser(){
@@ -142,5 +151,50 @@ class UserController extends Controller
             -> with($request -> email);
         }
 
-       }
+    }
+
+       /**
+     * Display the specified resource.
+     *
+     * @param int $user_id
+     * @return \Illuminate\Http\Response
+     */
+
+    /* public function show($user_id) {
+        DB::view('select from user where id = ?',[$user_id]);
+    } */
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $user_id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
+    public function edit($user_id)
+    {
+        $order=Order::find($user_id);
+        return view('auth.updateUser')->with('userdata',$user);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $user_id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     */
+    public function update(Request $request)
+    {
+        $userdata = User::find($request -> user_id);
+        $userdata -> username = $request -> username;
+        $userdata -> email = $request -> email;
+        $userdata -> mobileNumber = $request -> mobileNumber;
+        $userdata -> address = $request -> address;
+        $userdata -> password = Hash::make($request -> password);
+
+        $userdata -> save();
+        /* $userdatas = User::all();
+        return view('order_management.retrieve_order')->with('order_details',$orderdatas); */
+    }
+    
 }

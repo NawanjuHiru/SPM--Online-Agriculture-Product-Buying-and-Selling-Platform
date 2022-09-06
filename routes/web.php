@@ -16,13 +16,16 @@ Route::get('/auth/forgetPassword',[UserController::class, 'forgetPassword']) -> 
 Route::post('/auth/forgetPassword',[UserController::class, 'sendResetLink']) -> name('auth.sendResetLink');
 Route::get('/auth/resetPassword/{token}',[UserController::class, 'resetPasswordForm']) -> name('auth.resetPasswordForm');
 Route::post('/auth/resetPassword',[UserController::class, 'resetPassword']) -> name('auth.resetPassword');
-Route::get('/auth/profile',[UserController::class, 'profile']) -> name('auth.profile');
-Route::get('/auth/updateUser',[UserController::class, 'updateUser']) -> name('auth.updateUser');
-Route::get('/auth/logout',[UserController::class, 'logout']) -> name('auth.logout');
 
 Route::group(['middleware' => ['AuthCheck']], function(){
     Route::get('/auth/register',[UserController::class, 'register']) -> name('auth.register');
     Route::get('/auth/login',[UserController::class, 'login']) -> name('auth.login');
+    Route::get('/auth/profile',[UserController::class, 'profile']) -> name('auth.profile');
+    Route::get('/auth/profile/{user_id}',[UserController::class, 'profileShow']) -> name('auth.profile');
+    Route::get('/auth/updateUser',[UserController::class, 'updateUser']) -> name('auth.updateUser');
+    Route::get('/auth/edit/{user_id}',[UserController::class, 'updateUser']) -> name('auth.updateUser');
+    Route::post('/auth/edit/{user_id}',[UserController::class, 'updateUser']) -> name('auth.updateUser');
+    Route::get('/auth/logout',[UserController::class, 'logout']) -> name('auth.logout');
 });
 
 Route::get('/home', function () {
