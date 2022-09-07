@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\product_management;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -22,6 +22,6 @@ class productModel extends Model
         'user_id',
         'created_at',
         'updated_at',
-        
+
     ];
 }

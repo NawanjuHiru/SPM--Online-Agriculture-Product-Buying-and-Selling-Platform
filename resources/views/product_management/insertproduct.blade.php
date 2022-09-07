@@ -89,21 +89,22 @@
 
                         @foreach($errors->all() as $error)
                         <div class= "alert alert-danger" role="alert">
-                        {{$error}}
+                            {{$error}}
                         </div>
                         @endforeach
 
-                        <form method="post" action="/addproduct" id="productForm" style="width: 100%">
+                        <form method="POST" action="/addProduct"  style="width: 100%">
                             {{csrf_field()}}
                             <h2 class="text-left">Add Products</h2>
                             <p class="text-left">Enter your product details here.</p>
+
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="productname">
+                                    name="proname" placeholder="Product Name">
                             </div>
-                            <div class="form-group" style="margin-top: 10px">
-                                <select name="category" class="form-control"
+                            <div class="form-group" style="margin-top: 10px; ">
+                                <select name="procategory" class="form-group"
                                     placeholder="Product Category">
-                                    <option value = "hidden" disabled selected >Select Product Category</option>
+                                    <option value = "hidden"  style="margin-top: 10px; " disabled selected >Select Product Category</option>
                                     <option value = "Sales Income"> Vegetables </option>
                                     <option value = "Interest Income"> Fruits </option>
                                     <option value = "Commission Income"> Fertilizer </option>
@@ -112,10 +113,10 @@
 
                             </div>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="productprice" placeholder="Product Price">
+                                    name="proprice" placeholder="Product Price">
                             </div>
                             <div class="form-group"><input class="form-control" type="text"
-                                    name="productdesc" placeholder="Description" style="height: 80px; padding-bottom: 80px; ">
+                                    name="prodesc" placeholder="Description" style="margin-top: 10px; height: 80px; padding-bottom: 80px; ">
                             </div>
                             <div class="form-group"><button class="btn btn-block" type="submit"
                                     style="background-color:#6EBD6C; color: white;">Add Product</button>
