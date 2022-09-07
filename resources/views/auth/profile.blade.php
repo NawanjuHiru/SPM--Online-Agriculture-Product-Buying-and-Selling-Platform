@@ -66,7 +66,7 @@
                 </div>
                 <div class="column2" margin-right="110"><br>
                     <h1 style="font-family: Arial">User Profile</h1><br>
-                    <form action="{{ route('auth.profileShow', $profile -> user_id) }}" method="POST">
+                    <form action="{{ route('auth.profile'/* , $profile -> user_id)  */}}" method="POST">
                         <div class="form-group">
                             <input type="text" class="form-control" name="username" placeholder="Username" value="{{ $profile -> username) }}" width="50">
                         </div>

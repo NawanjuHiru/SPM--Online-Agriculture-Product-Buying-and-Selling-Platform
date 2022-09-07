@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserModel\User;
+use App\Models\UserModel\Profile;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
@@ -21,8 +22,8 @@ class UserController extends Controller
         return view('auth.register');
     }
 
-    public function index(){
-        $users = DB::select('select * from user');
+    public function userList(){
+        $user = DB::select('select * from user');
         return view('auth.userList',['user' => $user]);
     }
 
@@ -153,16 +154,17 @@ class UserController extends Controller
 
     }
 
-       /**
+    /**
      * Display the specified resource.
      *
      * @param int $user_id
      * @return \Illuminate\Http\Response
      */
 
-    /* public function show($user_id) {
-        DB::view('select from user where id = ?',[$user_id]);
-    } */
+    public function show($user_id) {
+        $user = User::find($user_id);
+        return view('user.show',compact('user'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -172,7 +174,7 @@ class UserController extends Controller
      */
     public function edit($user_id)
     {
-        $order=Order::find($user_id);
+        $user = User::find($user_id);
         return view('auth.updateUser')->with('userdata',$user);
     }
 
@@ -205,8 +207,8 @@ class UserController extends Controller
      */
     public function destroy($user_id)
     {
-        $order=User::find($user_id);
-        $order->delete();
-        return response()->Json(['status'=>'success','msg'=>'Deleted successfully']);
+        User::find($user_id) -> delete();
+        return redirect() -> route('auth.userList')
+        -> with(['status'=>'success','msg'=>'User Deleted successfully']);
     }
 }
