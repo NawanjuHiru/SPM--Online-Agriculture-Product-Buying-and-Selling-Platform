@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::post('/addProduct', [productController::class, 'create']);
+
+Route::get('/insertProduct', function () {
+    return view('product_management.insertproduct');
+});
