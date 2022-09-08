@@ -1906,13 +1906,19 @@
                 @foreach ($reviewratings as $reviewrating)
                     <div class="row">
                         <div class="card-body" style="text-align: left">
-                            <p>{{ $reviewrating->username }}</p>
-                            <p>{{ $reviewrating->comments }}</p>
-                            <p>
-                                @for ($i = 1; $i <= $reviewrating->star_rating; $i++)
-                                    <span><i class="fa fa-star text-warning"></i></span>
-                                @endfor
-                            </p>
+                            <div class="">
+                                <img src="https://www.pngitem.com/pimgs/m/334-3344170_user-vector-user-flat-png-transparent-png.png"
+                                    class="card-img-top" alt="..." style="height: 50px; width:50px;">
+                            </div>
+                            <div style="margin-left: 70px; margin-top: -60px;">
+                                <p>{{ $reviewrating->username }}</p>
+                                <p>{{ $reviewrating->comments }}</p>
+                                <p>
+                                    @for ($i = 1; $i <= $reviewrating->star_rating; $i++)
+                                        <span><i class="fa fa-star text-warning"></i></span>
+                                    @endfor
+                                </p>
+                            </div>
                             <hr style="opacity: 0.1">
                         </div>
                     </div>
