@@ -86,7 +86,13 @@
             <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
                 <div class="row g-3">
                     <div class="col">
-                        <form method="post" style="width: 100%">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <form method="post" action="/contactus" style="width: 100%">
+                            @csrf
                             <h2 class="text-left">Contact Us</h2>
                             <p class="text-left">Reach us at anytime.</p>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"

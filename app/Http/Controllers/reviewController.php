@@ -19,7 +19,7 @@ class reviewController extends Controller
 
     public function view()
     {
-        $data=ReviewRating::all();
+        $data=ReviewRating::paginate(5);
         return view('reviewratings')->with('reviewratings',$data);
     }
 }

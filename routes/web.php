@@ -3,6 +3,7 @@
 use App\Http\Controllers\order_management\NewsController;
 use App\Http\Controllers\order_management\OrderController;
 use App\Http\Controllers\reviewController;
+use App\Http\Controllers\contactusController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,6 +33,8 @@ Route::get('/aboutus', function () {
 Route::get('/contactus', function () {
     return view('contactUs.contactUs');
 });
+
+Route::post('/contactus', [contactusController::class, 'store']);
 
 //Route::resource('/news',NewsController::class);
 Route::post('/get_news_list', [NewsController::class, 'getNewsList']);
