@@ -87,14 +87,7 @@
                 <div class="row g-3">
                     <div class="col">
 
-                        @foreach($errors->all() as $error)
-                        <div class= "alert alert-danger" role="alert">
-                            {{$error}}
-                        </div>
-                        @endforeach
-
-                        <form method="POST" action="/addProduct"  style="width: 100%">
-                            {{csrf_field()}}
+                        <form method="POST" action="/addProduct"  style="width: 100%" id="productForm">
                             <h2 class="text-left">Add Products</h2>
                             <p class="text-left">Enter your product details here.</p>
 
@@ -119,7 +112,7 @@
                                     name="prodesc" placeholder="Description" style="margin-top: 10px; height: 80px; padding-bottom: 80px; ">
                             </div>
                             <div class="form-group"><button class="btn btn-block" type="submit"
-                                    style="background-color:#6EBD6C; color: white;">Add Product</button>
+                                    id="saveButton" style="background-color:#6EBD6C; color: white;">Add Product</button>
                             </div>
                         </form>
                     </div>
@@ -133,4 +126,37 @@
     </body>
 
     </html>
+@endsection
+
+{{--footer--}}
+
+@section('javaScript')
+
+    <script>
+        $(document).ready(function () {
+            $('#saveButton').click(function (e) {
+
+                e.preventDefault();
+
+                var data = {
+                    formdata: $('#productForm').serialize()
+                }
+
+                $.ajax({
+                    url: '{{url('/products')}}',
+                    type: 'POST',
+                    dataType: 'JSON',
+                    data: $.param(data),
+                    success: function (response) {
+                        alert(response.msg);
+                        window.location.href = '{{url('/products')}}';
+                    },
+                    error: function (errors) {
+
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
 @endsection

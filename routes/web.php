@@ -21,8 +21,12 @@ Route::get('/', function () {
 //     return view('home');
 // });
 
-Route::post('/addProduct', [productController::class, 'create']);
+//Route::post('/addProduct', [productController::class, 'create']);
 
-Route::get('/insertProduct', function () {
-    return view('product_management.insertproduct');
-});
+// Route::get('/insertProduct', function () {
+//     return view('product_management.insertproduct');
+// });
+
+Route::resources([
+     'products' => productController::class,
+ ]);
