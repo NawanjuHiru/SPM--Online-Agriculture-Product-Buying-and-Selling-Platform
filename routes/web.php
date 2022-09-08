@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\order_management\NewsController;
 use App\Http\Controllers\order_management\OrderController;
+use App\Http\Controllers\reviewController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -10,8 +11,11 @@ Route::get('/', function () {
 });
 
 Route::get('/review', function () {
-    return view('review_management.review');
+    $data=App\Models\Reviewrating::all();
+    return view('review_management.review')->with('reviewratings', $data);
 });
+
+Route::post('/review', [reviewController::class, 'store']);
 
 Route::get('/delivery', function () {
     return view('delivery_management.delivery');

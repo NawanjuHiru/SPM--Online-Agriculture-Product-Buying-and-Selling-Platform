@@ -86,26 +86,33 @@
             <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
                 <div class="row g-3">
                     <div class="col">
-                        <form method="post" style="width: 100%">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <form method="post" style="width: 100%" action="/review">
+                            @csrf
                             <h2 class="text-left">Rate Our Service</h2>
                             <p class="text-left">Leave a comment to improve our service.</p>
 
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
                                     name="username" placeholder="Username">
                             </div>
-                            <div class="form-group"><input class="form-control" type="text" name="comment"
+                            <div class="form-group"><input class="form-control" type="text" name="comments"
                                     placeholder="Leave a comment" style="height: 150px; padding-bottom: 150px; ">
                             </div>
                             <div class="form-group rate">
-                                <input type="radio" id="star5" class="rate" name="rating" value="5" />
+                                <input type="radio" id="star5" class="rate" checked id="star5"
+                                    name="star_rating" value="5" />
                                 <label for="star5" title="text">5 stars</label>
-                                <input type="radio" checked id="star4" class="rate" name="rating" value="4" />
+                                <input type="radio" class="rate" name="star_rating" value="4" />
                                 <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" class="rate" name="rating" value="3" />
+                                <input type="radio" id="star3" class="rate" name="star_rating" value="3" />
                                 <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" class="rate" name="rating" value="2">
+                                <input type="radio" id="star2" class="rate" name="star_rating" value="2">
                                 <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" class="rate" name="rating" value="1" />
+                                <input type="radio" id="star1" class="rate" name="star_rating" value="1" />
                                 <label for="star1" title="text">1 star</label>
                             </div>
 
@@ -1891,6 +1898,25 @@
                         </svg>
                     </div>
                 </div>
+            </div>
+            <center style="margin-top: 40px">
+                <h1 class="" style="color:#6EBD6C;">What our clients say about us</h1>
+            </center>
+            <div class="col-sm-8 card" style="background-color: #F4F7F8; ">
+                @foreach ($reviewratings as $reviewrating)
+                    <div class="row">
+                        <div class="card-body" style="text-align: left">
+                            <p>{{ $reviewrating->username }}</p>
+                            <p>{{ $reviewrating->comments }}</p>
+                            <p>
+                                @for ($i = 1; $i <= $reviewrating->star_rating; $i++)
+                                    <span><i class="fa fa-star text-warning"></i></span>
+                                @endfor
+                            </p>
+                            <hr style="opacity: 0.1">
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </center>
 
