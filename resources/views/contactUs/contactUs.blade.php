@@ -1,5 +1,5 @@
 @extends('order_management.layout')
-@section('title', 'Delivery Status')
+@section('title', 'Contact Us')
 @section('content')
 
 
