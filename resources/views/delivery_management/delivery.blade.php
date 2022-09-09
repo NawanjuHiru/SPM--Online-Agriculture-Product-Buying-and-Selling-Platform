@@ -96,13 +96,14 @@
                             <h2 class="text-left">Delivery Details</h2>
                             <p class="text-left">Enter your delivery details here.</p>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="username" placeholder="Username">
+                                    name="username" placeholder="Username" required>
                             </div>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="telno" placeholder="Mobile number">
+                                    name="telno" placeholder="Mobile number" required>
                             </div>
                             <div class="form-group"><input class="form-control" type="text" name="address"
-                                    placeholder="Address" style="height: 80px; padding-bottom: 80px;margin-top: 30px ">
+                                    placeholder="Address" style="height: 80px; padding-bottom: 80px;margin-top: 30px"
+                                    required>
                             </div>
                             <div class="form-group"><button class="btn btn-block" type="submit"
                                     style="background-color:#6EBD6C; color: white;">Confirm Delivery</button>

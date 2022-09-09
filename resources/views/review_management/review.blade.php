@@ -97,14 +97,15 @@
                             <p class="text-left">Leave a comment to improve our service.</p>
 
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="username" placeholder="Username">
+                                    name="username" placeholder="Username" required maxlength="45">
                             </div>
                             <div class="form-group"><input class="form-control" type="text" name="comments"
-                                    placeholder="Leave a comment" style="height: 150px; padding-bottom: 150px; ">
+                                    placeholder="Leave a comment" style="height: 150px; padding-bottom: 150px;"
+                                    maxlength="100">
                             </div>
                             <div class="form-group rate">
                                 <input type="radio" id="star5" class="rate" checked id="star5"
-                                    name="star_rating" value="5" />
+                                    name="star_rating" value="5" required />
                                 <label for="star5" title="text">5 stars</label>
                                 <input type="radio" class="rate" name="star_rating" value="4" />
                                 <label for="star4" title="text">4 stars</label>

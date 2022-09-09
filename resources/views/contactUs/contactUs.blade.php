@@ -96,13 +96,13 @@
                             <h2 class="text-left">Contact Us</h2>
                             <p class="text-left">Reach us at anytime.</p>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="name" placeholder="Name">
+                                    name="name" placeholder="Name" required>
                             </div>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="email"
-                                    name="email" placeholder="Email">
+                                    name="email" placeholder="Email" required>
                             </div>
                             <div class="form-group"><input class="form-control" type="text" name="message"
-                                    placeholder="Message" style="height: 80px; padding-bottom: 80px; ">
+                                    placeholder="Message" style="height: 80px; padding-bottom: 80px;">
                             </div>
                             <div class="form-group"><button class="btn btn-block" type="submit"
                                     style="background-color:#6EBD6C; color: white;">Send</button>
