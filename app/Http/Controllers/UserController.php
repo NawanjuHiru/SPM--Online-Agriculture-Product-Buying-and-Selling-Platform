@@ -202,10 +202,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $user_id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($user_id)
+    public function destroy($id)
     {
         User::find($user_id) -> delete();
         return redirect() -> route('auth.userList')

@@ -24,7 +24,8 @@ Route::get('/auth/edit/{user_id}',[UserController::class, 'updateUser']) -> name
 Route::post('/auth/edit/{user_id}',[UserController::class, 'updateUser']) -> name('auth.updateUser');
 Route::get('/auth/logout',[UserController::class, 'logout']) -> name('auth.logout');
 Route::get('/auth/userList',[UserController::class, 'userList']) -> name('auth.userList');
-Route::post('/auth/delete',[UserController::class, 'destroy']) -> name('auth.delete');
+Route::get('/auth/delete',[UserController::class, 'destroy']) -> name('auth.destroy');
+Route::get('/auth/delete/{id}',[UserController::class, 'delete']) -> name('auth.delete');
 
 Route::group(['middleware' => ['AuthCheck']], function(){
     Route::get('/auth/register',[UserController::class, 'register']) -> name('auth.register');

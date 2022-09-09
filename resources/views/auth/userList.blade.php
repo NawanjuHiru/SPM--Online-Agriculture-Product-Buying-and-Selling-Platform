@@ -270,6 +270,49 @@
                     }
                 }
             </script>
+
+            <script>
+                $('#userTable').on('click', '.deletebtn', function () {
+                    var user_id = $(this).data('id');
+
+                    var delete_confirm = $.confirm({
+                        title: 'Confirm!',
+                        content: 'Simple confirm!',
+                        buttons: {
+
+                            cancel: function () {
+                            },
+
+                            somethingElse: {
+                                text: 'Delete',
+                                type: 'red',
+                                btnClass: 'btn-red',
+                                keys: ['enter', 'shift'],
+                                action: function () {
+
+                                    $.ajax({
+                                        url: '{{url('/userList')}}' + '/' + user_id,
+                                        type: 'DELETE',
+                                        dataType: 'JSON',
+                                        success: function (response) {
+                                            alert(response.msg);
+                                            order_table.ajax.reload();
+                                            delete_confirm.close();
+
+                                        },
+                                        error: function (errors) {
+
+                                        }
+                                    });
+                                    return false;
+                                }
+                            }
+                        }
+                    });
+
+
+                });
+            </script>
         
             @yield('javaScript')
         </html>
