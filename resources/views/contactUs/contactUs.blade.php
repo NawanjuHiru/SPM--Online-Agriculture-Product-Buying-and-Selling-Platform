@@ -96,10 +96,11 @@
                             <h2 class="text-left">Contact Us</h2>
                             <p class="text-left">Reach us at anytime.</p>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="name" placeholder="Name" required>
+                                    name="name" placeholder="Name" pattern="[A-Za-z]{}" title=""required>
                             </div>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="email"
-                                    name="email" placeholder="Email" required>
+                                    name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    title="Enter a valid email" required>
                             </div>
                             <div class="form-group"><input class="form-control" type="text" name="message"
                                     placeholder="Message" style="height: 80px; padding-bottom: 80px;">
