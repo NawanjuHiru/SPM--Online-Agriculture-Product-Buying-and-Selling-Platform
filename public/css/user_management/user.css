@@ -454,7 +454,7 @@ hr {
     border-radius: 10px;
   }
 
-input[type=text] {
+.search {
      width: 20%;
      -webkit-transition: width 0.15s ease-in-out;
      transition: width 0.15s ease-in-out;

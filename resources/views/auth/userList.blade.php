@@ -64,7 +64,7 @@
         <div class="main">
         <br><h1> &nbsp;&nbsp; User List </h1>
         <br>
-        <input  type="text" id="searchbar" onkeyup="searchUser()" name="search" placeholder="Search here..">
+        <input type="text" class="search" id="searchbar" onkeyup="searchUser()" name="search" placeholder="Search here..">
         <center>
         <button class="ibtn4" onclick="openForm()"><i class="fa fa-user-plus"></i></button>
         <div class="form-popup" id="myForm">
@@ -119,7 +119,7 @@
                         <button class="ibtn3" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-trash"></i></button>
                         <div id="id01" class="modal">
                             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                            <form class="modal-content" action="{{ route('auth.delete') }}">
+                            <form class="modal-content" action="{{-- {{ route('auth.delete') }} --}}">
                               <div class="container">
                                 <h1>Delete Account</h1>
                                 <p>Are you sure you want to delete this account?</p>
