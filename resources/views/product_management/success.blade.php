@@ -91,12 +91,16 @@
 
                         <form method="" action="" style="width: 100%">
                             @csrf
-                            <h2 class="text-left">You Added Product Successfully!! </h2>
-                            <p class="text-left"></p>
-
-                            <div class="form-group"><button class="btn btn-block" type="submit"
-                                    style="background-color:#6EBD6C; color: white;">View Product List </button>
+                            <h3 class="text-left">You Added Product Successfully!! </h3>
+                            <p class="text-left"> You can add another product or navigate to the product list</p>
+<br><br><br>
+                            <div class="form-group"><a href="/product/list" class="btn btn-block"
+                                    style="background-color:#6EBD6C; color: white;">View Product List </a>
                             </div>
+
+                            <div class="form-group"><a href="/product/create" class="btn btn-block" a href="/product/insert"
+                                style="background-color:#6EBD6C; color: white;">Add another Product </a>
+                        </div>
                         </form>
                     </div>
                     <div class="col" style="margin-top: 10px">

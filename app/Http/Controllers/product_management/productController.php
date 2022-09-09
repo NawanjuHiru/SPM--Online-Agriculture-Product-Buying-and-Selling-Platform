@@ -7,6 +7,7 @@ use App\Models\product_management\productModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\DataTables;
 
 class productController extends Controller
 {
@@ -104,6 +105,32 @@ class productController extends Controller
         return response()->json(['code'=>1,'result'=>$data]);
     }
 
+
+    //get products
+    public function getProductList(Request $request)
+    {
+        $products = productModel::all();
+
+        return DataTables::of($products)
+            ->addColumn('action', function ($products) {
+                return '<div>
+                <a href="' . url('/products/update' . $products->product_id . '/edit') . '" class="btn btn" style="background-color:#81D8D0!important;color:white;" >Edit</a>
+               <a href="' . url('/products/delete' . $products->product_id . '/delete') . '" class="btn btn" style="background-color:#81D8D0!important;color:white;" >Delete</a>
+
+           </div>  ';
+            })
+            ->rawColumns(['action'])
+            ->make();
+    }
+
+
+    public function show()
+    {
+
+        $data=productModel::all();
+        return view('product_management.viewproducts', compact('data'));
+
+    }
 
 
 }

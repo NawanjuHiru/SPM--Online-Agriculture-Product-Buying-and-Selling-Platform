@@ -17,9 +17,9 @@ Route::get('/product', function () {
     return view('product_management.layout');
 });
 
-// Route::get('/home', function () {
-//     return view('home');
-// });
+Route::get('/', function () {
+    return view('home');
+});
 
 //Route::post('/addProduct', [productController::class, 'create']);
 
@@ -36,8 +36,23 @@ Route::get('/product/create', function () {
 });
 
 Route::post('/product/insert',[productController::class,'save'])->name('insert.product');
+
 Route::get('/product/fetch',[productController::class,'fetchProducts'])->name('fetch.products');
+
+Route::post('/get_product_list', [productController::class, 'getProductList']);
+
+Route::get('/products/view', [productController::class, 'show']) ;
 
 Route::get('/product/list', function () {
     return view('product_management.viewproductlist');
 });
+
+Route::get('/product/success', function () {
+    return view('product_management.success');
+});
+
+Route::get('/product/view', function () {
+    return view('product_management.retrieveproducts');
+});
+
+
