@@ -4,6 +4,7 @@ use App\Http\Controllers\order_management\NewsController;
 use App\Http\Controllers\order_management\OrderController;
 use App\Http\Controllers\reviewController;
 use App\Http\Controllers\contactusController;
+use App\Http\Controllers\deliveryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,6 +22,8 @@ Route::post('/review', [reviewController::class, 'store']);
 Route::get('/delivery', function () {
     return view('delivery_management.delivery');
 });
+
+Route::post('/delivery', [deliveryController::class, 'store']);
 
 Route::get('/refund', function () {
     return view('refund_management.refund');

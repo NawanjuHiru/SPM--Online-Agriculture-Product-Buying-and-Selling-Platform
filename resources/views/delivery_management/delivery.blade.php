@@ -86,20 +86,23 @@
             <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
                 <div class="row g-3">
                     <div class="col">
-                        <form method="post" style="width: 100%">
-                            <h2 class="text-left">Delivery Status</h2>
-                            <p class="text-left">Track your ordered items here.</p>
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <form method="post" action="/delivery" style="width: 100%">
+                            @csrf
+                            <h2 class="text-left">Delivery Details</h2>
+                            <p class="text-left">Enter your delivery details here.</p>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
                                     name="username" placeholder="Username">
                             </div>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="orderno" placeholder="Order Number">
-                            </div>
-                            <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="status" placeholder="Status">
+                                    name="telno" placeholder="Mobile number">
                             </div>
                             <div class="form-group"><input class="form-control" type="text" name="address"
-                                    placeholder="Address" style="height: 80px; padding-bottom: 80px; ">
+                                    placeholder="Address" style="height: 80px; padding-bottom: 80px;margin-top: 30px ">
                             </div>
                             <div class="form-group"><button class="btn btn-block" type="submit"
                                     style="background-color:#6EBD6C; color: white;">Confirm Delivery</button>
