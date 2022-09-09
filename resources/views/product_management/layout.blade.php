@@ -48,7 +48,7 @@
             <button type="button" class="btn "
                     style="margin-top: 12px; margin-right:20px; background-color:white; color:#6EBD6C;">
                 <i class="fas fa-user-alt" style="margin-right:2px; color:#6EBD6C"></i>
-                <span>Sign In</span>
+                <span>Sign Out</span>
             </button>
         </li>
     </ul>

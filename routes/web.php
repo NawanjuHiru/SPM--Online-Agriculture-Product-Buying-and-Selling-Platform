@@ -13,7 +13,7 @@ use App\Http\Controllers\product_management\productController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/product', function () {
     return view('product_management.layout');
 });
 
@@ -27,6 +27,17 @@ Route::get('/', function () {
 //     return view('product_management.insertproduct');
 // });
 
-Route::resources([
-     'products' => productController::class,
- ]);
+// Route::resources([
+//      'products' => productController::class,
+//  ]);
+
+Route::get('/product/create', function () {
+    return view('product_management.insertproduct');
+});
+
+Route::post('/product/insert',[productController::class,'save'])->name('insert.product');
+Route::get('/product/fetch',[productController::class,'fetchProducts'])->name('fetch.products');
+
+Route::get('/product/list', function () {
+    return view('product_management.viewproductlist');
+});

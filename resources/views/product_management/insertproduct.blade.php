@@ -3,126 +3,72 @@
 @section('content')
 
 
-    <!DOCTYPE html>
-    <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Untitled</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-        <style>
-            /* Left column */
-            .leftcolumn {
-                float: left;
-                width: 75%;
-            }
-
-            /* Right column */
-            .rightcolumn {
-                float: left;
-                width: 25%;
-                padding-left: 20px;
-            }
-
-            .rate {
-                float: left;
-                height: 46px;
-                padding: 0 10px;
-            }
-
-            .rate:not(:checked)>input {
-                position: absolute;
-                display: none;
-            }
-
-            .rate:not(:checked)>label {
-                float: right;
-                width: 1em;
-                overflow: hidden;
-                white-space: nowrap;
-                cursor: pointer;
-                font-size: 30px;
-                color: #ccc;
-            }
-
-            .rate:not(:checked)>label:before {
-                content: '★ ';
-            }
-
-            .rate>input:checked~label {
-                color: #ffc700;
-            }
-
-            .rate:not(:checked)>label:hover,
-            .rate:not(:checked)>label:hover~label {
-                color: #deb217;
-            }
-
-            .rate>input:checked+label:hover,
-            .rate>input:checked+label:hover~label,
-            .rate>input:checked~label:hover,
-            .rate>input:checked~label:hover~label,
-            .rate>label:hover~input:checked~label {
-                color: #c59b08;
-            }
-
-            .rating-container .form-control:hover,
-            .rating-container .form-control:focus {
-                background: #fff;
-                border: 1px solid #ced4da;
-            }
-
-            .rating-container textarea:focus,
-            .rating-container input:focus {
-                color: #000;
-            }
-        </style>
-    </head>
-
-    <body>
         <center>
             <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
                 <div class="row g-3">
                     <div class="col">
 
-                        <form method="POST" action="/addProduct"  style="width: 100%" id="productForm">
+                        @foreach($errors->all() as $error)
+                        <div class= "alert alert-danger" role="alert">
+                        {{$error}}
+                        </div>
+                        @endforeach
+
+                        <form method="POST" action="{{ route('insert.product') }}" enctype="multipart/form-data" style="width: 100%" id="productForm">
+                            {{csrf_field()}}
                             <h2 class="text-left">Add Products</h2>
                             <p class="text-left">Enter your product details here.</p>
 
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
                                     name="proname" placeholder="Product Name">
+                                    @error('Product Name')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                             </div>
                             <div class="form-group" style="margin-top: 10px; ">
                                 <select name="procategory" class="form-group"
                                     placeholder="Product Category">
                                     <option value = "hidden"  style="margin-top: 10px; " disabled selected >Select Product Category</option>
-                                    <option value = "Sales Income"> Vegetables </option>
-                                    <option value = "Interest Income"> Fruits </option>
-                                    <option value = "Commission Income"> Fertilizer </option>
-                                    <option value = "Individual Order Income"> Equipment </option>
+                                    <option value = "Vegetables"> Vegetables </option>
+                                    <option value = "Fruits"> Fruits </option>
+                                    <option value = "Fertilizer"> Fertilizer </option>
+                                    <option value = "Equipment"> Equipment </option>
                                 </select>
+                                <span class="text-danger error-text procategory_error"></span>
 
                             </div>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
                                     name="proprice" placeholder="Product Price">
+                                    <span class="text-danger error-text proprice_error"></span>
                             </div>
                             <div class="form-group"><input class="form-control" type="text"
                                     name="prodesc" placeholder="Description" style="margin-top: 10px; height: 80px; padding-bottom: 80px; ">
+                                    <span class="text-danger error-text prodesc_error"></span>
+                                </div>
+                            <div class="col-sm-6">
+                                <label for="image">You can upload a product image from here</label>
+                                <input type="file" style="background-color:#6EBD6C; color: white;" name="image" id="image" placeholder="Upload an image">
+                                <span class="text-danger error-text image_error"></span>
+                                <br>
                             </div>
+
+                            <div class="img-holder"></div>
+
                             <div class="form-group"><button class="btn btn-block" type="submit"
                                     id="saveButton" style="background-color:#6EBD6C; color: white;">Add Product</button>
                             </div>
                         </form>
+
+
                     </div>
                 </div>
             </div>
         </center>
 
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+
     </body>
 
     </html>
@@ -130,33 +76,75 @@
 
 {{--footer--}}
 
+
 @section('javaScript')
+        <script src="{{ asset('jquery.min.js') }}"></script>
+        <script>
+            $(function(){
 
-    <script>
-        $(document).ready(function () {
-            $('#saveButton').click(function (e) {
+                $('#form').on('submit', function(e){
+                    e.preventDefault();
 
-                e.preventDefault();
+                    var form = this;
+                    $.ajax({
+                        url:$(form).attr('action'),
+                        method:$(form).attr('method'),
+                        data:new FormData(form),
+                        processData:false,
+                        dataType:json,
+                        contentType:false,
+                        success: function (response) {
+                            alert(response.msg);
+                            window.location.href = '{{url('/product/create')}}';
+                        },
+                        error: function (errors) {
 
-                var data = {
-                    formdata: $('#productForm').serialize()
-                }
+                        }
+                    });
 
-                $.ajax({
-                    url: '{{url('/products')}}',
-                    type: 'POST',
-                    dataType: 'JSON',
-                    data: $.param(data),
-                    success: function (response) {
-                        alert(response.msg);
-                        window.location.href = '{{url('/products')}}';
-                    },
-                    error: function (errors) {
-
-                    }
                 });
-                return false;
             });
-        });
-    </script>
+
+
+
+            //Reset input file
+            $('input[type="file"][name="image"]').val('');
+            //Image preview
+            $('input[type="file"][name="image"]').on('change', function(){
+                var img_path = $(this)[0].value;
+                var img_holder = $('.img-holder');
+                var extension = img_path.substring(img_path.lastIndexOf('.')+1).toLowerCase();
+                if(extension == 'jpeg' || extension == 'jpg' || extension == 'png'){
+                     if(typeof(FileReader) != 'undefined'){
+                          img_holder.empty();
+                          var reader = new FileReader();
+                          reader.onload = function(e){
+                              $('<img/>',{'src':e.target.result,'class':'img-fluid','style':'max-width:100px;margin-bottom:10px;'}).appendTo(img_holder);
+                          }
+                          img_holder.show();
+                          reader.readAsDataURL($(this)[0].files[0]);
+                     }else{
+                         $(img_holder).html('This browser does not support FileReader');
+                     }
+                }else{
+                    $(img_holder).empty();
+                }
+            });
+
+
+            // //fetch all products
+            // fetchAllProducts();
+            // function fetchAllProducts(){
+            //     $.get('{{route("fetch.products")}}',{}, function(data){
+            //          $('#AllProducts').html(data.result);
+            //     },'json');
+            // }
+
+
+        </script>
 @endsection
+
+
+
+
+

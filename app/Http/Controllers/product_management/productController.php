@@ -46,36 +46,64 @@ class productController extends Controller
 
     }
 
-
-
-    public function store(Request $request)
+    public function save(Request $request)
     {
-        parse_str($request['formdata'], $formdata);
-
-        $validator = Validator::make($formdata, [
+        $validator = Validator::make($request->all(),[
             'proname' => 'required',
             'procategory' => 'required',
-            'proprice' => 'required|numeric',
+            'proprice' => 'required',
             'prodesc' => '',
+            'image' => 'required|image',
+        ],[
+            'proname.required' =>  'Product name is required',
+            'procategory.required' => 'Product category is required',
+            'proprice.required' => 'Product price is required',
+
+            'image.required' => 'Image is required',
+            'image.image' => 'Image must be an image',
 
         ]);
 
-
-        if ($validator->fails()) {
+        if(!$validator->passes()){
+            //return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
             return response()->Json(['status' => 'error', 'msg' => 'validation failed']);
+        }else{
+            $path = "files/";
+            $file = $request->file('image');
+            $filename = time().'_'.$file->getClientOriginalName();
+
+           // $upload = $file->storeAs($path, $filename);
+            $upload = $file->storeAs($path, $filename,'public');
+
+            if($upload){
+                productModel::insert([
+                    'product_name'=>$request->proname,
+                    'category'=>$request->procategory,
+                    'product_price'=>$request->proprice,
+                    'product_desc'=>$request->prodesc,
+                    'product_image'=>$filename,
+
+                ]);
+                //return response()->Json(['status' => 'success', 'msg' => 'Added successfully']);
+                return view('product_management.success');
+            }
+
+            //return response()->Json(['status' => 'success', 'msg' => 'Added successfully']);
 
         }
 
-        $product = new productModel();
-
-        $product->product_name = $formdata['proname'];
-        $product->category = $formdata['procategory'];
-        $product->product_price = $formdata['proprice'];
-        $product->product_desc = $formdata['prodesc'];
-
-
-        $product->save();
-        return response()->Json(['status' => 'success', 'msg' => 'Added successfully']);
     }
+
+
+
+
+    //fetch all products function
+    public function fetchProducts(){
+        $products = productModel::all();
+        $data = \View::make('product_management.productlist')->with('products', $products)->render();
+        return response()->json(['code'=>1,'result'=>$data]);
+    }
+
+
 
 }
