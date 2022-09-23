@@ -15,21 +15,28 @@
                 </div>
                 @endforeach
 
-                <form method="POST" action="{{ route('update.product') }}" enctype="multipart/form-data" style="width: 100%" id="productForm">
+                <form method="POST" action="{{ route('update.product') }}" enctype="multipart/form-data" style="width: 100%" id="productUpdateForm">
                     {{csrf_field()}}
-                    <h2 class="text-left">Add Products</h2>
-                    <p class="text-left">Enter your product details here.</p>
+                    <h2 class="text-left">Update Product</h2>
+                    <p class="text-left">Update your product details here.</p>
+
+                    <div class="form-group" style="margin-top: 10px"><input class="form-control" type="hidden"
+                        name="proid" value="{{$productdata -> product_id}}">
+                        @error('Product ID')
+                        <span class="text-danger">{{$message}}</span>
+                        @enderror
+                </div>
 
                     <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                            name="proname" placeholder="Product Name">
+                            name="proname" value="{{$productdata -> product_name}}">
                             @error('Product Name')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
                     </div>
                     <div class="form-group" style="margin-top: 10px; ">
                         <select name="procategory" class="form-group"
-                            placeholder="Product Category">
-                            <option value = "hidden"  style="margin-top: 10px; " disabled selected >Select Product Category</option>
+                        >
+                            <option value = "hidden"  style="margin-top: 10px; " disabled selected  >{{$productdata -> category}}</option>
                             <option value = "Vegetables"> Vegetables </option>
                             <option value = "Fruits"> Fruits </option>
                             <option value = "Fertilizer"> Fertilizer </option>
@@ -39,11 +46,11 @@
 
                     </div>
                     <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                            name="proprice" placeholder="Product Price">
+                            name="proprice" value="{{$productdata -> product_price}}">
                             <span class="text-danger error-text proprice_error"></span>
                     </div>
                     <div class="form-group"><input class="form-control" type="text"
-                            name="prodesc" placeholder="Description" style="margin-top: 10px; height: 80px; padding-bottom: 80px; ">
+                            name="prodesc" value="{{$productdata -> product_desc}}" style="margin-top: 10px; height: 80px; padding-bottom: 80px; ">
                             <span class="text-danger error-text prodesc_error"></span>
                         </div>
 
@@ -54,8 +61,9 @@
                             padding: 6px 12px;
                             cursor: pointer;
                             width:350px">
-                        <input type="file" style="background-color:#6EBD6C; color: white;" name="image" id="image">
+                        <input type="file" class="form-control" style="background-color:#6EBD6C; color: white;" name="image" id="image" value="{{$productdata -> product_image}}">
                     </label>
+                    {{$productdata -> product_image}}
                         <span class="text-danger error-text image_error"></span>
 
                         </div>
@@ -81,6 +89,39 @@
 
 @endsection
 
+@section('javaScript')
+        <script src="{{ asset('jquery.min.js') }}"></script>
+        <script>
+
+
+
+            //Reset input file
+            $('input[type="file"][name="image"]').val('');
+            //Image preview
+            $('input[type="file"][name="image"]').on('change', function(){
+                var img_path = $(this)[0].value;
+                var img_holder = $('.img-holder');
+                var extension = img_path.substring(img_path.lastIndexOf('.')+1).toLowerCase();
+                if(extension == 'jpeg' || extension == 'jpg' || extension == 'png'){
+                     if(typeof(FileReader) != 'undefined'){
+                          img_holder.empty();
+                          var reader = new FileReader();
+                          reader.onload = function(e){
+                              $('<img/>',{'src':e.target.result,'class':'img-fluid','style':'max-width:175px;margin-bottom:10px;'}).appendTo(img_holder);
+                          }
+                          img_holder.show();
+                          reader.readAsDataURL($(this)[0].files[0]);
+                     }else{
+                         $(img_holder).html('This browser does not support FileReader');
+                     }
+                }else{
+                    $(img_holder).empty();
+                }
+            });
+
+
+        </script>
+@endsection
 
 
 

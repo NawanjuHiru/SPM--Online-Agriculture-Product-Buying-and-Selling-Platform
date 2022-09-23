@@ -54,7 +54,7 @@
                             padding: 6px 12px;
                             cursor: pointer;
                             width:350px">
-                        <input type="file" style="background-color:#6EBD6C; color: white;" name="image" id="image">
+                        <input class="form-control" type="file" style="background-color:#6EBD6C; color: white;" name="image" id="image">
                     </label>
                         <span class="text-danger error-text image_error"></span>
 
