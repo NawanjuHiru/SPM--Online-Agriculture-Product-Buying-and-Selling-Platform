@@ -4,8 +4,8 @@
 
     <center>
             <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
-                <div class="row g-3">
-                    <div class="col">
+                <div class="row g-3" >
+                    <div class="col" style="background-color: #91f1d5;" >
 
 
             <h1 class="text-center" style="font-family:'Trebuchet MS', sans-serif;margin-left:0px; margin-top:20px"> My Products </h1>
@@ -13,7 +13,7 @@
             <div class="container" style="margin-bottom:20px">
 
 
-                <table id="product_details" class="display" style="width: 100%; ">
+                <table id="product_details" class="display" style="width: 100%; background-color: #199dc9;">
                     <thead>
                     <tr>
                         <th>Product Id</th>

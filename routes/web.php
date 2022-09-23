@@ -43,6 +43,8 @@ Route::post('/get_product_list', [productController::class, 'getProductList']);
 
 Route::get('/products/view', [productController::class, 'show']) ;
 
+Route::post('/product/update',[productController::class,'edit'])->name('update.product');
+
 Route::get('/product/list', function () {
     return view('product_management.viewproductlist');
 });

@@ -133,4 +133,14 @@ class productController extends Controller
     }
 
 
+    public function updateProView($product_id){
+
+        $product = productModel::find($product_id);
+        return view('product_management.editproduct') ->with ('productdata', $product);
+    }
+
+
+
+
+
 }
