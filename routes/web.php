@@ -19,13 +19,14 @@ Route::get('/auth/resetPassword/{token}',[UserController::class, 'resetPasswordF
 Route::post('/auth/resetPassword',[UserController::class, 'resetPassword']) -> name('auth.resetPassword');
 Route::get('/auth/profile',[UserController::class, 'profile']) -> name('auth.profile');
 //Route::get('/auth/profile/{user_id}',[ProfileController::class, 'profileShow']) -> name('auth.profileShow');
-Route::get('/auth/updateUser',[UserController::class, 'updateUser']) -> name('auth.updateUser');
-Route::get('/auth/edit/{user_id}',[UserController::class, 'updateUser']) -> name('auth.updateUser');
-Route::post('/auth/edit/{user_id}',[UserController::class, 'updateUser']) -> name('auth.updateUser');
+Route::get('/auth/updateUser', [UserController::class, 'updateUser'])->name('auth.updateUser');
+Route::post('/auth/updateUser', [UserController::class, 'update'])->name('auth.update');
+Route::get('/auth/edit/{user_id}', [UserController::class, 'updateUser'])->name('auth.updateUser');
+Route::post('/auth/edit/{user_id}', [UserController::class, 'updateUser'])->name('auth.updateUser');
 Route::get('/auth/logout',[UserController::class, 'logout']) -> name('auth.logout');
 Route::get('/auth/userList',[UserController::class, 'userList']) -> name('auth.userList');
-Route::get('/auth/delete',[UserController::class, 'destroy']) -> name('auth.destroy');
-//Route::get('/auth/delete/{id}',[UserController::class, 'delete']) -> name('auth.delete');
+Route::get('/auth/delete',[UserController::class, 'destroy'])->name('auth.destroy');
+Route::get('/auth/delete/{user_id}',[UserController::class, 'destroy'])->name('auth.delete');
 
 Route::group(['middleware' => ['AuthCheck']], function(){
     Route::get('/auth/register',[UserController::class, 'register']) -> name('auth.register');

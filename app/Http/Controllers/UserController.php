@@ -122,11 +122,13 @@ class UserController extends Controller
         return back() -> with('success', 'We have e-mailed your password reset link.');
        }
 
-       public function resetPasswordForm(Request $request, $token = null){
+       public function resetPasswordForm(Request $request, $token = null)
+       {
         return view('auth.resetPassword') -> with(['token' => $token, 'email' => $request -> email]);
        }
 
-       public function resetPassword(Request $request){
+       public function resetPassword(Request $request)
+       {
         $request -> validate([
             'email' => 'required|email|exists:user,email',
             'password' => 'required|min:5|max:12',
@@ -161,7 +163,8 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show($user_id) {
+    public function show($user_id) 
+    {
         $user = User::find($user_id);
         return view('user.show',compact('user'));
     }
@@ -175,7 +178,7 @@ class UserController extends Controller
     public function edit($user_id)
     {
         $user = User::find($user_id);
-        return view('auth.updateUser')->with('userdata',$user);
+        return view('auth.updateUser')->with('userdata', $user);
     }
 
     /**
@@ -187,28 +190,28 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
-        $userdata = User::find($request -> user_id);
-        $userdata -> username = $request -> username;
-        $userdata -> email = $request -> email;
-        $userdata -> mobileNumber = $request -> mobileNumber;
-        $userdata -> address = $request -> address;
-        $userdata -> password = Hash::make($request -> password);
+        $userdata = User::find($request->user_id);
+        $userdata->username = $request->username;
+        $userdata->email = $request->email;
+        $userdata->mobileNumber = $request->mobileNumber;
+        $userdata->address = $request->address;
+        $userdata->password = Hash::make($request->password);
 
-        $userdata -> save();
-        /* $userdatas = User::all();
-        return view('order_management.retrieve_order')->with('order_details',$orderdatas); */
+        $userdata->save();
+        /* $userdatas = User::all(); */
+        return redirect()->route('auth.userList');
     }
     
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param int $user_id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($user_id)
     {
-        User::find($user_id) -> delete();
-        return redirect() -> route('auth.userList')
+        User::find($user_id)->delete();
+        return redirect()->route('auth.userList')
         -> with(['status'=>'success','msg'=>'User Deleted successfully']);
     }
 }

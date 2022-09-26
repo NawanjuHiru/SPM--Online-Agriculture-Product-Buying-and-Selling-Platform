@@ -66,18 +66,18 @@
                 </div>
                 <div class="column2" margin-right="110"><br>
                     <h1 style="font-family: Arial">User Profile</h1><br>
-                    <form action="{{ route('auth.profile'/* , $profile -> user_id)  */}}" method="POST">
+                    <form action="{{ route('auth.profile', $profile -> user_id) }}" method="POST">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username" placeholder="Username" value="{{ $profile -> username) }}" width="50">
+                            <input type="text" class="form-control" name="username" placeholder="Username" value="{{ $profile->username) }}" width="50">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="email" placeholder="Email" value="{{ $user -> email }}">
+                            <input type="text" class="form-control" name="email" placeholder="Email" value="{{ $user->email }}">
                         </div>
                         <div class="form-group">
-                            <input type="integer" class="form-control" name="mobileNumber" placeholder="Mobile Number" value="{{ $user -> mobileNumber }}">
+                            <input type="integer" class="form-control" name="mobileNumber" placeholder="Mobile Number" value="{{ $user->mobileNumber }}">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="address" placeholder="Address" value="{{ $user -> address }}">
+                            <input type="text" class="form-control" name="address" placeholder="Address" value="{{ $user->address }}">
                         </div>
                         <button class="btn1" style="background-color: #07be16">Update</button>
                         <button class="btn1" style="background-color: #c50c0c">Delete</button><br>

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="widthe=device-width, initial-scale.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>User | Profile</title>
+        <title>User | List</title>
         <link rel="stylesheet" href="{{ asset('css/user_management/user.css') }}">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css"> --}}
     </head>
+
     <body>
         <!-- Nav bar-->
         <nav class="topnav-right" style="background-color: #6EBD6C; height:60px">
@@ -43,8 +44,7 @@
                     <a class="nav-link" href="#" style="color: white;margin-top:10px">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn "
-                            style="margin-top: 12px; margin-right:20px; background-color:white; color:#6EBD6C;">
+                    <button type="button" class="btn "style="margin-top: 12px; margin-right:20px; background-color:white; color:#6EBD6C;">
                         <i class="fas fa-user-alt" style="margin-right:2px; color:#6EBD6C"></i>
                         <span>Sign In</span>
                     </button>
@@ -83,6 +83,7 @@
 
                 @csrf
                 <button class="ibtn6" onclick="closeForm()"><i class="fa fa-window-close" aria-hidden="true"></i></button><br>
+                <h1>User Form</h1>
                 <input type="text" class="form-control" name="username" placeholder="Username" value="{{ old('username') }}" required>
                 <input type="text" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}" required>
                 <input type="integer" class="form-control" name="mobileNumber" placeholder="Mobile Number" value="{{ old('mobileNumber') }}" required>
@@ -93,6 +94,22 @@
         </div>
         <button class="ibtn5"><i class="fa fa-download"></i></button>
         <br>
+
+        <!-- Update Form -->
+        <div class="form-popup" id="update-form">
+            <form action="{{ route('auth.update') }}" class="form-container" method="POST">
+                @csrf
+                <button type="button" class="ibtn6" onclick="closeUpdateForm()"><i class="fa fa-window-close" aria-hidden="true"></i></button><br>
+                <h1>User Form</h1>
+                <input type="text" name="id" id="update-user-id" hidden />
+                <input type="text" class="form-control" name="username" placeholder="Username" required/>
+                <input type="text" class="form-control" name="email" placeholder="Email" required />
+                <input type="integer" class="form-control" name="mobileNumber" placeholder="Mobile Number" required />
+                <input type="text" class="form-control" name="address" placeholder="Address" required />
+                <input type="password" class="form-control" name="password" placeholder="Password" required />
+                <button type="submit" class="btn">Update</button>
+            </form>
+        </div>
 
         <table class="styled-table" id="userTable">
             <thead>
@@ -114,12 +131,12 @@
                     <td>{{ $user->mobileNumber }}</td>
                     <td>{{ $user->address }}</td>
                     <td>
-                        <button class="ibtn2" onclick="editForm()"><i class="fa fa-pencil-square-o"></i></button>
-
-                        <button class="ibtn3" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-trash"></i></button>
-                        <div id="id01" class="modal">
-                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                            <form class="modal-content" action="{{-- {{ route('auth.delete') }} --}}">
+                        <button class="ibtn2" onclick="openUpdateForm('{{ $user->user_id }}')"><i class="fa fa-pencil-square-o"></i></button>
+                        
+                        <button class="ibtn3" onclick="document.getElementById('df-id{{ $user->user_id }}').style.display='block'"><i class="fa fa-trash"></i></button>
+                        <div id="df-id{{ $user->user_id }}" class="modal">
+                            <span onclick="document.getElementById('df-id{{ $user->user_id }}').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <form class="modal-content" action="{{ route('auth.delete', $user->user_id ) }}">
                               <div class="container">
                                 <h1>Delete Account</h1>
                                 <p>Are you sure you want to delete this account?</p>
@@ -230,17 +247,20 @@
             </script>
 
             <script>
-                function editForm() {
-                    document.getElementById("myForm").style.display = "block";
+                const updateForm = document.getElementById("update-form");
+
+                function openUpdateForm(id) {
+                    document.getElementById("update-user-id").setAttribute("value", id);
+                    updateForm.style.display = "block";
                 }
 
-                function closeForm() {
-                    document.getElementById("myForm").style.display = "none";
+                function closeUpdateForm() {
+                    updateForm.style.display = "none";
                 }
             </script>
 
             <script>
-                var modal = document.getElementById('id01');
+                var modal = document.getElementById('df-id{{ $user->user_id }}');
                 
                 window.onclick = function(event) {
                     if (event.target == modal) {
