@@ -2,26 +2,38 @@
 
 use App\Http\Controllers\order_management\NewsController;
 use App\Http\Controllers\order_management\OrderController;
+use App\Http\Controllers\order_management\ShoppingCartController;
+use App\Http\Controllers\order_management\StripeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
+Route::get('/vgnv', function () {
     return view('order_management.layout');
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
 
 
 
 //Route::resource('/news',NewsController::class);
-Route::post('/get_news_list', [NewsController::class, 'getNewsList']);
+
 Route::post('/get_order_list', [OrderController::class, 'getOrderList']);
+
 //Route::resource('/orders',OrderController::class);
+Route::resources([
+    'orders' => OrderController::class,
+]);
+Route::get('/order/create/{id}',[OrderController::class, 'createOrder']);
+Route::post('/retrieve_order', [OrderController::class, 'retrieveOrder']);
 
 
 Route::resources([
-    'news' => NewsController::class,
-    'orders' => OrderController::class,
+    'carts' => ShoppingCartController::class,
 ]);
+Route::post('/get_cart', [ShoppingCartController::class, 'getCart']);
+
+Route::get('stripe', [StripeController::class, 'stripe']);
+Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
+

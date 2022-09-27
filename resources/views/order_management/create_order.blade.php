@@ -7,7 +7,21 @@
         <form class="form-group form1" id="orderForm">
 
             <fieldset>
-                <h1 class="text-center">Check Out</h1>
+                <h1 class="text-center" style="color:#224957">Check Out</h1>
+
+                <div class="row pb-3">
+                    <div class="col-4 text-center" >
+                        <img src="{{ asset($product->product_image ?? '') }}" alt="" height="100px" width="100px">
+                    </div>
+                    <div class="col-4 text-center" style="margin-top: 30px;">
+                        <h3 class="">{{ $product->product_name ?? '' }}</h3>
+                    </div>
+                    <div class="col-4 text-center" style="margin-top: 30px;">
+                        <h3>{{ number_format($product->product_price, 2) }}</h3>
+                    </div>
+                </div>
+                <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+<hr>
                 <legend><span class="number">1</span> Add your delivery details</legend>
                 <div class="row">
                     <div class="col-sm-6">
@@ -82,7 +96,7 @@
                     data: $.param(data),
                     success: function (response) {
                         alert(response.msg);
-                        window.location.href = '{{url('/orders')}}';
+                        window.location.href = '{{url('/orders')}}/'+response.orderId+'/edit';
                     },
                     error: function (errors) {
 
