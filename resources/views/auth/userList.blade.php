@@ -44,9 +44,9 @@
                     <a class="nav-link" href="#" style="color: white;margin-top:10px">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn "style="margin-top: 12px; margin-right:20px; background-color:white; color:#6EBD6C;">
+                    <button type="button" onclick="{{ route('auth.logout') }}" class="btn "style="margin-top: 12px; margin-right:20px; background-color:white; color:#6EBD6C;">
                         <i class="fas fa-user-alt" style="margin-right:2px; color:#6EBD6C"></i>
-                        <span>Sign In</span>
+                        <span>Sign Out</span>
                     </button>
                 </li>
             </ul>
@@ -92,13 +92,14 @@
                 <button type="submit" class="btn">Register</button>
             </form>
         </div>
-        <button class="ibtn5"><i class="fa fa-download"></i></button>
+        <button class="ibtn5" onclick="{{ route('auth.report') }}"><i class="fa fa-download"></i></button>
         <br>
 
         <!-- Update Form -->
         <div class="form-popup" id="update-form">
-            <form action="{{ route('auth.update') }}" class="form-container" method="POST">
+            <form action="{{ route('auth.update') }}" class="form-container" method="post">
                 @csrf
+                @method('PUT')
                 <button type="button" class="ibtn6" onclick="closeUpdateForm()"><i class="fa fa-window-close" aria-hidden="true"></i></button><br>
                 <h1>User Form</h1>
                 <input type="text" name="id" id="update-user-id" hidden />
@@ -131,7 +132,7 @@
                     <td>{{ $user->mobileNumber }}</td>
                     <td>{{ $user->address }}</td>
                     <td>
-                        <button class="ibtn2" onclick="openUpdateForm('{{ $user->user_id }}')"><i class="fa fa-pencil-square-o"></i></button>
+                        <button class="ibtn2" onclick="openUpdateForm('df-id{{ $user->user_id }}')"><i class="fa fa-pencil-square-o"></i></button>
                         
                         <button class="ibtn3" onclick="document.getElementById('df-id{{ $user->user_id }}').style.display='block'"><i class="fa fa-trash"></i></button>
                         <div id="df-id{{ $user->user_id }}" class="modal">
@@ -249,8 +250,8 @@
             <script>
                 const updateForm = document.getElementById("update-form");
 
-                function openUpdateForm(id) {
-                    document.getElementById("update-user-id").setAttribute("value", id);
+                function openUpdateForm(user_id) {
+                    document.getElementById("update-user-id").setAttribute("value", user_id);
                     updateForm.style.display = "block";
                 }
 

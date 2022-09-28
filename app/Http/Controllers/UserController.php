@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use DB;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
+use PDF;
 
 class UserController extends Controller
 {
@@ -26,10 +27,6 @@ class UserController extends Controller
         $user = DB::select('select * from user');
         return view('auth.userList',['user' => $user]);
     }
-
-    /* public function destroy($user_id) {
-        DB::delete('delete from user where id = ?',[$user_id]);
-    } */
 
     function save(Request $request) {
         //validate request
@@ -72,7 +69,7 @@ class UserController extends Controller
             //check password
             if (Hash::check($request -> password, $userInfo -> password)) {
                 $request -> session() -> put('LoggedUser', $userInfo -> user_id);
-                return redirect('user/home');
+                return redirect('/auth/userList');
             } else {
                 return back() -> with('fail','Incorrect password.');
             }
@@ -98,7 +95,17 @@ class UserController extends Controller
         return view('auth.forgetPassword');
     }
 
-    public function sendResetLink(Request $request){
+    public function resetPassword(Request $request) {
+        $userdata = User::find($request->user_id);
+        $userdata->username = $request->username;
+        $userdata->password = Hash::make($request->password);
+
+        $userdata->save();
+        /* $userdatas = User::all(); */
+        return redirect()->route('auth.login');
+    }
+
+    /* public function sendResetLink(Request $request){
         $request -> validate([
             'email' => 'required|email|exists:user,email'
         ]);
@@ -154,7 +161,7 @@ class UserController extends Controller
             -> with($request -> email);
         }
 
-    }
+    } */
 
     /**
      * Display the specified resource.
@@ -163,8 +170,8 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show($user_id) 
-    {
+    
+     public function show($user_id) {
         $user = User::find($user_id);
         return view('user.show',compact('user'));
     }
@@ -175,10 +182,9 @@ class UserController extends Controller
      * @param int $user_id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit($user_id)
-    {
+    public function edit($user_id){
         $user = User::find($user_id);
-        return view('auth.updateUser')->with('userdata', $user);
+        return view('auth.updateUser', compact('user'));
     }
 
     /**
@@ -188,16 +194,16 @@ class UserController extends Controller
      * @param int $user_id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function update(Request $request)
-    {
-        $userdata = User::find($request->user_id);
-        $userdata->username = $request->username;
-        $userdata->email = $request->email;
-        $userdata->mobileNumber = $request->mobileNumber;
-        $userdata->address = $request->address;
-        $userdata->password = Hash::make($request->password);
+    public function update(Request $request, $user_id) {
+        $user = User::find($user_id);
+        $user->username = $request->input('username');
+        $user->email = $request->email;
+        $user->mobileNumber = $request->mobileNumber;
+        $user->address = $request->address;
+        $user->password = Hash::make($request->password);
+        $user->user_id = auth()->user()->user_id;
 
-        $userdata->save();
+        $user->save();
         /* $userdatas = User::all(); */
         return redirect()->route('auth.userList');
     }
@@ -208,10 +214,26 @@ class UserController extends Controller
      * @param int $user_id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($user_id)
-    {
+    public function destroy($user_id){
         User::find($user_id)->delete();
         return redirect()->route('auth.userList')
         -> with(['status'=>'success','msg'=>'User Deleted successfully']);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function report(){
+        $data = [
+            'title' => 'Welcome to Agri Online',
+            'description' => 'User List Report',
+            'date' => date('m/d/Y')
+        ];
+          
+        $pdf = PDF::loadView('userPDF', $data);
+    
+        return $pdf->download('AgriOnlineUserPDF.pdf');
     }
 }

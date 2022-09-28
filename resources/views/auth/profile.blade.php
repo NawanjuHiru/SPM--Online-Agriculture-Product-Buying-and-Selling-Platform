@@ -79,7 +79,7 @@
                         <div class="form-group">
                             <input type="text" class="form-control" name="address" placeholder="Address" value="{{ $user->address }}">
                         </div>
-                        <button class="btn1" style="background-color: #07be16">Update</button>
+                        <button class="btn1" style="background-color: #07be16" >Update</button>
                         <button class="btn1" style="background-color: #c50c0c">Delete</button><br>
                     </form>
                 </div>
