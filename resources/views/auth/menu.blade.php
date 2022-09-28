@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="widthe=device-width, initial-scale.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>User | Profile</title>
+        <title>User | Menu</title>
         <link rel="stylesheet" href="{{ asset('css/user_management/user.css') }}">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,20 +53,16 @@
 
         @yield('content')
 
-        <div class="card" style="background-color: #d7d7df">
+        <div class="card1" style="background-color: #d7d7df">
             <div class="row">
-                <div class="column1" margin-left="100">
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="{{ asset('/images/User/profile.jpg') }}" id="profile" width="120" height="120" border-radius="3" readonly>
-                    <br><br>
-                    <button class="btn">Add Product To Sale</button>
-                    <button class="btn">View My Products</button>
-                    <button class="btn">My Orders</button>
-                    <button class="btn">Delivery Status</button>
-                </div>
-                <div class="column2" margin-right="110"><br>
-                    <h1 style="font-family: Arial">User Profile</h1><br>
-                    <form action="{{ route('auth.profile', $profile -> user_id) }}" method="POST">
+                <center><br><h1>Menu</h1><br>
+                <button class="btn10">Add Product To Sale</button>
+                <button class="btn10">View My Products</button>
+                <button class="btn10">My Orders</button>
+                <button class="btn10">Delivery Status</button>
+                {{-- <div class="column2" margin-right="110"><br>
+                    <h1 style="font-family: Arial">Menu</h1><br>
+                    <form action="{{ route('auth.profileShow', $profile->user_id) }}" method="POST">
                         <div class="form-group">
                             <input type="text" class="form-control" name="username" placeholder="Username" value="{{ $profile->username) }}" width="50">
                         </div>
@@ -82,7 +78,7 @@
                         <button class="btn1" style="background-color: #07be16" >Update</button>
                         <button class="btn1" style="background-color: #c50c0c">Delete</button><br>
                     </form>
-                </div>
+                </div> --}}
             </div>
         </div>
         <!-- Footer -->

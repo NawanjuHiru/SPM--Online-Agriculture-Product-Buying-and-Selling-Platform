@@ -468,3 +468,21 @@ hr {
 .user{
   display: list-item;    
  } 
+
+.btn10 {
+  background-color: rgb(40, 37, 214);
+  border: none;
+  width: 300px;
+  height: 150px;
+  color: white;
+  border-radius: 5%;
+  padding: 8px 15px;
+  text-align: center;
+  font-size: 28px;
+  margin: 4px 6px;
+  margin-left: 1%;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.btn10:hover {opacity: 3}

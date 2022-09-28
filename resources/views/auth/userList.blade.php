@@ -97,13 +97,13 @@
 
         <!-- Update Form -->
         <div class="form-popup" id="update-form">
-            <form action="{{url('/users/'.$user->user_id)}}" class="form-container" method="post">
+            <form action="{{ route('auth.update') }}" class="form-container" method="post">
                 @csrf
                 @method('PUT')
                 <button type="button" class="ibtn6" onclick="closeUpdateForm()"><i class="fa fa-window-close" aria-hidden="true"></i></button><br>
                 <h1>User Form</h1>
                 <input type="text" name="id" id="update-user-id" hidden />
-                <input type="text" class="form-control" name="username" placeholder="Username" required/>
+                <input type="text" class="form-control" name="username" value="" placeholder="Username" required/>
                 <input type="text" class="form-control" name="email" placeholder="Email" required />
                 <input type="integer" class="form-control" name="mobileNumber" placeholder="Mobile Number" required />
                 <input type="text" class="form-control" name="address" placeholder="Address" required />

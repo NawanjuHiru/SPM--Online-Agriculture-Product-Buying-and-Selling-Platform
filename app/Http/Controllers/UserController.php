@@ -83,8 +83,8 @@ class UserController extends Controller
         }
     }
 
-    function profileShow($user_id){
-        return view('auth.profile', compact('profile'));
+    function menu(){
+        return view('auth.menu');
     }
 
     function updateUser(){
@@ -182,8 +182,8 @@ class UserController extends Controller
      * @param int $user_id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit($user_id){
-        $user = User::find($user_id);
+    public function edit($id){
+        $user = User::where('user_id', $id)->first();
         return view('auth.updateUser', compact('user'));
     }
 
@@ -194,18 +194,18 @@ class UserController extends Controller
      * @param int $user_id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function update(Request $request, $user_id) {
-        $user = User::find($user_id);
-        $user->username = $request->username;
-        $user->email = $request->email;
-        $user->mobileNumber = $request->mobileNumber;
-        $user->address = $request->address;
-        $user->password = Hash::make($request->password);
-        $user->user_id = auth()->user()->user_id;
+    public function update(Request $request) {
+        $updatedata = User::find($request->$user_id);
+        $updatedata->username = $request->username;
+        $updatedata->email = $request->email;
+        $updatedata->mobileNumber = $request->mobileNumber;
+        $updatedata->address = $request->address;
+        $updatedata->password = Hash::make($request->password);
+        $updatedata->user_id = auth()->user()->user_id;
 
-        $user->save();
-        $users = User::all();
-        return view('auth.userList')->with('user_details',$users);
+        $updatedata->save();
+        $updatedatas = User::all();
+        return view('auth.userList')->with('user_details',$updatedatas);
     }
     
     /**
