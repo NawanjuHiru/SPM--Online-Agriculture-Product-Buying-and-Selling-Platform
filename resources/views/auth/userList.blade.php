@@ -97,7 +97,7 @@
 
         <!-- Update Form -->
         <div class="form-popup" id="update-form">
-            <form action="{{ route('auth.update') }}" class="form-container" method="post">
+            <form action="{{url('/users/'.$user->user_id)}}" class="form-container" method="post">
                 @csrf
                 @method('PUT')
                 <button type="button" class="ibtn6" onclick="closeUpdateForm()"><i class="fa fa-window-close" aria-hidden="true"></i></button><br>

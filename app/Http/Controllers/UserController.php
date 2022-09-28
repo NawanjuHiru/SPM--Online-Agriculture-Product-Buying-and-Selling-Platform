@@ -196,7 +196,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $user_id) {
         $user = User::find($user_id);
-        $user->username = $request->input('username');
+        $user->username = $request->username;
         $user->email = $request->email;
         $user->mobileNumber = $request->mobileNumber;
         $user->address = $request->address;
@@ -204,8 +204,8 @@ class UserController extends Controller
         $user->user_id = auth()->user()->user_id;
 
         $user->save();
-        /* $userdatas = User::all(); */
-        return redirect()->route('auth.userList');
+        $users = User::all();
+        return view('auth.userList')->with('user_details',$users);
     }
     
     /**
