@@ -6,21 +6,18 @@ use App\Models\product_management\productModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class ShoppingCart extends Model
 {
     use HasFactory;
 
-    protected $table = 'orders';
-    protected $primaryKey = 'order_id';
+    protected $table = 'cart';
+    protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;
     protected $fillable = [
-        'name',
-        'contact_number',
-        'email',
-        'address',
-        'zip_code',
-        'city',
+        'user_id',
+        'product_id',
+        'status',
         'created_at',
         'updated_at',
     ];

@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "b1e898550e78688d1096fc75251da0f1",
+=======
+    "content-hash": "ca861d06099f82ca31f3e1cefa6c22e5",
+>>>>>>> eab675626c14487c78ed02fe78a2b691d182a5d7
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3780,6 +3784,7 @@
             "time": "2021-09-25T23:10:38+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "sabberworm/php-css-parser",
             "version": "8.4.0",
             "source": {
@@ -3808,6 +3813,43 @@
             "autoload": {
                 "psr-4": {
                     "Sabberworm\\CSS\\": "src/"
+=======
+            "name": "stripe/stripe-php",
+            "version": "v9.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stripe/stripe-php.git",
+                "reference": "7c43066015d03ad9c4458db683ecfe019ce225da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/7c43066015d03ad9c4458db683ecfe019ce225da",
+                "reference": "7c43066015d03ad9c4458db683ecfe019ce225da",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "3.5.0",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpstan/phpstan": "^1.2",
+                "phpunit/phpunit": "^5.7 || ^9.0",
+                "squizlabs/php_codesniffer": "^3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stripe\\": "lib/"
+>>>>>>> eab675626c14487c78ed02fe78a2b691d182a5d7
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3816,6 +3858,7 @@
             ],
             "authors": [
                 {
+<<<<<<< HEAD
                     "name": "Raphael Schweikert"
                 }
             ],
@@ -3831,6 +3874,24 @@
                 "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.4.0"
             },
             "time": "2021-12-11T13:40:54+00:00"
+=======
+                    "name": "Stripe and contributors",
+                    "homepage": "https://github.com/stripe/stripe-php/contributors"
+                }
+            ],
+            "description": "Stripe PHP Library",
+            "homepage": "https://stripe.com/",
+            "keywords": [
+                "api",
+                "payment processing",
+                "stripe"
+            ],
+            "support": {
+                "issues": "https://github.com/stripe/stripe-php/issues",
+                "source": "https://github.com/stripe/stripe-php/tree/v9.6.0"
+            },
+            "time": "2022-09-15T19:45:46+00:00"
+>>>>>>> eab675626c14487c78ed02fe78a2b691d182a5d7
         },
         {
             "name": "swiftmailer/swiftmailer",
