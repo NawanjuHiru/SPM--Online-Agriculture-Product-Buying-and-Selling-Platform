@@ -2,12 +2,13 @@
 @section('title','check out')
 @section('content')
 
+    <br><br>
     <center>
         <div class="main">
             <h1 class="text-center" style="font-family:'Trebuchet MS', sans-serif;margin-left:0px;"> Orders </h1>
             <br><br>
             <div class="container">
-
+                <a style="float: right;" href="/downloadPdf" class="btn btn-success" role="button"><i class="fa fa-download"></i></a>
 
                 <table id="ordertable" class="display" style="width: 100%; ">
                     <thead>

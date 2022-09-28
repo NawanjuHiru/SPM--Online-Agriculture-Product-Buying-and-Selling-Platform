@@ -5,9 +5,12 @@ namespace App\Http\Controllers\order_management;
 use App\Http\Controllers\Controller;
 use App\Models\order_management\Order;
 use App\Models\product_management\productModel;
+
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
+
 
 
 class OrderController extends Controller
@@ -176,6 +179,11 @@ class OrderController extends Controller
         return view('order_management.create_order', compact('product'));
     }
 
+    public function downloadPdf(){
 
+        $order_details = Order::all();
+        $pdf = PDF::loadView('order_management.order_report',compact('order_details'));
+        return $pdf->download('retrieve_all_orders.pdf');
+    }
 
 }

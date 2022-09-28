@@ -37,3 +37,4 @@ Route::post('/get_cart', [ShoppingCartController::class, 'getCart']);
 Route::get('stripe', [StripeController::class, 'stripe']);
 Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
 
+Route::get('/downloadPdf', [OrderController::class, 'downloadPdf']);
