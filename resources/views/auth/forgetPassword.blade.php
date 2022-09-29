@@ -61,7 +61,7 @@
                 </div>
                 <div class="column2" margin-right="100"><br>
                     <h1 style="font-family: Arial">Forgot Password</h1><br>
-                    <form action="{{ route('auth.resetPassword') }}" method="POST">
+                    <form action="{{ route('auth.sendResetLink') }}" method="POST">
                     @if (Session::get('fail'))
                     <div class="alert alert-danger">
                         {{ Session::get('fail') }}
@@ -73,15 +73,12 @@
                     </div>
                     @endif
                     @csrf
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="username" placeholder="Username" value="{{-- {{ $userdata->username }} --}}">
-                        <span class="text-danger">@error('username'){{ $message }} @enderror</span>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" name="password" placeholder="New Password">
-                        <span class="text-danger">@error('password'){{ $message }} @enderror</span>
-                    </div>
-                        <button type="submit" class="btn1" style="background-color: #272ae6">Reset Password</button>
+                    <p> Enter your email address and we will send you <br>a link to reset your password.</p>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
+                            <span class="text-danger">@error('email'){{ $message }} @enderror</span>
+                        </div>
+                        <button type="submit" class="btn1" style="background-color: #272ae6">Send Password Link</button>
                         <br>
                         <a href="{{ route('auth.login') }}">Sign In</a>
                     </form>

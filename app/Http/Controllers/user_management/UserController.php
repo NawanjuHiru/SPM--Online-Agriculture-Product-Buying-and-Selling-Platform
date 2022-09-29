@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\user_management;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\UserModel\User;
+use App\Models\UserModel\Role;
 use App\Models\UserModel\Profile;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -95,17 +97,7 @@ class UserController extends Controller
         return view('auth.forgetPassword');
     }
 
-    public function resetPassword(Request $request) {
-        $userdata = User::find($request->user_id);
-        $userdata->username = $request->username;
-        $userdata->password = Hash::make($request->password);
-
-        $userdata->save();
-        /* $userdatas = User::all(); */
-        return redirect()->route('auth.login');
-    }
-
-    /* public function sendResetLink(Request $request){
+    public function sendResetLink(Request $request){
         $request -> validate([
             'email' => 'required|email|exists:user,email'
         ]);
@@ -121,7 +113,7 @@ class UserController extends Controller
         $body = "We are received a request to reset the password for <b>AgriProduct</b> account associated with ".$request -> email.". You can reset your password by clicking the link below";
 
         \Mail::send('auth.emailForget',['action_link' => $action_link,'body' => $body], function($message) use ($request){
-            $message -> from('agriproduct123@gmail.com','Agri Product');
+            $message -> from('nawanjuhiru2000@gmail.com','Agri Product');
             $message -> to($request -> email, 'username')
                      -> subject('Reset Password');
         });
@@ -161,7 +153,7 @@ class UserController extends Controller
             -> with($request -> email);
         }
 
-    } */
+    }
 
     /**
      * Display the specified resource.
@@ -195,17 +187,17 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function update(Request $request) {
-        $updatedata = User::find($request->$user_id);
+        $updatedata = User::find($request->id);
         $updatedata->username = $request->username;
         $updatedata->email = $request->email;
         $updatedata->mobileNumber = $request->mobileNumber;
         $updatedata->address = $request->address;
         $updatedata->password = Hash::make($request->password);
-        $updatedata->user_id = auth()->user()->user_id;
+        // $updatedata->user_id = auth()->user()->user_id;
 
         $updatedata->save();
         $updatedatas = User::all();
-        return view('auth.userList')->with('user_details',$updatedatas);
+        return redirect()->route('auth.userList');
     }
     
     /**
@@ -225,15 +217,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
     */
-    public function report(){
-        $data = [
-            'title' => 'Welcome to Agri Online',
-            'description' => 'User List Report',
-            'date' => date('m/d/Y')
-        ];
-          
-        $pdf = PDF::loadView('userPDF', $data);
-    
-        return $pdf->download('AgriOnlineUserPDF.pdf');
+    public function downloadPdf(){
+        $user = User::all();
+        $pdf = PDF::loadView('auth.userPDF',compact('user'));
+        return $pdf->download('User.pdf');
     }
 }

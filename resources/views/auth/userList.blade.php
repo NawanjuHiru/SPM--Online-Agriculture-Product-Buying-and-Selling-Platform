@@ -92,14 +92,13 @@
                 <button type="submit" class="btn">Register</button>
             </form>
         </div>
-        <button class="ibtn5" onclick="{{ route('auth.report') }}"><i class="fa fa-download"></i></button>
+        <button class="ibtn5" onclick="{{ route('auth.download') }}"><i class="fa fa-download"></i></button>
         <br>
 
         <!-- Update Form -->
         <div class="form-popup" id="update-form">
             <form action="{{ route('auth.update') }}" class="form-container" method="post">
                 @csrf
-                @method('PUT')
                 <button type="button" class="ibtn6" onclick="closeUpdateForm()"><i class="fa fa-window-close" aria-hidden="true"></i></button><br>
                 <h1>User Form</h1>
                 <input type="text" name="id" id="update-user-id" hidden />
@@ -132,7 +131,7 @@
                     <td>{{ $user->mobileNumber }}</td>
                     <td>{{ $user->address }}</td>
                     <td>
-                        <button class="ibtn2" onclick="openUpdateForm('df-id{{ $user->user_id }}')"><i class="fa fa-pencil-square-o"></i></button>
+                        <button class="ibtn2" onclick="openUpdateForm('{{ $user->user_id }}')"><i class="fa fa-pencil-square-o"></i></button>
                         
                         <button class="ibtn3" onclick="document.getElementById('df-id{{ $user->user_id }}').style.display='block'"><i class="fa fa-trash"></i></button>
                         <div id="df-id{{ $user->user_id }}" class="modal">
