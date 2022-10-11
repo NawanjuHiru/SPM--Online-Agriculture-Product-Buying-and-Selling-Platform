@@ -5,6 +5,7 @@ use App\Http\Controllers\order_management\OrderController;
 use App\Http\Controllers\reviewController;
 use App\Http\Controllers\contactusController;
 use App\Http\Controllers\deliveryController;
+use App\Http\Controllers\refundController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,6 +29,8 @@ Route::post('/delivery', [deliveryController::class, 'store']);
 Route::get('/refund', function () {
     return view('refund_management.refund');
 });
+
+Route::post('/refund', [refundController::class, 'store']);
 
 Route::get('/aboutus', function () {
     return view('aboutUs.aboutUs');
