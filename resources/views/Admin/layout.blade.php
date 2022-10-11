@@ -110,17 +110,21 @@
     </nav>
     <!-- Nav bar-->
 
-    @yield('content')
-
     <!-- Side bar -->
     <div class="sidebar"style="border: solid 2px">
-        <a class="active" href="">User </a>
+        <a class="" href="">User </a>
         <a href="">Product </a>
         <a href="">Order </a>
-        <a href="">Review & Feedback</a>
+        <a href="review">Review & Feedback</a>
+    </div>
+    <!-- Side bar -->
+
+    <div class="content">
+        @yield('content')
     </div>
 
-    <!-- Side bar -->
+
+
 </body>
 
 
