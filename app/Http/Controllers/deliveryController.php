@@ -16,4 +16,17 @@ class deliveryController extends Controller
         $post->save();
         return redirect('delivery');
     }
+
+    public function view()
+    {
+        $data=Delivery::paginate(10);
+        return view('deliveries')->with('deliveries',$data);
+    }
+
+    public function delete($id)
+    {
+        $delete=Delivery::find($id);
+        $delete->delete();
+        return redirect('/admin/delivery')->with('deliveries',$delete);
+    }
 }

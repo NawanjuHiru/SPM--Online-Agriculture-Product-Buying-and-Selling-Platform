@@ -91,7 +91,7 @@
 
 <body style="overflow-x:hidden">
     <!-- Nav bar-->
-    <nav class="topnav-right" style="background-color: #6EBD6C; height:60px">
+    <nav class="topnav-right" style="background-color: #6EBD6C; height:60px; ">
         <ul class="nav justify-content-end" style="">
             <li class="nav-item" style="margin-right:1200px;">
                 <a href="/" style="text-decoration: none">
@@ -111,11 +111,12 @@
     <!-- Nav bar-->
 
     <!-- Side bar -->
-    <div class="sidebar"style="border: solid 2px">
-        <a class="" href="">User </a>
-        <a href="">Product </a>
-        <a href="">Order </a>
+    <div class="sidebar"style="border: solid 2px; position:absolute; height: 100%;">
+        <a class="" href="user">User </a>
+        <a href="product">Product </a>
+        <a href="order">Order </a>
         <a href="review">Review & Feedback</a>
+        <a href="delivery">Delivery Details</a>
     </div>
     <!-- Side bar -->
 

@@ -52,3 +52,18 @@ Route::resources([
     'news' => NewsController::class,
     'orders' => OrderController::class,
 ]);
+
+Route::get('/admin/review', function () {
+    $data=App\Models\Reviewrating::all();
+    return view('admin.review')->with('reviewratings', $data);
+});
+
+Route::get('/delete/{id}', [reviewController::class, 'delete']);
+Route::get('/edit/{id}', [reviewController::class, 'edit']);
+
+Route::get('/admin/delivery', function () {
+    $data=App\Models\Delivery::all();
+    return view('admin.delivery')->with('deliveries', $data);
+});
+
+Route::get('/delete-delivery/{id}', [deliveryController::class, 'delete']);
