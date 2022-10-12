@@ -129,8 +129,8 @@ class OrderController extends Controller
         return DataTables::of($orders)
             ->addColumn('action', function ($orders) {
                 return '<div >
-               <a href="' . url('/orders/' . $orders->order_id . '/edit') . '" class="btn btn" style="background-color:#0059b3!important;color:white;" >Edit</a>
-               <button class="btn btn btn_delete " data-id="' . $orders->order_id . '" style="background-color:#008080!important;color:white;width:100px;margin-top: 10px;">Delete</button>
+               <a href="' . url('/orders/' . $orders->order_id . '/edit') . '" class="btn btn" style="background-color:#09560D!important;color:white;" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+               <button class="btn btn btn_delete " data-id="' . $orders->order_id . '" style="background-color:#CF0808!important;color:white;width:45px;margin-top: 10px;"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
 
            </div>  ';
