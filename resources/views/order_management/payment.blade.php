@@ -17,10 +17,11 @@
                     <div class="text-center">
                         <h3 class="text-success">Payment Method</h3>
                     </div>
+                    {{-- <form method="post" action=""> --}}
                     <div class="p-4">
                         <div class="container"
                              style="background-color: #E8ECF2 ;height: 40px;margin-bottom: 10px;border-radius: 10px;">
-                            <div class="form-check">
+                            <div class="form-check" onclick="setpaymethod('cash')">
                                 <div class="row pb-9">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault"
                                            id="flexRadioDefault1" style="margin-top: 10px;">
@@ -35,7 +36,7 @@
                         </div>
                         <div class="container"
                              style="background-color: #E8ECF2;height: 40px;margin-bottom: 10px;border-radius: 10px;">
-                            <div class="form-check">
+                            <div class="form-check" onclick="setpaymethod('card')">
                                 <div class="row pb-6">
 
                                     <input class="form-check-input" type="radio" name="flexRadioDefault"
@@ -51,11 +52,12 @@
                         </div>
                         <br><br><br>
                         <div class="d-grid col-12 mx-auto">
-                            <button class="btn btn-success" type="button"><span></span> MAKE PAYMENT</button>
+                            <button class="btn btn-success" type="button" onclick="rdirect()"><span></span> MAKE PAYMENT</button>
                         </div>
 
 
                     </div>
+                {{-- </form> --}}
                 </div>
 
             </div>
@@ -68,6 +70,23 @@
 
 @section('javaScript')
 
+<script>
+
+var location1 = "";
+function setpaymethod(method1){
+  if(method1 === 'cash'){
+    location1="{{url('/cashondelivery')}}";
+  }
+  else if(method1 === 'card'){
+    location1="{{url('/stripe')}}";
+  }
+}
+
+function rdirect(){
+    window.location.href=location1;
+}
+
+    </script>
 
 @endsection
 

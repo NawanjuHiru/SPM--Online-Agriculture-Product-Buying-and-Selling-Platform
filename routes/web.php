@@ -19,6 +19,10 @@ Route::get('/admin', function () {
     return view('Admin.layout');
 });
 
+Route::get('/cashondelivery', function () {
+    return view('order_management.cash_on_delivery');
+});
+
 
 
 //Route::resource('/news',NewsController::class);
