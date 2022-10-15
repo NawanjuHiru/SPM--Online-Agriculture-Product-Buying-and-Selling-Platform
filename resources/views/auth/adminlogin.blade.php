@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="widthe=device-width, initial-scale.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>User | Sign In</title>
+        <title>Admin | Sign In</title>
         <link rel="stylesheet" href="{{ asset('css/user_management/user.css') }}">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -78,10 +78,8 @@
                             <input type="password" class="form-control" name="password" placeholder="Password">
                             <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                         </div>
-                        <a href="{{ route('auth.adminlogin') }}">Admin Login</a>
                         <br><br>
                         <button type="submit" class="btn1" style="background-color: #272ae6">Sign In</button><br>
-                        <a href="{{ route('auth.register') }}">Create an account</a>
                     </form>
                 </div>
             </div>

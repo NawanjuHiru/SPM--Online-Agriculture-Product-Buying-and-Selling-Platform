@@ -23,7 +23,8 @@ Route::get('/auth/updateUser/{user_id}', [UserController::class, 'updateUser'])-
 Route::post('/auth/updateUser', [UserController::class, 'update'])->name('auth.update');
 Route::get('/auth/edit/{user_id}', [UserController::class, 'editUser'])->name('auth.editUser');
 Route::post('/auth/edit/{user_id}', [UserController::class, 'edit'])->name('auth.edit');
-Route::get('/auth/logout',[UserController::class, 'logout']) -> name('auth.logout');
+//Route::get('/auth/logout',[UserController::class, 'logout']) -> name('auth.logout');
+Route::get('/auth/logout',[UserController::class, 'perform'])->name('logout.perform');
 Route::get('/auth/userList',[UserController::class, 'userList']) -> name('auth.userList');
 Route::get('/auth/delete',[UserController::class, 'destroy'])->name('auth.destroy');
 Route::get('/auth/delete/{user_id}',[UserController::class, 'destroy'])->name('auth.delete');
@@ -35,14 +36,16 @@ Route::group(['middleware' => ['AuthCheck']], function(){
     Route::get('/auth/login',[UserController::class, 'login']) -> name('auth.login');
 });
 
-Route::get('/home', function () {
+Route::get('/auth/adminlogin',[AdminController::class, 'adminlogin']) -> name('auth.adminlogin');
+Route::get('/auth/adminlogout',[AdminController::class, 'adminperform'])->name('logout.adminperform');
+
+Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/userhome', function () {
+    return view('userhome');
 });
-
 
 
 //Route::resource('/news',NewsController::class);

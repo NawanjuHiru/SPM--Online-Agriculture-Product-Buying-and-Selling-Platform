@@ -14,6 +14,7 @@ use DB;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
 use PDF;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -71,17 +72,29 @@ class UserController extends Controller
             //check password
             if (Hash::check($request -> password, $userInfo -> password)) {
                 $request -> session() -> put('LoggedUser', $userInfo -> user_id);
-                return redirect('/auth/userList');
+                return redirect('/userhome');
             } else {
                 return back() -> with('fail','Incorrect password.');
             }
         }
 
-        function logout() {
-            if(session() -> has('LoggedUser')) {
-                session() -> pull('LoggedUser');
-                return redirect('/auth/login');
-            }
+        // function logout() {
+        //     if(session() -> has('LoggedUser')) {
+        //         session() -> pull('LoggedUser');
+        //         return redirect('/auth/login');
+        //     }
+        // }
+
+
+        /**
+         * 
+       * @return \Illuminate\Routing\Redirector
+        * 
+         */
+        function perform(){
+            Session::flush();
+            Auth::logout();
+            return redirect('/auth/login');
         }
     }
 
