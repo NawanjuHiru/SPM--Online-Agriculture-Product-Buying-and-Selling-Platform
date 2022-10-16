@@ -19,7 +19,14 @@ class reviewController extends Controller
 
     public function view()
     {
-        $data=ReviewRating::paginate(5);
+        $data=ReviewRating::paginate(10);
         return view('reviewratings')->with('reviewratings',$data);
+    }
+
+    public function delete($id)
+    {
+        $delete=ReviewRating::find($id);
+        $delete->delete();
+        return redirect('/admin/review')->with('reviewratings',$delete);
     }
 }
