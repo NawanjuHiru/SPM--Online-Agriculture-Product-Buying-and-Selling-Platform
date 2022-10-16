@@ -11,7 +11,7 @@
     <nav class="topnav-right" style="background-color: #6EBD6C; height:60px">
         <center>
             <div class="body-section">
-                <h3 class="heading">Order Report</h3>
+                <h3 class="heading">Delivery Details Report</h3>
                 <br>
                 <table class="table-bordered" style="font-size:14px">
                     <thead>

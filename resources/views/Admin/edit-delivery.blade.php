@@ -17,7 +17,7 @@
         <label>Status</label>
         <select name="status"type="text" name="status" value="{{ $data['status'] }}"
             style="width: 420px; height: 50px">
-            <option value="Inprgress">In progress</option>
+            <option value="Inprogress">In progress</option>
             <option value="Delivered">Delivered</option>
         </select>
 

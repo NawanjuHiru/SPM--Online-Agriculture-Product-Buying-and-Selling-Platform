@@ -3,7 +3,7 @@
 @section('content')
 
     <div style=" padding: 30px">
-        <h2 class="" style=" margin-right: 750px;">Review & Feedback</h2>
+        <h2 class="" style=" margin-right: 750px;"><b>Review & Feedback</b></h2>
         <div class="" style="background-color: #F4F7F8; ">
             <table class="table table-hover" style="width:100%;">
                 <tr style="background-color: #6EBD6C;">
@@ -11,7 +11,9 @@
                     <th><b>Username</b></th>
                     <th><b>Comments</b></th>
                     <th><b>Rating</b></th>
-                    <th><b>Action</b></th>
+                    <th style="width: 15%">
+                        <center><b>Action</b></center>
+                    </th>
                 </tr>
                 @foreach ($reviewratings as $reviewrating)
                     <tr style="height: 50px;">
@@ -24,11 +26,14 @@
                             @endfor
                         </td>
                         <td>
-                            <div class="">
-                                <a href="/delete/{{ $reviewrating->id }}" class="btn btn-danger"
-                                    style="width: 90px; height: 35px; opacity: 70%">
-                                    delete</a>
-                            </div>
+                            <center>
+                                <div class="">
+                                    <a href="/delete/{{ $reviewrating->id }}" class="btn btn-danger"
+                                        style="width: 90px; height: 35px; opacity: 90%"><i class="fa fa-trash"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </center>
                         </td>
                     </tr>
                 @endforeach
