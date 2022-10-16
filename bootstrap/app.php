@@ -36,6 +36,8 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+$app->singleton(\Barryvdh\DomPDF\ServiceProvider::class);
+
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class

@@ -4,7 +4,8 @@
 
     <div style=" padding: 30px">
         <h2 class="" style=" margin-right: 750px;">Delivery Details</h2>
-        <a class="btn btn-success float-end" style="margin-bottom:10px" href="">Export Report</a>
+        <a style="float: right;" href="/downloadPdf" class="btn btn-success" role="button">Generate Report <i
+                class="fa fa-download"></i></a>
         <div class="" style="background-color: #F4F7F8; ">
             <table class="table table-hover" style="width:100%;">
                 <tr style="background-color: #6EBD6C;">
@@ -25,17 +26,19 @@
                         <td>
                             <div class="">
                                 <a href="/delete-delivery/{{ $deliveries->id }}" class="btn btn-danger"
-                                    style="width: 90px; height: 35px; opacity: 70%">
-                                    delete</a>
-                                <a href="/delete/{{ $deliveries->id }}" class="btn btn-primary"
-                                    style="width: 90px; height: 35px; opacity: 70%">
-                                    Edit</a>
+                                    style="width: 90px; height: 35px; opacity: 70%"><i class="fa fa-trash"
+                                        aria-hidden="true"></i>
+                                </a>
+
+                                <a href="/edit-delivery/{{ $deliveries->id }}" class="btn btn-success"
+                                    style="width: 90px; height: 35px; opacity: 70%; background-color:#09560D!important;color:white;">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+
                             </div>
                         </td>
                     </tr>
                 @endforeach
             </table>
-
         </div>
     </div>
 

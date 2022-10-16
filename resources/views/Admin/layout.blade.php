@@ -64,8 +64,6 @@
         @media screen and (max-width: 700px) {
             .sidebar {
                 width: 100%;
-                height: auto;
-                position: relative;
             }
 
             .sidebar a {
@@ -111,7 +109,7 @@
     <!-- Nav bar-->
 
     <!-- Side bar -->
-    <div class="sidebar"style="border: solid 2px; position:absolute; height: 100%;">
+    <div class="sidebar"style="border: solid 2px; position:absolute; height: 100vh;">
         <a class="" href="user">User </a>
         <a href="product">Product </a>
         <a href="order">Order </a>

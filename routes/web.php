@@ -59,7 +59,6 @@ Route::get('/admin/review', function () {
 });
 
 Route::get('/delete/{id}', [reviewController::class, 'delete']);
-Route::get('/edit/{id}', [reviewController::class, 'edit']);
 
 Route::get('/admin/delivery', function () {
     $data=App\Models\Delivery::all();
@@ -67,3 +66,7 @@ Route::get('/admin/delivery', function () {
 });
 
 Route::get('/delete-delivery/{id}', [deliveryController::class, 'delete']);
+Route::get('/edit-delivery/{id}', [deliveryController::class, 'edit']);
+Route::post('/editdelivery', [deliveryController::class, 'update']);
+
+Route::get('/downloadPdf', [deliveryController::class, 'downloadPdf']);
