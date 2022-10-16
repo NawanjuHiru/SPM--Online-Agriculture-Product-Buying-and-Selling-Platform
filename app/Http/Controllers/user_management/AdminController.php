@@ -64,15 +64,16 @@ class AdminController extends Controller
           // }
   
   
-          /**
-           * 
-         * @return \Illuminate\Routing\Redirector
-          * 
-           */
-          function adminperform(){
-              Session::flush();
-              Auth::adminlogout();
-              return redirect('/auth/login');
-          }
-      }
+        /**
+        * Log out account admin.
+        *
+        * @return \Illuminate\Routing\Redirector
+        */
+        function adminperform()
+        {
+            Session::flush();
+            Auth::logout();
+            return redirect('/auth/login');
+        }
+    }
 }

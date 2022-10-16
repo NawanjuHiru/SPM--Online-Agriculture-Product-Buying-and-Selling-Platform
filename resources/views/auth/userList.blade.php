@@ -92,7 +92,7 @@
                 <button type="submit" class="btn">Register</button>
             </form>
         </div>
-        <button class="ibtn5" onclick="{{ route('auth.download') }}"><i class="fa fa-download"></i></button>
+        <button class="ibtn5" onclick="window.location.href='/auth/downloadPdf'"><i class="fa fa-download"></i></button>
         <br>
 
         <!-- Update Form -->

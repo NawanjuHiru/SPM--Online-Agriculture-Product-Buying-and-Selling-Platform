@@ -80,7 +80,7 @@
                         </div>
                         <a href="{{ route('auth.adminlogin') }}">Admin Login</a>
                         <br><br>
-                        <button type="submit" class="btn1" style="background-color: #272ae6">Sign In</button><br>
+                        <button type="submit" class="btn1" s7tyle="background-color: #272ae6">Sign In</button><br>
                         <a href="{{ route('auth.register') }}">Create an account</a>
                     </form>
                 </div>
