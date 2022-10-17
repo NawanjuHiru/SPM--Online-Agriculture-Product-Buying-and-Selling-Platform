@@ -5,12 +5,6 @@
 <button class="btn btn1" onclick="history.back()"><i class="fa fa-arrow-left fa-2xl back_icon " aria-hidden="true"></i></button>
 
 
-
-@foreach($errors->all() as $error)
-    <div class= "alert alert-danger" role="alert" style="padding:2px 2px;">
-    {{$error}}
-    </div>
-@endforeach 
         <form class="form-group form1" id="orderForm">
             {{csrf_field()}}
             
@@ -45,7 +39,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <label for="email">Email:</label>
-                        <input type="text" class="form-control" name="email" placeholder="abc@gmail.com" required><br>
+                        <input type="email" class="form-control" name="email" placeholder="abc@gmail.com" required><br>
                     </div>
                     <div class="col-sm-6">
                         <label for="address">Address:</label>
@@ -67,11 +61,7 @@
                 </div>
             </fieldset>
 
-            {{--            <div class="button1">--}}
-            {{--                <button id="saveButton" class="btn btn-primary" style=" color:white;width:140px;font-family:'Trebuchet MS', sans-serif; ">Add</button>--}}
-            {{--                <a href="{{url('/orders')}}" class="btn btn"--}}
-            {{--                   style="background-color:#001f4d!important; color:white;width:140px;font-family:'Trebuchet MS', sans-serif; ">Back</a>--}}
-            {{--            </div>--}}
+
 
         </form>
 
@@ -88,29 +78,41 @@
 @section('javaScript')
 
     <script>
+        
         $(document).ready(function () {
+
+            $('#orderForm').validate(); 
+            
+
             $('#saveButton').click(function (e) {
-
+                
                 e.preventDefault();
-
+                var valid = $('#orderForm').valid(); 
+                if(!valid){
+                    return false;
+                }
+                
                 var data = {
                     formdata: $('#orderForm').serialize()
                 }
-
                 $.ajax({
                     url: '{{url('/orders')}}',
                     type: 'POST',
                     dataType: 'JSON',
                     data: $.param(data),
+                    
                     success: function (response) {
+                       
                         alert(response.msg);
                         window.location.href = '{{url('/orders')}}/'+response.orderId+'/edit';
                     },
                     error: function (errors) {
-
+                        
+                        alert(response.msg);
                     }
                 });
                 return false;
+                
             });
         });
     </script>

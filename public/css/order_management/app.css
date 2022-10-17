@@ -137,3 +137,13 @@ label.light {
 .back_icon{
     padding-left: 300px;
 }
+
+
+
+label.error {
+   color: red;
+}
+
+input.error{
+    margin-bottom: 5px;
+}
