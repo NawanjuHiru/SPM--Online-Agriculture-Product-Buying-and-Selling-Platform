@@ -23,13 +23,12 @@ Route::get('/auth/updateUser/{user_id}', [UserController::class, 'updateUser'])-
 Route::post('/auth/updateUser', [UserController::class, 'update'])->name('auth.update');
 Route::get('/auth/edit/{user_id}', [UserController::class, 'editUser'])->name('auth.editUser');
 Route::post('/auth/edit/{user_id}', [UserController::class, 'edit'])->name('auth.edit');
-//Route::get('/auth/logout',[UserController::class, 'logout']) -> name('auth.logout');
 Route::get('/auth/logout',[UserController::class, 'perform'])->name('logout.perform');
 Route::get('/auth/userList',[UserController::class, 'userList']) -> name('auth.userList');
 Route::get('/auth/delete',[UserController::class, 'destroy'])->name('auth.destroy');
 Route::get('/auth/delete/{user_id}',[UserController::class, 'destroy'])->name('auth.delete');
-//Route::get('/auth/report', [UserController::class, 'report'])->name('auth.report');
 Route::get('/auth/downloadPdf', [UserController::class, 'downloadPdf'])->name('auth.download');
+Route::get('/auth/search', [UserController::class, 'search'])->name('auth.search');
 
 Route::group(['middleware' => ['AuthCheck']], function(){
     Route::get('/auth/register',[UserController::class, 'register']) -> name('auth.register');

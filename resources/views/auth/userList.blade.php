@@ -271,10 +271,11 @@
 
             <script>
                 function searchUser() {
-                    var input, filter, table, tr, td, i, txtValue;
+                    var input, filter, table, thead, tbody, tr, td, i, txtValue;
                     input = document.getElementById("searchbar");
                     filter = input.value.toUpperCase();
                     table = document.getElementById("userTable");
+                    tbody = table.getElementsByTagName("tbody");
                     tr = table.getElementsByTagName("tr");
                     
                     for (i = 0; i < tr.length; i++) {

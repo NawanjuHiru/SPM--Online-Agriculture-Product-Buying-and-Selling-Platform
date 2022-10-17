@@ -235,4 +235,20 @@ class UserController extends Controller
         $pdf = PDF::loadView('auth.userPDF',compact('user'));
         return $pdf->download('User.pdf');
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function search(Request $request){
+        $search = $request->input('search');
+
+        $users = Post::query()
+            ->where('user_id', 'LIKE', "%{$search}%")
+            ->orWhere('username', 'LIKE', "%{$search}%")
+            ->get();
+    
+        return view('search', compact('users'));
+    }
 }
