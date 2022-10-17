@@ -45,6 +45,14 @@ Route::get('/', function () {
 Route::get('/userhome', function () {
     return view('userhome');
 });
+Route::get('/admin', function () {
+    return view('Admin.layout');
+});
+
+Route::get('/cashondelivery', function () {
+    return view('order_management.cash_on_delivery');
+});
+
 
 
 //Route::resource('/news',NewsController::class);
@@ -58,3 +66,9 @@ Route::resources([
     'orders' => OrderController::class,
     'users' => UserController::class,
 ]);
+Route::post('/get_cart', [ShoppingCartController::class, 'getCart']);
+
+Route::get('stripe', [StripeController::class, 'stripe']);
+Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
+
+Route::get('/downloadPdf', [OrderController::class, 'downloadPdf']);

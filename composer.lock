@@ -5,10 +5,14 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "content-hash": "b1e898550e78688d1096fc75251da0f1",
 =======
     "content-hash": "ca861d06099f82ca31f3e1cefa6c22e5",
 >>>>>>> eab675626c14487c78ed02fe78a2b691d182a5d7
+=======
+    "content-hash": "0cb5bae3585457477c38654daeb2b0cc",
+>>>>>>> ee6d6a48a0fed19cb52dbf7cea64c8f1fce9fc4d
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3785,6 +3789,9 @@
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ee6d6a48a0fed19cb52dbf7cea64c8f1fce9fc4d
             "name": "sabberworm/php-css-parser",
             "version": "8.4.0",
             "source": {
@@ -3813,7 +3820,35 @@
             "autoload": {
                 "psr-4": {
                     "Sabberworm\\CSS\\": "src/"
+<<<<<<< HEAD
 =======
+=======
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Schweikert"
+                }
+            ],
+            "description": "Parser for CSS Files written in PHP",
+            "homepage": "https://www.sabberworm.com/blog/2010/6/10/php-css-parser",
+            "keywords": [
+                "css",
+                "parser",
+                "stylesheet"
+            ],
+            "support": {
+                "issues": "https://github.com/sabberworm/PHP-CSS-Parser/issues",
+                "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.4.0"
+            },
+            "time": "2021-12-11T13:40:54+00:00"
+        },
+        {
+>>>>>>> ee6d6a48a0fed19cb52dbf7cea64c8f1fce9fc4d
             "name": "stripe/stripe-php",
             "version": "v9.6.0",
             "source": {

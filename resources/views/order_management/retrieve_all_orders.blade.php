@@ -1,13 +1,20 @@
-@extends('order_management.layout')
-@section('title','check out')
+@extends('Admin.layout')
+@section('title','All Orders')
 @section('content')
 
-    <center>
-        <div class="main">
-            <h1 class="text-center" style="font-family:'Trebuchet MS', sans-serif;margin-left:0px;"> Orders </h1>
-            <br><br>
-            <div class="container">
+    <br><br>
+    <div class="text-center">
+        <h3 class="text" style="color:#072a0d">All Orders</h3>
+    </div>
+    <div class="container-fluid vh-100" style="margin-top:20px">
+        <div class="" style="margin-top:50px;">
+            <div class="rounded d-flex justify-content-center">
 
+                <div class="col-md-12 col-sm-10 shadow-lg p-5" style="background-color: #eef1f1;border-radius: 15px;">
+                    
+                    <div class="p-4">
+                        <div class="container">
+                <a style="float: right;" href="/downloadPdf" class="btn btn-success" role="button"><i class="fa fa-download"></i></a>
 
                 <table id="ordertable" class="display" style="width: 100%; ">
                     <thead>
@@ -19,7 +26,7 @@
                         <th>Address:</th>
                         <th>Zip Code:</th>
                         <th>City:</th>
-                        <th width="25%">Action</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
 
@@ -31,6 +38,11 @@
 
             </div>
         </div>
+    </div>
+</div>
+</div>
+</div>
+
     </center>
 
     <br><br><br><br><br>
@@ -69,8 +81,8 @@
             var order_id = $(this).data('id');
 
             var delete_confirm = $.confirm({
-                title: 'Confirm!',
-                content: 'Simple confirm!',
+                title: 'Confirm Delete!',
+                content: 'Are you sure you want to delete?',
                 buttons: {
 
                     cancel: function () {
