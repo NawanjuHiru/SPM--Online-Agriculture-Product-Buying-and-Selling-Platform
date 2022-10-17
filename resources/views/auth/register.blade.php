@@ -41,7 +41,7 @@
                     <a class="nav-link" href="#" style="color: white;margin-top:10px">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn "
+                    <button type="button" class="btn " onclick="window.location.href='/auth/login'"
                             style="margin-top: 12px; margin-right:20px; background-color:white; color:#6EBD6C;">
                         <i class="fas fa-user-alt" style="margin-right:2px; color:#6EBD6C"></i>
                         <span>Sign In</span>
@@ -53,6 +53,7 @@
 
         @yield('content')
 
+        <center>
         <div class="card1" width="900" height="400" style="background-color: #d7d7df" >
             <div class="row">
                 <div class="column1" margin-left="100">

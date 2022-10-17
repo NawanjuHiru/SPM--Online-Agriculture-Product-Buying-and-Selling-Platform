@@ -1,68 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="widthe=device-width, initial-scale.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>User | List</title>
-        <link rel="stylesheet" href="{{ asset('css/user_management/user.css') }}">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"/> --}}
 
-        {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css"> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css"> --}}
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" />
 
-    <body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ asset('css/user_management/user.css') }}">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Lato", sans-serif;
+        }
+        .sidebar {
+            position: absolute;
+            width: 252px;
+            height: 100%;
+            background: #111;
+            padding-top: 50px;
+        }
+        .sidebar h1 {
+            display: block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-weight: 400;
+            margin: 0;
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px 20px;
+            color: #bbb;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+    </style>
+
+
+    <title>Admin | User List</title>
+</head>
+
+    <body style="overflow-x:hidden">
         <!-- Nav bar-->
         <nav class="topnav-right" style="background-color: #6EBD6C; height:60px">
             <ul class="nav justify-content-end" style="">
-                <li class="nav-item" style="margin-right:800px;">
-                    <h2 style="color: white;margin-top:10px">Agri Online</h2>
+                <li class="nav-item" style="margin-right:1200px;">
+                    <a href="/" style="text-decoration: none">
+                        <h2 style="color: white;margin-top:10px">Agri Online</h2>
+    
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#" style="color: white;margin-top:10px">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: white;margin-top:10px">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: white;margin-top:10px">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: white;margin-top:10px">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                    <button type="button" onclick="window.location.href='/auth/logout'" class="btn "style="margin-top: 12px; margin-right:20px; background-color:white; color:#6EBD6C;">
+                <li class="nav-item" style="margin-right: 10px">
+                    <button type="button" class="btn " onclick="window.location.href='/auth/logout'"
+                        style="margin-top: 12px; margin-right:25px; background-color:white; color:#6EBD6C;">
                         <i class="fas fa-user-alt" style="margin-right:2px; color:#6EBD6C"></i>
                         <span>Sign Out</span>
                     </button>
                 </li>
             </ul>
-            <div class="sidebar">
-                <a href="{{ route('auth.userList') }}"><i class="fa fa-fw fa-user"></i> Users</a>
-                <a href="#services"><i class="fa fa-square"></i> Products</a>
-                <a href="#clients"><i class="fa fa-shopping-cart"></i> Orders</a>
-                <a href="#contact"><i class="fa fa-file-text"></i> Reviews & Feedbacks</a>
-              </div>
         </nav>
         <!-- Nav bar-->
+    
+        <!-- Side bar -->
+        <div class="sidebar"style="border: solid 2px; border-color:white; background-color:#6EBD6C;">
+            <b>
+                <a href="{{ route('auth.userList') }}" style="color: #f1f1f1; margin-top: -40px"><i class="bi bi-people-fill"></i>
+                    Users</a>
+                <a href="" style="color: #f1f1f1"><i class="bi bi-bag-fill"></i> Products</a>
+                <a href="/orders" style="color: #f1f1f1"><i class="bi bi-box-fill"></i> Orders</a>
+                <a href="delivery" style="color: #f1f1f1"><i class="bi bi-cart-check-fill"></i> Delivery Details</a>
+                <a href="review" style="color: #f1f1f1"><i class="bi bi-star-fill"></i> Review & Feedback</a>
+                <a href="{{ route('logout.perform') }}" style="color: #f1f1f1; position: absolute; bottom: 0;"><i class="bi bi-power"></i>
+                    Logout</a>
+            </b>
+        </div>
+        <!-- Side bar -->
+    
+        <div class="content" style="margin-left: 250px">
+            @yield('content')
+        </div>
 
         @yield('content')
 
         <div class="main">
-        <br><h1> &nbsp;&nbsp; User List </h1>
+        <br><b><h1><center>User List </h1></b>
         <br>
         <input type="text" class="search" id="searchbar" onkeyup="searchUser()" name="search" placeholder="Search here..">
         <center>
@@ -219,15 +260,15 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
             <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
-        
+            
             <script>
                 function goBack() {
                     window.history.back();
                 }
             </script>
-        
-        
-        
+            
+            
+            
             <script type="text/javascript">
                 $.ajaxSetup({
                     headers: {
@@ -236,104 +277,105 @@
                 });
             </script>
 
-            <script>
-                function openForm() {
-                    document.getElementById("myForm").style.display = "block";
-                }
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
 
-                function closeForm() {
-                    document.getElementById("myForm").style.display = "none";
-                }
-            </script>
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
 
-            <script>
-                const updateForm = document.getElementById("update-form");
+<script>
+    const updateForm = document.getElementById("update-form");
 
-                function openUpdateForm(user_id) {
-                    document.getElementById("update-user-id").setAttribute("value", user_id);
-                    updateForm.style.display = "block";
-                }
+    function openUpdateForm(user_id) {
+        document.getElementById("update-user-id").setAttribute("value", user_id);
+        updateForm.style.display = "block";
+    }
 
-                function closeUpdateForm() {
-                    updateForm.style.display = "none";
-                }
-            </script>
+    function closeUpdateForm() {
+        updateForm.style.display = "none";
+    }
+</script>
 
-            <script>
-                var modal = document.getElementById('df-id{{ $user->user_id }}');
-                
-                window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                }
-            </script>
+<script>
+    var modal = document.getElementById('df-id{{ $user->user_id }}');
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
-            <script>
-                function searchUser() {
-                    var input, filter, table, thead, tbody, tr, td, i, txtValue;
-                    input = document.getElementById("searchbar");
-                    filter = input.value.toUpperCase();
-                    table = document.getElementById("userTable");
-                    tbody = table.getElementsByTagName("tbody");
-                    tr = table.getElementsByTagName("tr");
-                    
-                    for (i = 0; i < tr.length; i++) {
-                        td = tr[i].getElementsByTagName("td")[0];
-                        if (td) {
-                            txtValue = td.textContent || td.innerText;
-                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                                tr[i].style.display = "";
-                            } else {
-                                tr[i].style.display = "none";
-                            }
-                        }
-                    }
-                }
-            </script>
+<script>
+    $('#userTable').on('click', '.deletebtn', function () {
+        var user_id = $(this).data('id');
 
-            <script>
-                $('#userTable').on('click', '.deletebtn', function () {
-                    var user_id = $(this).data('id');
+        var delete_confirm = $.confirm({
+            title: 'Confirm!',
+            content: 'Simple confirm!',
+            buttons: {
 
-                    var delete_confirm = $.confirm({
-                        title: 'Confirm!',
-                        content: 'Simple confirm!',
-                        buttons: {
+                cancel: function () {
+                },
 
-                            cancel: function () {
+                somethingElse: {
+                    text: 'Delete',
+                    type: 'red',
+                    btnClass: 'btn-red',
+                    keys: ['enter', 'shift'],
+                    action: function () {
+
+                        $.ajax({
+                            url: '{{url('/userList')}}' + '/' + user_id,
+                            type: 'DELETE',
+                            dataType: 'JSON',
+                            success: function (response) {
+                                alert(response.msg);
+                                order_table.ajax.reload();
+                                delete_confirm.close();
+
                             },
+                            error: function (errors) {
 
-                            somethingElse: {
-                                text: 'Delete',
-                                type: 'red',
-                                btnClass: 'btn-red',
-                                keys: ['enter', 'shift'],
-                                action: function () {
-
-                                    $.ajax({
-                                        url: '{{url('/userList')}}' + '/' + user_id,
-                                        type: 'DELETE',
-                                        dataType: 'JSON',
-                                        success: function (response) {
-                                            alert(response.msg);
-                                            order_table.ajax.reload();
-                                            delete_confirm.close();
-
-                                        },
-                                        error: function (errors) {
-
-                                        }
-                                    });
-                                    return false;
-                                }
                             }
-                        }
-                    });
+                        });
+                        return false;
+                    }
+                }
+            }
+        });
 
 
-                });
-            </script>
+    });
+</script>
+
+<script>
+    function searchUser() {
+        var input, filter, table, thead, tbody, tr, td, i, txtValue;
+        input = document.getElementById("searchbar");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("userTable");
+        tbody = table.getElementsByTagName("tbody");
+        tr = table.getElementsByTagName("tr");
         
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+            
             @yield('javaScript')
-        </html>
+            
+            </html>

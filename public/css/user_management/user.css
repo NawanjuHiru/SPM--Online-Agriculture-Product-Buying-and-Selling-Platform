@@ -1,39 +1,6 @@
-.sidebar {
-    height: 100%;
-    width: 170px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #6EBD6C;
-    overflow-x: hidden;
-    padding-top: 16px;
-    margin-top: 60px;
-    margin-bottom: 280px;
-    border-right: 1px solid #000000;
-}
-  
-  
-.sidebar a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #000000;
-    display: block;
-  }
-  
-.sidebar a:hover {
-    color: #979494;
-  }
-  
 .main {
     margin-left: 160px; /* Same as the width of the sidenav */
     padding: 0px 10px;
-  }
-  
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
   }
 
 .card {
@@ -57,7 +24,6 @@
     border-radius: 3%;
     width: 900px;
     height: 470px;
-    margin-left: 15%;
 }
 
 .card2 {
@@ -69,7 +35,6 @@
     border-radius: 3%;
     width: 900px;
     height: 370px;
-    margin-left: 15%;
 }
 
 .card3 {
@@ -81,7 +46,6 @@
     border-radius: 3%;
     width: 900px;
     height: 300px;
-    margin-left: 15%;
 }
 
 .card:hover {
@@ -186,7 +150,7 @@
 }
 
 .styled-table thead tr {
-    background-color: #009879;
+    background-color: #4bc970;
     color: #ffffff;
     text-align: left;
 }
@@ -197,11 +161,11 @@
 }
 
 .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #b4acac;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #bebebe;
 }
 
 .styled-table tbody tr:last-of-type {
@@ -214,7 +178,7 @@
 }
 
 .ibtn2 {
-    background-color: rgb(78, 16, 224);
+    background-color: rgb(21, 133, 64);
     border: none;
     color: white;
     padding: 8px 12px;
@@ -223,7 +187,7 @@
   }
   
 .ibtn2:hover {
-    background-color: rgba(4, 1, 165, 0.329);
+    background-color: rgba(15, 75, 30, 0.329);
 }
 
 .ibtn3 {
@@ -241,7 +205,7 @@
 
 .ibtn4 {
     float: right;
-    background-color: rgb(36, 182, 17);
+    background-color: rgb(24, 22, 184);
     border: none;
     color: white;
     padding: 12px 16px;
@@ -251,12 +215,12 @@
   }
   
 .ibtn4:hover {
-    background-color: rgb(6, 146, 1);
+    background-color: rgb(1, 3, 146);
 }
 
 .ibtn5 {
     float: right;
-    background-color: rgb(29, 143, 14);
+    background-color: rgb(30, 120, 180);
     border: none;
     color: white;
     padding: 12px 15px;
@@ -266,7 +230,7 @@
   }
   
 .ibtn5:hover {
-    background-color: rgb(7, 104, 4);
+    background-color: rgb(4, 14, 104);
 }
 
 .ibtn6 {
@@ -403,7 +367,7 @@
     overflow: auto; 
     background-color: #e4e0e0a4;
     padding-top: 50px;
-    margin-left: 300px;
+    margin-left: 150px;
     margin-top: 150px;
     font-family: Arial, Helvetica, sans-serif;
   }
@@ -448,26 +412,26 @@ hr {
   }
 
 #searchbar{
-    background-image: url('fa fa-search');
-    margin-left: 21%;
-    padding:8px;
-    border-radius: 10px;
-  }
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 20%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+  margin-left: 10%;
+}
 
 .search {
      width: 20%;
      -webkit-transition: width 0.15s ease-in-out;
      transition: width 0.15s ease-in-out;
   }
-
-#list{
-   font-size:  1.5em;
-   margin-left: 90px;
-  }
-
-.user{
-  display: list-item;    
- } 
 
 .btn10 {
   background-color: rgb(40, 37, 214);
