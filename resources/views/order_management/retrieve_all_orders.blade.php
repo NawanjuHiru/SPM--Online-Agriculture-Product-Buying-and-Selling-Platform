@@ -14,7 +14,7 @@
                     
                     <div class="p-4">
                         <div class="container">
-                <a style="float: right;" href="/downloadPdf" class="btn btn-success" role="button"><i class="fa fa-download"></i></a>
+                <a style="float: right;" href="/downloadPdf" class="btn btn-success" role="button">Genarate Report <i class="fa fa-download"></i></a>
 
                 <table id="ordertable" class="display" style="width: 100%; ">
                     <thead>
@@ -26,7 +26,7 @@
                         <th>Address:</th>
                         <th>Zip Code:</th>
                         <th>City:</th>
-                        <th>Action</th>
+                        <th style="width: 80px">Action</th>
                     </tr>
                     </thead>
 
@@ -100,7 +100,7 @@
                                 type: 'DELETE',
                                 dataType: 'JSON',
                                 success: function (response) {
-                                    alert(response.msg);
+                                    
                                     order_table.ajax.reload();
                                     delete_confirm.close();
 

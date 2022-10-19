@@ -65,6 +65,7 @@
     <nav class="topnav-right" style="background-color: #6EBD6C; height:60px">
         <ul class="nav justify-content-end" style="">
             <li class="nav-item" style="margin-right:1200px;">
+                
                 <a href="/" style="text-decoration: none">
                     <h2 style="color: white;margin-top:10px">Agri Online</h2>
 

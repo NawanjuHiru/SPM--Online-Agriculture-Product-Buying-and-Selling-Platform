@@ -17,12 +17,16 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+  
  
 
     <link rel="stylesheet" href="{{ asset('css/order_management/app.css') }}">
 
 
     <title>@yield('title')</title>
+    <link rel = "icon" href = 
+"https://cdn-icons-png.flaticon.com/512/2962/2962084.png" 
+        type = "image/x-icon">
 </head>
 
 <body style="overflow-x:hidden">
@@ -30,7 +34,8 @@
 <nav class="topnav-right" style="background-color: #6EBD6C; height:60px">
     <ul class="nav justify-content-end" style="">
         <li class="nav-item" style="margin-right:800px;">
-            <h2 style="color: white;margin-top:10px">Agri Online</h2>
+            {{-- <a href="#"><img id="logo" style="width:140px; height:89.5px;margin-left:-30px;margin-top:-7px;" src="/images/Logo/logo2.png"></a> --}}
+            <h2 style="color: white;margin-top:10px;">Agri Online</h2>
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="#" style="color: white;margin-top:10px">Home</a>

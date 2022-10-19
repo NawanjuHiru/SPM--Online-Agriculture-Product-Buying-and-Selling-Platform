@@ -33,12 +33,12 @@ class OrderController extends Controller
         parse_str($request['formdata'], $formdata);
 
         $validator = Validator::make($formdata, [
-            'name' => 'required|max:1000|min:5|string',
-            'contact_number' => 'required|max:1000|min:5',
-            'email' => 'required|max:1000|min:5',
-            'address' => 'required|max:1000|min:5|string',
-            'zip_code' => 'required|max:1000|min:5',
-            'city' => 'required|max:1000|min:5|string',
+            'name' => 'required',
+            'contact_number' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'zip_code' => 'required',
+            'city' => 'required',
 
         ]);
 
@@ -145,12 +145,12 @@ class OrderController extends Controller
         parse_str($request['formdata'], $formdata);
 
         $validator = Validator::make($formdata, [
-            'name' => 'required|max:1000|min:5|string',
-            'contact_number' => 'required|max:1000|min:5',
-            'email' => 'required|max:1000|min:5',
-            'address' => 'required|max:1000|min:5|string',
-            'zip_code' => 'required|max:1000|min:5',
-            'city' => 'required|max:1000|min:5|string',
+            'name' => 'required',
+            'contact_number' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'zip_code' => 'required',
+            'city' => 'required',
 
         ]);
 
