@@ -14,7 +14,7 @@
                     
                     <div class="p-4">
                         <div class="container">
-                <a style="float: right;" href="/downloadPdf" class="btn btn-success" role="button">Genarate Report <i class="fa fa-download"></i></a>
+                <a style="float: right;" href="/orderReport" class="btn btn-success" role="button">Genarate Report <i class="fa fa-download"></i></a>
 
                 <table id="ordertable" class="display" style="width: 100%; ">
                     <thead>

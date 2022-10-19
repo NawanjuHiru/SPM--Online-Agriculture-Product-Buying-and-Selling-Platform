@@ -7,7 +7,7 @@ use App\Http\Controllers\order_management\AdminOrderController;
 use Illuminate\Support\Facades\Route;
 
 
-
+// -----------------------------------------------Order management routes start -------------------------------------------------
 Route::get('/userlayout', function () {
     return view('order_management.layout');
 });
@@ -31,4 +31,7 @@ Route::post('/retrieve_order', [OrderController::class, 'retrieveOrder']);
 Route::post('/get_cart', [ShoppingCartController::class, 'getCart']);
 Route::get('stripe', [StripeController::class, 'stripe']);
 Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');
-Route::get('/downloadPdf', [AdminOrderController::class, 'downloadPdf']);
+Route::get('/orderReport', [AdminOrderController::class, 'orderReport']);
+
+
+// -----------------------------------------------Order management routes end -------------------------------------------------

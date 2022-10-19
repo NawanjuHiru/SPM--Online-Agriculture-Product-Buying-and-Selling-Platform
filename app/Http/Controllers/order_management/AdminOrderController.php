@@ -115,7 +115,7 @@ class AdminOrderController extends Controller
             ->make();
     }
 
-    public function downloadPdf(){
+    public function orderReport(){
 
         $order_details = Order::all();
         $pdf = PDF::loadView('Admin.order_management.order_report',compact('order_details'));
