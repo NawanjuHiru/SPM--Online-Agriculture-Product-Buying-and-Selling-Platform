@@ -22,6 +22,9 @@
             <h2 style="color: white;margin-top:10px">Agri Online</h2>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('auth.userList') }}" style="color: white;margin-top:10px">Dashboard</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link active" href="#" style="color: white;margin-top:10px">Home</a>
         </li>
         <li class="nav-item">
