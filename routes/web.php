@@ -41,14 +41,18 @@ Route::get('/product/fetch',[productController::class,'fetchProducts'])->name('f
 
 Route::post('/get_product_list', [productController::class, 'getProductList']);
 
-Route::get('/products/view', [productController::class, 'show']) ;
+Route::get('/products/view', [productController::class, 'show']);
 
-Route::post('/product/update',[productController::class,'updateProduct'])->name('update.product');
+//to save edited data
+Route::post('/product/update/{product_id}',[productController::class,'updateProduct']);
 
+//get the product edit form page
 Route::get('/products/update{product_id}/edit',[productController::class,'edit']);
 
+//to delete a product data
+Route::get('/product/delete{product_id}/delete',[productController::class,'deleteProduct']);
 
-
+//view available product list
 Route::get('/product/list', function () {
     return view('product_management.viewproductlist');
 });
@@ -57,8 +61,13 @@ Route::get('/product/success', function () {
     return view('product_management.success');
 });
 
+//retrive my products table
 Route::get('/product/view', function () {
     return view('product_management.retrieveproducts');
 });
 
+//admin side product list
+Route::get('/productlist/view', function () {
+    return view('Admin.productlist');
+});
 

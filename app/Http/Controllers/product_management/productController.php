@@ -7,6 +7,9 @@ use App\Models\product_management\productModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+
 use Yajra\DataTables\DataTables;
 
 class productController extends Controller
@@ -115,7 +118,7 @@ class productController extends Controller
             ->addColumn('action', function ($products) {
                 return '<div>
                 <a href="' . url('/products/update' . $products->product_id . '/edit') . '" class="btn btn" style="background-color:#81D8D0!important;color:white;" >Edit</a>
-               <a href="' . url('/products/delete' . $products->product_id . '/delete') . '" class="btn btn" style="background-color:#81D8D0!important;color:white;" >Delete</a>
+               <a href="' . url('/product/delete' . $products->product_id . '/delete') . '" class="btn btn" style="background-color:#81D8D0!important;color:white;" >Delete</a>
 
            </div>  ';
             })
@@ -140,93 +143,52 @@ class productController extends Controller
     }
 
 
-    // public function updateProduct(Request $request){
+    public function updateProduct(Request $request, $product_id){
+        $product = productModel::find($product_id);
 
-    //     $validatedata = $request->validate([
-    //         'proname' => 'required',
-    //         'procategory' => 'required',
-    //         'proprice' => 'required',
-    //         'prodesc' => 'required',
-    //         'image' => '',
-    //         ]);
+        $product->product_name = $request->input('proname');
+        $product->category = $request->input('procategory');
+        $product->product_price = $request->input('proprice');
+        $product->product_desc = $request->input('prodesc');
 
+        // if($request ->hasfile('image'))
+        // {
+        //     $destination = 'files/'.$product->product_image;
 
-    //     $updatedata = productModel::find($request -> product_id);
-    //     $updatedata -> product_name = $request -> proname;
-    //     $updatedata -> category = $request -> procategory;
-    //     $updatedata -> product_price = $request -> proprice;
-    //     $updatedata -> product_desc = $request -> prodesc;
-    //     $updatedata -> product_image= $request -> image;
+        //     if(File::exsists($destination))
+        //     {
+        //         File::delete($destination);
+        //     }
 
-    //     $updatedata -> save();
-
-    //     $expensedatas= productModel::all();
-    //     return view('finance.retrieveexpense') -> with('data', $expensedatas);
-    // }
-
-
-/*
-    public function updateProduct(Request $request){
-
-        $validator = Validator::make($request->all(),[
-        'proname' => 'required',
-        'procategory' => '',
-        'proprice' => 'required',
-        'prodesc' => '',
-        'image' => '',
-    ],[
-        'proname.required' =>  'Product name is required',
-        'procategory.required' => 'Product category is required',
-        'proprice.required' => 'Product price is required',
-
-        'image.required' => 'Image is required',
-        'image.image' => 'Image must be an image',
-
-    ]);
-
-    if(!$validator->passes()){
-        //return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
-        return response()->Json(['status' => 'error', 'msg' => 'validation failed']);
-    }else{
-        $path = "files/";
-        $file = $request->file('image');
-        $filename = time().'_'.$file->getClientOriginalName();
-
-       // $upload = $file->storeAs($path, $filename);
-        $upload = $file->storeAs($path, $filename,'public');
-
-        // if($upload){
-        //     $updatedata = productModel::find($request -> product_id);
-
-        //       $updatedata -> product_name = $request->proname;
-        //        $updatedata -> category = $request->procategory;
-        //         $updatedata -> product_price = $request->proprice;
-        //         $updatedata -> product_desc = $request->prodesc;
-        //         $updatedata -> product_image = $filename;
-
-        //         $updatedata -> save();
-        //         $productdatas= productModel::all();
+            $path = "files/";
+            $file = $request->file('image');
+            //$extension = $file->getClientOriginalExtension();
+            $filename = time().'_'.$file->getClientOriginalName();
+            $file->storeAs($path, $filename,'public');
+            $product->product_image = $filename;
 
 
-                if($upload){
-                    productModel::insert([
-                        'product_name'=>$request->proname,
-                        'category'=>$request->procategory,
-                        'product_price'=>$request->proprice,
-                        'product_desc'=>$request->prodesc,
-                        'product_image'=>$filename,
+        $product->update();
+        return view('product_management.success');
 
-                    ]);
 
-            //return response()->Json(['status' => 'success', 'msg' => 'Added successfully']);
-            return view('product_management.success');
-        }
+}
 
-        //return response()->Json(['status' => 'success', 'msg' => 'Added successfully']);
 
-    }
-    }
-*/
+public function deleteProduct($product_id){
+    $product = productModel::find($product_id);
+
+
+
+    // $path = "files/";
+    //         $file = $request->file('image');
+    //         //$extension = $file->getClientOriginalExtension();
+    //         $filename = time().'_'.$file->getClientOriginalName();
+    //         $file->delete($path, $filename,'public');
+    //         $product->product_image = $filename;
+    $product->delete();
+    return redirect()->back()->with('status', 'Product deleted successfully');
+}
 
 
 }

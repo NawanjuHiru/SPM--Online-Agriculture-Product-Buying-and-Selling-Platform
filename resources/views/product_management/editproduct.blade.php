@@ -15,8 +15,11 @@
                 </div>
                 @endforeach
 
-                <form method="POST" action="{{ route('update.product') }}" enctype="multipart/form-data" style="width: 100%" id="productUpdateForm">
+
+                <form method="POST" action="{{ url('/product/update/'.$productdata -> product_id) }}" enctype="multipart/form-data" style="width: 100%" id="productUpdateForm">
+
                     {{csrf_field()}}
+
                     <h2 class="text-left">Update Product</h2>
                     <p class="text-left">Update your product details here.</p>
 
@@ -61,9 +64,10 @@
                             padding: 6px 12px;
                             cursor: pointer;
                             width:350px">
-                        <input type="file" class="form-control" style="background-color:#6EBD6C; color: white;" name="image" id="image" value="{{$productdata -> product_image}}">
+                        <input type="file" class="form-control" style="background-color:#6EBD6C; color: white;" name="image" id="image" value="{{$productdata -> product_image}}"> <br>
+                        <img src = "{{ asset('/storage/files/'.$productdata -> product_image) }}" width="180px" height="150px" alt="Product image">
                     </label>
-                    {{$productdata -> product_image}}
+
                         <span class="text-danger error-text image_error"></span>
 
                         </div>
