@@ -5,13 +5,8 @@ namespace App\Http\Controllers\order_management;
 use App\Http\Controllers\Controller;
 use App\Models\order_management\Order;
 use App\Models\product_management\productModel;
-
-use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Yajra\DataTables\DataTables;
-
-
 
 class OrderController extends Controller
 {
@@ -122,24 +117,6 @@ class OrderController extends Controller
         return response()->Json(['status' => 'success', 'msg' => 'Deleted successfully']);
     }
 
-    public function getOrderList(Request $request)
-    {
-        $orders = Order::all();
-
-        return DataTables::of($orders)
-            ->addColumn('action', function ($orders) {
-                return '<div >
-               <a href="' . url('/orders/' . $orders->order_id . '/edit') . '" class="btn btn" style="background-color:#09560D!important;color:white;" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-               <button class="btn btn btn_delete " data-id="' . $orders->order_id . '" style="background-color:#CF0808!important;color:white;width:45px;margin-top: 10px;"><i class="fa fa-trash" aria-hidden="true"></i></button>
-
-
-           </div>  ';
-            })
-            ->rawColumns(['action'])
-            ->make();
-    }
-
-
     public function retrieveOrder(Request $request)
     {
         parse_str($request['formdata'], $formdata);
@@ -177,13 +154,6 @@ class OrderController extends Controller
     public function createOrder($id){
         $product = productModel::find($id);
         return view('order_management.create_order', compact('product'));
-    }
-
-    public function downloadPdf(){
-
-        $order_details = Order::all();
-        $pdf = PDF::loadView('order_management.order_report',compact('order_details'));
-        return $pdf->download('retrieve_all_orders.pdf');
     }
 
 }
