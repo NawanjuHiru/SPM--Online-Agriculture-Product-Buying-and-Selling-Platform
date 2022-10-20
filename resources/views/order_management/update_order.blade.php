@@ -1,5 +1,5 @@
 @extends('order_management.layout')
-@section('title','check out')
+@section('title', 'check out')
 @section('content')
     <br><br>
     <button style="margin-left:-150px;" class="btn btn1" onclick="history.back()"><i class="fa fa-arrow-left fa-2xl back_icon "
@@ -9,14 +9,15 @@
 
     <form style="background-color: #E5E5E5;border-radius: 25px;" class="form-group form1 shadow-lg" method="post" action="{{url('/orders/'.$order->order_id)}}">
         @method('PUT')
-        {{csrf_field()}}
+        {{ csrf_field() }}
 
         <fieldset>
             <h1 class="text-center">Order Details</h1>
 
             <div class="row pb-3">
                 <div class="col-4 text-center">
-                    <img src="{{ asset($order->product->product_image ?? '') }}" alt="" height="100px" width="100px">
+                    <img src="{{ asset($order->product->product_image ?? '') }}" alt="" height="100px"
+                        width="100px">
                 </div>
                 <div class="col-4 text-center" style="margin-top: 30px;">
                     <h3 class="">{{ $order->product->product_name ?? '' }}</h3>
@@ -73,24 +74,3 @@
     </form>
 
 @endsection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

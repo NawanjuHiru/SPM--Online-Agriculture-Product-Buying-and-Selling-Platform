@@ -1,8 +1,9 @@
 @extends('order_management.layout')
-@section('title','check out')
+@section('title', 'check out')
 @section('content')
     <br><br>
-    <button class="btn btn1" onclick="history.back()"><i class="fa fa-arrow-left fa-2xl back_icon " aria-hidden="true"></i></button>
+    <button class="btn btn1" onclick="history.back()"><i class="fa fa-arrow-left fa-2xl back_icon "
+            aria-hidden="true"></i></button>
 
     <form class="form-group form1" id="orderForm">
 
@@ -45,19 +46,16 @@
             </div>
         </fieldset>
 
-        {{--            <div class="button1">--}}
-        {{--                <button id="saveButton" class="btn btn-primary" style=" color:white;width:140px;font-family:'Trebuchet MS', sans-serif; ">Add</button>--}}
-        {{--                <a href="{{url('/orders')}}" class="btn btn"--}}
-        {{--                   style="background-color:#001f4d!important; color:white;width:140px;font-family:'Trebuchet MS', sans-serif; ">Back</a>--}}
-        {{--            </div>--}}
+        {{--            <div class="button1"> --}}
+        {{--                <button id="saveButton" class="btn btn-primary" style=" color:white;width:140px;font-family:'Trebuchet MS', sans-serif; ">Add</button> --}}
+        {{--                <a href="{{url('/orders')}}" class="btn btn" --}}
+        {{--                   style="background-color:#001f4d!important; color:white;width:140px;font-family:'Trebuchet MS', sans-serif; ">Back</a> --}}
+        {{--            </div> --}}
 
     </form>
 @endsection
 
-{{--footer--}}
+{{-- footer --}}
 
 @section('javaScript')
 @endsection
-
-
-
