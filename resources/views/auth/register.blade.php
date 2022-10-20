@@ -29,7 +29,7 @@
                     <h2 style="color: white;margin-top:10px">Agri Online</h2>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#" style="color: white;margin-top:10px">Home</a>
+                    <a class="nav-link active" href="/" style="color: white;margin-top:10px">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" style="color: white;margin-top:10px">Products</a>
@@ -54,11 +54,10 @@
         @yield('content')
 
         <center>
-        <div class="card1" width="900" height="400" style="background-color: #d7d7df" >
+        <div class="card1" width="900" height="410" style="background-color: #d7d7df" >
             <div class="row">
-                <div class="column1" margin-left="100">
-                    &nbsp;&nbsp;
-                    <img src="{{ asset('/images/User/signup.jpg') }}" id="profile" width="460" height="450" border-radius="4" readonly>
+                <div class="column1" margin-left="90">&nbsp;
+                    <br><img src="{{ asset('/images/User/signup.jpg') }}" id="signup" width="440" height="430" border-radius="4" readonly>
                 </div>
                 <div class="column2" margin-right="110"><br>
                     <h1 style="font-family: Arial">Sign Up</h1><br>
@@ -77,28 +76,23 @@
 
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username" placeholder="Username" value="{{ old('username') }}">
-                            <span class="text-danger">@error('username'){{ $message }} @enderror</span>
+                            <input type="text" class="form-control" name="username" placeholder="Username" value="{{ old('username') }}" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
-                            <span class="text-danger">@error('email'){{ $message }} @enderror</span>
+                            <input type="text" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}" required>
                         </div>
                         <div class="form-group">
-                            <input type="integer" class="form-control" name="mobileNumber" placeholder="Mobile Number" value="{{ old('mobileNumber') }}">
-                            <span class="text-danger">@error('mobileNumber'){{ $message }} @enderror</span>
+                            <input type="integer" class="form-control" name="mobileNumber" placeholder="Mobile Number" value="{{ old('mobileNumber') }}" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="address" placeholder="Address" value="{{ old('address') }}">
-                            <span class="text-danger">@error('address'){{ $message }} @enderror</span>
+                            <input type="text" class="form-control" name="address" placeholder="Address" value="{{ old('address') }}" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password">
-                            <span class="text-danger">@error('password'){{ $message }} @enderror</span>
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
                         </div>
                         <br>
                         <button type="submit" class="btn1" style="background-color: #272ae6">Sign Up</button><br>
-                        <a href="{{ route('auth.login') }}">Already a member? Sign in</a>
+                        <a href="{{ route('auth.login') }}">Already a member? Sign in</a><br>
                     </form>
                 </div>
             </div>
@@ -127,7 +121,7 @@
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="#!" class="text-white">Home</a>
+                                <a href="/" class="text-white">Home</a>
                             </li>
                             <li>
                                 <a href="#!" class="text-white">Product</a>

@@ -220,7 +220,7 @@
         
                                 <ul class="list-unstyled mb-0">
                                     <li>
-                                        <a href="#!" class="text-white">Home</a>
+                                        <a href="/" class="text-white">Home</a>
                                     </li>
                                     <li>
                                         <a href="#!" class="text-white">Product</a>

@@ -72,7 +72,7 @@ class UserController extends Controller
             //check password
             if (Hash::check($request -> password, $userInfo -> password)) {
                 $request -> session() -> put('LoggedUser', $userInfo -> user_id);
-                return redirect('/auth/userlist');
+                return redirect('/auth/userList');
             } else {
                 return back() -> with('fail','Incorrect password.');
             }
