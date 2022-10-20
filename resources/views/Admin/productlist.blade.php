@@ -60,7 +60,7 @@ $(document).ready(() => {
 
         ],
         ajax: {
-            "url": '{{url('/get_product_list')}}',
+            "url": '{{url('/get_adminproduct_list')}}',
             "type": "POST",
 
         }
