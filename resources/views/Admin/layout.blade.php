@@ -68,6 +68,7 @@
     <nav class="topnav-right" style="background-color: #6EBD6C; height:60px">
         <ul class="nav justify-content-end" style="">
             <li class="nav-item" style="margin-right:1200px;">
+                
                 <a href="/" style="text-decoration: none">
                     <h2 style="color: white;margin-top:10px">Agri Online</h2>
 
@@ -89,10 +90,10 @@
         <b>
             <a href="!#" style="color: #f1f1f1; margin-top: -40px"><i class="bi bi-people-fill"></i>
                 Users</a>
-            <a href="" style="color: #f1f1f1"><i class="bi bi-bag-fill"></i> Products</a>
-            <a href="/orders" style="color: #f1f1f1"><i class="bi bi-box-fill"></i> Orders</a>
-            <a href="delivery" style="color: #f1f1f1"><i class="bi bi-cart-check-fill"></i> Delivery Details</a>
-            <a href="review" style="color: #f1f1f1"><i class="bi bi-star-fill"></i> Review & Feedback</a>
+            <a href="#" style="color: #f1f1f1"><i class="bi bi-bag-fill"></i> Products</a>
+            <a href="/adminorders" style="color: #f1f1f1"><i class="bi bi-box-fill"></i> Orders</a>
+            <a href="/admin/delivery" style="color: #f1f1f1"><i class="bi bi-cart-check-fill"></i> Delivery Details</a>
+            <a href="/admin/review" style="color: #f1f1f1"><i class="bi bi-star-fill"></i> Review & Feedback</a>
             <a href="" style="color: #f1f1f1; position: absolute; bottom: 0;"><i class="bi bi-power"></i>
                 Logout</a>
         </b>

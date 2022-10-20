@@ -8,7 +8,7 @@
 
                 <div class="col-md-9 col-sm-10 shadow-lg p-5" style="background-color: #E5E5E5;border-radius: 25px;">
                     <div class="text-center">
-                        <h3 class="text" style="color:#224957">Shopping Cart</h3>
+                        <h1 class="text" style="color:#224957">Shopping Cart</h1>
                     </div>
                     <div class="p-4">
                         <div class="container">

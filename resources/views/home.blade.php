@@ -22,7 +22,7 @@
             <img src="http://unblast.com/wp-content/uploads/2020/05/Farming-Vector-Illustration.jpg" alt="Home Image"
                 style="float: right; width: 45%; height: 85%;" />
             <h1 style="margin-top:20px; color:#6EBD6C; text-align:left;">
-                A New Way to Invest<br />
+                A New Way to Invest<br/>
                 in Agriculture
             </h1>
             <span style="font-size: 20">
