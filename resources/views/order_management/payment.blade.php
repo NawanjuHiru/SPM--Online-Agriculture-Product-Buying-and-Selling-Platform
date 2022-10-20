@@ -20,33 +20,21 @@
                     {{-- <form method="post" action=""> --}}
                     <div class="p-4">
                         <div class="container"
-                             style="background-color: #E8ECF2 ;height: 40px;margin-bottom: 10px;border-radius: 10px;">
-                            <div class="form-check" onclick="setpaymethod('cash')">
-                                <div class="row pb-9">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                           id="flexRadioDefault1" style="margin-top: 10px;">
-                                    <label class="form-check-label" for="flexRadioDefault1" style="margin-top: 10px;">
-                                        Cash On Delivery<i class="fa-regular fa-money-bill-1"
-                                                           style="margin-left: 15px"></i>
+                             style="background-color: #E8ECF2 ;height: 50px;margin-bottom: 10px;border-radius: 10px; ">
+                            <div class="custom-control custom-radio" onclick="setpaymethod('cash')">
+                                <div class="row pb-10">
+                                    <input style="padding-bottom:-50px;" class="custom-control-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label style="font-size:22px;margin-left: 30px;" class="custom-control-label" for="flexRadioDefault1">Cash On Delivery<i class="fa-regular fa-money-bill-1" style="margin-left: 15px;"></i>
                                     </label>
-
-
                                 </div>
                             </div>
-                        </div>
+                        </div><br><br>
                         <div class="container"
-                             style="background-color: #E8ECF2;height: 40px;margin-bottom: 10px;border-radius: 10px;">
-                            <div class="form-check" onclick="setpaymethod('card')">
-                                <div class="row pb-6">
-
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                           id="flexRadioDefault2" style="margin-top: 10px;" checked>
-
-                                    <label class="form-check-label" for="flexRadioDefault2">Card Payment<i
-                                            class="fa-brands fa-cc-visa"
-                                            style="margin-left: 15px;margin-top: 10px;"></i></label>
-
-
+                             style="background-color: #E8ECF2;height: 50px;margin-bottom: 10px;border-radius: 10px;">
+                            <div class="custom-control custom-radio" onclick="setpaymethod('card')">
+                                <div class="row pb-9">
+                                    <input style="" class="custom-control-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  >
+                                    <label style="font-size:22px;margin-left: 45px;" class="custom-control-label" for="flexRadioDefault2">Card Payment<i class="fa-brands fa-cc-visa" style="margin-left: 15px;margin-top: 10px;"></i></label>
                                 </div>
                             </div>
                         </div>

@@ -76,12 +76,19 @@
 
     <script>
 
+    jQuery.validator.addMethod("letterswithspace", function(value, element) {
+              return this.optional(element) || /^[a-z\s]+$/i.test(value);
+    }, "letters only");
+
         $(document).ready(function () {
 
             $('#orderForm').validate({
+
+                
+                
                 rules: {
                     name: {
-                        lettersonly: true,
+                        letterswithspace: true,
                         minlength: 2
 
                     },
