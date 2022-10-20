@@ -88,7 +88,7 @@
     <!-- Side bar -->
     <div class="sidebar"style="border: solid 2px; border-color:white; background-color:#6EBD6C;">
         <b>
-            <a href="!#" style="color: #f1f1f1; margin-top: -40px"><i class="bi bi-people-fill"></i>
+            <a href="/auth/userList" style="color: #f1f1f1; margin-top: -40px"><i class="bi bi-people-fill"></i>
                 Users</a>
             <a href="#" style="color: #f1f1f1"><i class="bi bi-bag-fill"></i> Products</a>
             <a href="/adminorders" style="color: #f1f1f1"><i class="bi bi-box-fill"></i> Orders</a>

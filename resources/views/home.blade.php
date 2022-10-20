@@ -35,7 +35,7 @@
                 includes Pest Management and Landscaping.
             </span>
             <br />
-            <button type="button" class="btn"
+            <button type="button" class="btn" 
                 style="float: left; margin-top: 20px; background-color:#6EBD6C; color: white; width:200px;">
                 <span>Get Started </span>
             </button>
