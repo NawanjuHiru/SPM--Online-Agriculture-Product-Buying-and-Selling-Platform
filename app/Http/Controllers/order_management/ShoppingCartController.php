@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\order_management;
 
 use App\Http\Controllers\Controller;
-use App\Models\order_management\Order;
 use App\Models\order_management\ShoppingCart;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
@@ -92,7 +91,7 @@ class ShoppingCartController extends Controller
         $cart = ShoppingCart::with('product')->where('status', '0')->get();
         return DataTables::of($cart)
             ->addColumn('image', function ($cart) {
-                return '<img src="'.asset($cart->product->product_image ?? '').'" width="50px" height="50px"></img>';
+                return '<img src="' . asset($cart->product->product_image ?? '') . '" width="50px" height="50px"></img>';
             })
             ->addColumn('product', function ($cart) {
                 return $cart->product->product_name ?? '';
@@ -101,7 +100,7 @@ class ShoppingCartController extends Controller
                 return number_format($cart->product->product_price, 2) ?? '';
             })
             ->addColumn('action', function ($cart) {
-                return '<a class="btn btn-success btn-sm btn_checkout" href="'.url('/order/create/'.$cart->product->product_id).'">Checkout</a>';
+                return '<a class="btn btn-success btn-sm btn_checkout" href="' . url('/order/create/' . $cart->product->product_id) . '">Checkout</a>';
             })
             ->rawColumns(['action', 'image'])
             ->make();

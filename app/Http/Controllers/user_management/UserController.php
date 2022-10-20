@@ -52,6 +52,7 @@ class UserController extends Controller
 
         if ($save) {
             return back() -> with('success','New User has been successfully added.');
+            return redirect('/auth/login');
         } else {
             return back() -> with('fail','Something went wrong. Try again later.');
         }
@@ -65,7 +66,6 @@ class UserController extends Controller
         ]); 
 
         $userInfo = User::where('username','=', $request -> username) -> first();
-
         if (!$userInfo) {
             return back() -> with('fail','We do not recognize your username.');
         } else {
@@ -78,12 +78,15 @@ class UserController extends Controller
             }
         }
 
-        // function logout() {
-        //     if(session() -> has('LoggedUser')) {
-        //         session() -> pull('LoggedUser');
-        //         return redirect('/auth/login');
-        //     }
-        // }
+        /* $userInfo = $request->input();
+        $request->session()->put('user',$userInfo['user']); */
+
+        function logout() {
+            if(session() -> has('LoggedUser')) {
+                session() -> pull('LoggedUser');
+               return redirect('/auth/login');
+           }
+        }
 
 
         /**

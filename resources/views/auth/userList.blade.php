@@ -84,14 +84,14 @@
         <!-- Side bar -->
         <div class="sidebar"style="border: solid 2px; border-color:white; background-color:#6EBD6C;">
             <b>
-                <a href="{{ route('auth.userList') }}" style="color: #f1f1f1; margin-top: -40px"><i class="bi bi-people-fill"></i>
+                <a href="/auth/userList" style="color: #f1f1f1; margin-top: -40px"><i class="bi bi-people-fill"></i>
                     Users</a>
                 <a href="" style="color: #f1f1f1"><i class="bi bi-bag-fill"></i> Products</a>
-                <a href="/orders" style="color: #f1f1f1"><i class="bi bi-box-fill"></i> Orders</a>
-                <a href="delivery" style="color: #f1f1f1"><i class="bi bi-cart-check-fill"></i> Delivery Details</a>
+                <a href="/adminorders" style="color: #f1f1f1"><i class="bi bi-box-fill"></i> Orders</a>
+                <a href="/admin/delivery" style="color: #f1f1f1"><i class="bi bi-cart-check-fill"></i> Delivery Details</a>
                 <a href="review" style="color: #f1f1f1"><i class="bi bi-star-fill"></i> Review & Feedback</a>
                 <a href="/userhome" style="color: #f1f1f1"><i class="bi bi-arrow-left-circle"></i> User View</a>
-                <a href="{{ route('logout.perform') }}" style="color: #f1f1f1; position: absolute; bottom: 0;"><i class="bi bi-power"></i>
+                <a href="{{ route('auth.logout') }}" style="color: #f1f1f1; position: absolute; bottom: 0;"><i class="bi bi-power"></i>
                     Logout</a>
             </b>
         </div>

@@ -4,15 +4,10 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
     "content-hash": "b1e898550e78688d1096fc75251da0f1",
-=======
     "content-hash": "ca861d06099f82ca31f3e1cefa6c22e5",
->>>>>>> eab675626c14487c78ed02fe78a2b691d182a5d7
-=======
     "content-hash": "0cb5bae3585457477c38654daeb2b0cc",
->>>>>>> ee6d6a48a0fed19cb52dbf7cea64c8f1fce9fc4d
+    "content-hash": "e61a7ca460e7d533ed8684d2a97f1bec",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -146,6 +141,86 @@
                 }
             ],
             "time": "2022-07-06T11:12:10+00:00"
+        },
+        {
+            "name": "blade-ui-kit/blade-ui-kit",
+            "version": "0.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/blade-ui-kit/blade-ui-kit.git",
+                "reference": "139f387d219bceb647c02d18c6b74cebb4c8dae6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/blade-ui-kit/blade-ui-kit/zipball/139f387d219bceb647c02d18c6b74cebb4c8dae6",
+                "reference": "139f387d219bceb647c02d18c6b74cebb4c8dae6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/filesystem": "^7.0|^8.0|^9.0",
+                "illuminate/support": "^7.0|^8.0|^9.0",
+                "illuminate/view": "^7.0|^8.0|^9.0",
+                "nesbot/carbon": "^2.38",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "gajus/dindent": "^2.0",
+                "guzzlehttp/guzzle": "^7.4",
+                "league/commonmark": "^1.4|^2.0",
+                "lorisleiva/cron-translator": "^0.1.1",
+                "orchestra/testbench": "^5.0|^6.0|^7.1",
+                "phpunit/phpunit": "^9.0"
+            },
+            "suggest": {
+                "league/commonmark": "Required to use the markdown component (^1.4).",
+                "lorisleiva/cron-translator": "Required to use the cron component (^0.1.1)."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BladeUIKit\\BladeUIKitServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BladeUIKit\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dries Vints",
+                    "homepage": "https://driesvints.com"
+                }
+            ],
+            "description": "A set of renderless components to utilise in your Laravel Blade views.",
+            "homepage": "https://github.com/blade-ui-kit/blade-ui-kit",
+            "keywords": [
+                "blade",
+                "laravel",
+                "ui"
+            ],
+            "support": {
+                "issues": "https://github.com/blade-ui-kit/blade-ui-kit/issues",
+                "source": "https://github.com/blade-ui-kit/blade-ui-kit"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/caneco",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/driesvints",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-04-17T13:03:05+00:00"
         },
         {
             "name": "brick/math",
@@ -3788,10 +3863,6 @@
             "time": "2021-09-25T23:10:38+00:00"
         },
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> ee6d6a48a0fed19cb52dbf7cea64c8f1fce9fc4d
             "name": "sabberworm/php-css-parser",
             "version": "8.4.0",
             "source": {
@@ -3820,9 +3891,6 @@
             "autoload": {
                 "psr-4": {
                     "Sabberworm\\CSS\\": "src/"
-<<<<<<< HEAD
-=======
-=======
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3848,7 +3916,6 @@
             "time": "2021-12-11T13:40:54+00:00"
         },
         {
->>>>>>> ee6d6a48a0fed19cb52dbf7cea64c8f1fce9fc4d
             "name": "stripe/stripe-php",
             "version": "v9.6.0",
             "source": {
@@ -3884,7 +3951,6 @@
             "autoload": {
                 "psr-4": {
                     "Stripe\\": "lib/"
->>>>>>> eab675626c14487c78ed02fe78a2b691d182a5d7
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3893,23 +3959,6 @@
             ],
             "authors": [
                 {
-<<<<<<< HEAD
-                    "name": "Raphael Schweikert"
-                }
-            ],
-            "description": "Parser for CSS Files written in PHP",
-            "homepage": "https://www.sabberworm.com/blog/2010/6/10/php-css-parser",
-            "keywords": [
-                "css",
-                "parser",
-                "stylesheet"
-            ],
-            "support": {
-                "issues": "https://github.com/sabberworm/PHP-CSS-Parser/issues",
-                "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.4.0"
-            },
-            "time": "2021-12-11T13:40:54+00:00"
-=======
                     "name": "Stripe and contributors",
                     "homepage": "https://github.com/stripe/stripe-php/contributors"
                 }
@@ -3926,7 +3975,6 @@
                 "source": "https://github.com/stripe/stripe-php/tree/v9.6.0"
             },
             "time": "2022-09-15T19:45:46+00:00"
->>>>>>> eab675626c14487c78ed02fe78a2b691d182a5d7
         },
         {
             "name": "swiftmailer/swiftmailer",
