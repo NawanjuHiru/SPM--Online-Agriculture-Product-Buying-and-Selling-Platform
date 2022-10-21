@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class productModel extends Model
 {
     use HasFactory;
+
     protected $table = 'product_details';
     protected $primaryKey = 'product_id';
     public $incrementing = true;

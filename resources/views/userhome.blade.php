@@ -28,7 +28,7 @@
             <a class="nav-link active" href="#" style="color: white;margin-top:10px">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" style="color: white;margin-top:10px">Products</a>
+            <a class="nav-link" href="/product/list" style="color: white;margin-top:10px">Products</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#" style="color: white;margin-top:10px">About Us</a>
@@ -43,7 +43,7 @@
                 <span>Sign Out</span>
             </button>
 
-            
+
         </li>
     </ul>
 </nav>
