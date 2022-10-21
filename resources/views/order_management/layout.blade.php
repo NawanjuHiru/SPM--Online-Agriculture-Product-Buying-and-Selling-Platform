@@ -26,9 +26,7 @@
 
 
     <title>@yield('title')</title>
-    <link rel = "icon" href =
-"https://cdn-icons-png.flaticon.com/512/2962/2962084.png"
-        type = "image/x-icon">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2962/2962084.png" type="image/x-icon">
 </head>
 
 <body style="overflow-x:hidden">
