@@ -33,16 +33,16 @@
             <h2 style="color: white;margin-top:10px">Agri Online</h2>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#" style="color: white;margin-top:10px">Home</a>
+            <a class="nav-link active" href="/" style="color: white;margin-top:10px">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" style="color: white;margin-top:10px">Products</a>
+            <a class="nav-link" href="/product/list" style="color: white;margin-top:10px">Products</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" style="color: white;margin-top:10px">About Us</a>
+            <a class="nav-link" href="/aboutus" style="color: white;margin-top:10px">About Us</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" style="color: white;margin-top:10px">Contact Us</a>
+            <a class="nav-link" href="/contactus" style="color: white;margin-top:10px">Contact Us</a>
         </li>
         <li class="nav-item">
             <button type="button" class="btn "

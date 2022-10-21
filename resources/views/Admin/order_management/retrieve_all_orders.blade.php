@@ -3,17 +3,15 @@
 @section('content')
 
     <br><br>
-    <div class="text-center">
-        <h3 class="text" style="color:#072a0d">All Orders</h3>
-    </div>
-    <div class="container-fluid vh-100" style="margin-top:20px">
-        <div class="" style="margin-top:50px;">
-            <div class="rounded d-flex justify-content-center">
+    <div class="col-sm-11 card" style="background-color: #F4F7F8; margin-top:40px;margin-left:50px;">
 
-                <div class="col-md-12 col-sm-10 shadow-lg p-5" style="background-color: #eef1f1;border-radius: 15px;">
-                    
-                    <div class="p-4">
-                        <div class="container">
+        <div class="row g-2" >
+            <div class="col" >
+
+
+    <h1 class="text-center" style="font-family:'Trebuchet MS', sans-serif;margin-left:50px; margin-top:20px"> All Orders </h1>
+    <br><br>
+    <div class="container" style="margin-bottom:20px">
                 <a style="float: right;" href="/orderReport" class="btn btn-success" role="button">Genarate Report <i class="fa fa-download"></i></a>
 
                 <table id="ordertable" class="display" style="width: 100%; ">
@@ -40,8 +38,7 @@
         </div>
     </div>
 </div>
-</div>
-</div>
+
 
     </center>
 
