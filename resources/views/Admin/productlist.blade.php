@@ -3,7 +3,9 @@
 @section('content')
 
 <center>
+
     <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
+
         <div class="row g-3" >
             <div class="col" style="background-color: #91f1d5;" >
 
@@ -12,6 +14,7 @@
     <br><br>
     <div class="container" style="margin-bottom:20px">
 
+        <a style="float: right; margin-bottom:10px;" href="/productReport" class="btn btn-success" role="button">Genarate Report <i class="fa fa-download"></i></a>
 
         <table id="product_details" class="display" style="width: 100%; background-color: #199dc9;">
             <thead>
@@ -22,7 +25,7 @@
                 <th>Product Price</th>
                 <th>Description</th>
 
-                <th width="25%">Action</th>
+                <th width="15%">Action</th>
             </tr>
             </thead>
 

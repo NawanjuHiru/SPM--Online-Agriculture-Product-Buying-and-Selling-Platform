@@ -84,3 +84,6 @@ Route::get('/productlist/view', function () {
     return view('Admin.productlist');
 });
 
+
+Route::get('/productReport', [adminproductController::class, 'productReport']);
+
