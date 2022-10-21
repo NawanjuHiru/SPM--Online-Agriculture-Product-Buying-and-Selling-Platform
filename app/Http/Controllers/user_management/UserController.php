@@ -51,7 +51,7 @@ class UserController extends Controller
         $save = $user -> save();
 
         if ($save) {
-            return back() -> with('success','New User has been successfully added.');
+            //return back() -> with('success','New User has been successfully added.');
             return redirect('/auth/login');
         } else {
             return back() -> with('fail','Something went wrong. Try again later.');
