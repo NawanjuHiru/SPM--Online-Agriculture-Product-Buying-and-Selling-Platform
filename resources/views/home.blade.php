@@ -6,35 +6,42 @@
     
         <div classname="" style="margin-left:100px">
             <img src="http://unblast.com/wp-content/uploads/2020/05/Farming-Vector-Illustration.jpg" alt="Home Image"
-                style="float: right; width: 45%; height: 85%;" />
-            <h1 style="margin-top:20px; color:#6EBD6C; text-align:left;">
-                A New Way to Invest<br/>
-                in Agriculture
-            </h1>
-            <span style="font-size: 20">
-                Our portfolio of businesses caters to the entire Agri Value Chain and includes Seeds & Planting
-                Materials,
-                Crop Protection Compounds, Agri Equipment, Animal Health Products, Organic and Mineral Fertilizer,
-                Environmental Science Products, Pre and Post Harvest Management Systems & Products, Green House and
-                Protected Agriculture Structures as well as Water Management & Irrigation Systems. Our selection of
-                services
-                includes Pest Management and Landscaping.
-            </span>
-            <br />
-            <button type="button" class="btn"
-                style="float: left; margin-top: 20px; background-color:#6EBD6C; color: white; width:200px;">
-                <span>Get Started </span>
-            </button>
+                style="margin-left:55%; width: 45%; height: 85%;" />
+            <div style="float: left; margin-top:-450px">
+                <h1 style="margin-top:20px; color:#6EBD6C; text-align:left;">
+                    A New Way to Invest<br />
+                    in Agriculture
+                </h1>
+                <span style="font-size: 20">
+                    Our portfolio of businesses caters to the entire Agri Value Chain and includes Seeds & Planting<br>
+                    Materials,
+                    Crop Protection Compounds, Agri Equipment, Animal Health Products, Organic & Mineral Fertilizer,<br>
+                    Environmental Science Products, Pre and Post Harvest Management Systems & Products, Green House and<br>
+                    Protected Agriculture Structures as well as Water Management & Irrigation Systems. Our selection of<br>
+                    services
+                    includes Pest Management and Landscaping.
+                </span>
+                <br />
+                <a href="/auth/login"class="btn"
+                    style="float:
+                    left; margin-top: 20px; background-color:#6EBD6C; color: white; width:200px;">
+                    <center>Get Started</center>
+                </a>
+            </div>
             <img src="https://media.istockphoto.com/vectors/farmer-working-on-garden-vector-id1303644694?k=20&m=1303644694&s=612x612&w=0&h=xMAA4N-0vvzcZJy12DpGEiKltyHrv1rGIKcl0v6iOP4="
-                alt="leaves Image" style="float: left; width: 30%;height: 50%; margin-top: 60px;  margin-left: -260px;" />
-            <div style="padding-left: 280px; padding-top: 100px">
+                alt="leaves Image" style="width: 30%;height: 50%; margin-top: -30px;  margin-left: -100px;" />
+            <div style=" padding-left:450px; margin-top:-280px">
                 <h2 style="color:#6EBD6C;">The Future of Agriculture <br />investments</h2><br />
                 <span style="font-size: 20">
-                    Supporting Sustainable Greener Agriculture with Innovation, Quality Inputs and Extension Services.
+                    Supporting Sustainable Greener Agriculture with Innovation, Quality Inputs and Extension Services.<br>
+                    he agriculture industry has radically transformed over the past 50 years. Advances in machinery have<br>
+                    expanded the scale, speed, and productivity of farm equipment, leading to more efficient cultivation
+                    of<br>
+                    more land. Seed, irrigation, and fertilizers also have vastly improved, helping farmers increase yields.
                 </span>
                 <br />
             </div>
-            <div class="" style="margin-top: 180px; margin-right: 40px; ">
+            <div class="" style="margin-top: 100px; margin-right: 40px; ">
                 <center>
                     <h1 class="" style="color:#6EBD6C;">Our Services</h1>
                 </center><br />
@@ -94,20 +101,23 @@
                     <div class="card-body">
                         <img src="https://thumbs.dreamstime.com/b/logotype-agriculture-logo-field-wheat-stylized-eco-logo-green-energy-fields-logotype-agriculture-logo-field-117795540.jpg"
                             alt="Home Image" style="float: right; width: 25%; height: 25%; margin-right:80px" />
-                        <p class="card-text">Our system is an online Agriculture product buying and selling platform
-                            (E-Marketplace)<br />
-                            which the user can sell their products (Fruits, vegetables, seeds, fertilizer, and equipment
-                            <br />
-                            related to agriculture field) and users can buy any of products as they wish. <br />The
-                            system
-                            is mainly focused on Sri Lankan agriculture sector.
-                        </p>
-                        <p class="card-text"> From this website Farmers will be able to get their needed products for
-                            their
-                            plantation and agricultural activities<br />
-                            This website also support the buyers who need to buy the needed equipments and products for
-                            their purposes.<br /> Any Client can sell their products in this website. This will be very
-                            helpful for client involve in agricultural sector<br /> to fullfill their needs and wants.
+                        <div style="float: left; margin-top: 50px">
+                            <p class="card-text">Our system is an online Agriculture product buying and selling platform
+                                (E-Marketplace)<br>
+                                which the user can sell their products (Fruits, vegetables, seeds, fertilizer, and equipment
+                                <br />
+                                related to agriculture field) and users can buy any of products as they wish. <br />The
+                                system
+                                is mainly focused on Sri Lankan agriculture sector.
+                            </p>
+                            <p class="card-text"> From this website Farmers will be able to get their needed products for
+                                their
+                                plantation and agricultural activities<br />
+                                This website also support the buyers who need to buy the needed equipments and products for
+                                their purposes.<br /> Any Client can sell their products in this website. This will be very
+                                helpful for client involve in agricultural sector<br /> to fullfill their needs and wants.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="" style="margin-top: 90px; margin-right: 40px; ">
