@@ -19,15 +19,15 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
-  
- 
+
+
 
     <link rel="stylesheet" href="{{ asset('css/order_management/app.css') }}">
 
 
     <title>@yield('title')</title>
-    <link rel = "icon" href = 
-"https://cdn-icons-png.flaticon.com/512/2962/2962084.png" 
+    <link rel = "icon" href =
+"https://cdn-icons-png.flaticon.com/512/2962/2962084.png"
         type = "image/x-icon">
 </head>
 
@@ -44,7 +44,7 @@
                 <a class="nav-link active" href="/" style="color: white;margin-top:10px">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="" style="color: white;margin-top:10px">Products</a>
+                <a class="nav-link" href="/product/list" style="color: white;margin-top:10px">Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/aboutus" style="color: white;margin-top:10px">About Us</a>
