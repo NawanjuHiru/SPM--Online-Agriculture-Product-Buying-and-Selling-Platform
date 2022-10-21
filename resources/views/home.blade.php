@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agri Online</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ URL::asset('public/css/home.css') }}" />
-</head>
-
-<body style="overflow-x:hidden">
     @extends('order_management.layout')
     @section('title', 'Home')
     @section('content')
+
+    
         <div classname="" style="margin-left:100px">
             <img src="http://unblast.com/wp-content/uploads/2020/05/Farming-Vector-Illustration.jpg" alt="Home Image"
                 style="margin-left:55%; width: 45%; height: 85%;" />

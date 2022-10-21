@@ -8,12 +8,20 @@
     <button style="margin-left:-150px;" class="btn btn1" onclick="history.back()"><i class="fa fa-arrow-left fa-2xl back_icon "
                                                          aria-hidden="true"></i></button>
 
+                                                         <div class="col-sm-9 card" style="background-color: #F4F7F8; margin-top:40px;margin-left:200px;">
 
-    <form class="form-group form1 shadow-lg" id="orderForm" style="background-color: #E5E5E5;border-radius: 25px;">
+                                                            <div class="row g-2" >
+                                                                <div class="col" >
+                                                        
+                                                        
+                                                        <h1 class="text-center" style="font-family:'Trebuchet MS', sans-serif;margin-left:50px; margin-top:20px; color:#224957"> Check Out </h1>
+                                                        <br><br>
+                                                        <div class="container" style="margin-bottom:10px">
+    <form class="form-group form1" id="orderForm">
         {{csrf_field()}}
 
         <fieldset >
-            <h1 class="text-center" style="color:#224957">Check Out</h1>
+            
 
             <div class="row pb-3">
                 <div class="col-4 text-center">
@@ -67,6 +75,10 @@
 
 
     </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 @endsection
 

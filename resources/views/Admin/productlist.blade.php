@@ -7,7 +7,7 @@
     <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
 
         <div class="row g-3" >
-            <div class="col" style="background-color: #91f1d5;" >
+            <div class="col" >
 
 
     <h1 class="text-center" style="font-family:'Trebuchet MS', sans-serif;margin-left:0px; margin-top:20px"> All Products </h1>
@@ -16,7 +16,7 @@
 
         <a style="float: right; margin-bottom:10px;" href="/productReport" class="btn btn-success" role="button">Genarate Report <i class="fa fa-download"></i></a>
 
-        <table id="product_details" class="display" style="width: 100%; background-color: #199dc9;">
+        <table id="product_details" class="display" style="width: 100%;">
             <thead>
             <tr>
                 <th>Product Id</th>

@@ -2,16 +2,15 @@
 @section('title','shopping cart')
 @section('content')
 
-    <div class="container-fluid vh-100" style="margin-top:20px">
-        <div class="" style="margin-top:50px;">
-            <div class="rounded d-flex justify-content-center">
+<div class="col-sm-9 card" style="background-color: #F4F7F8; margin-top:40px;margin-left:200px;">
 
-                <div class="col-md-9 col-sm-10 shadow-lg p-5" style="background-color: #E5E5E5;border-radius: 25px;">
-                    <div class="text-center">
-                        <h1 class="text" style="color:#224957">Shopping Cart</h1>
-                    </div>
-                    <div class="p-4">
-                        <div class="container">
+    <div class="row g-2" >
+        <div class="col" >
+
+
+<h1 class="text-center" style="font-family:'Trebuchet MS', sans-serif;margin-left:50px; margin-top:20px"> Shopping Cart </h1>
+<br><br>
+<div class="container" style="margin-bottom:20px">
 
 
                             <table id="carttable" class="display" style="width: 100%; ">
@@ -36,8 +35,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+       
 
 @endsection
 
