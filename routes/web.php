@@ -33,9 +33,7 @@ Route::get('/aboutus', function () {
 Route::get('/contactus', function () {
     return view('contactUs.contactUs');
 });
-Route::get('/userhome', function () {
-    return view('userhome');
-});
+
 
 
 //user management
@@ -117,8 +115,9 @@ Route::get('/adminproduct/delete{product_id}/delete',[adminproductController::cl
 Route::post('/adminproduct/update/{product_id}',[adminproductController::class,'updateProduct']);
 Route::get('/productReport', [adminproductController::class, 'productReport']);
 
-//delivery management
 
+
+//delivery management
 
 Route::get('/admin/review', function () {
     $data=App\Models\Reviewrating::all();

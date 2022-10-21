@@ -7,12 +7,21 @@
 
 
 
-    <form style="background-color: #E5E5E5;border-radius: 25px;" class="form-group form1 shadow-lg" method="post" action="{{url('/orders/'.$order->order_id)}}">
+<div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px;margin-left:250px;">
+
+                                                            <div class="row g-2" >
+                                                                <div class="col" >
+                                                        
+                                                        
+                                                        <h1 class="text-center" style="font-family:'Trebuchet MS', sans-serif;margin-left:20px; margin-top:20px; color:#224957"> Order Details</h1>
+                                                        
+                                                        <div class="container" style="margin-bottom:10px">
+    <form  class="form-group form1" method="post" action="{{url('/orders/'.$order->order_id)}}">
         @method('PUT')
         {{ csrf_field() }}
 
         <fieldset>
-            <h1 class="text-center">Order Details</h1>
+          
 
             <div class="row pb-3">
                 <div class="col-4 text-center">
@@ -27,16 +36,16 @@
                 </div>
             </div>
             <input type="hidden" name="product_id" value="{{ $order->product->product_id }}">
-            <hr>
+            <hr style="height:3px; color:black;">
             <legend><span class="number">#</span> Update your delivery details</legend>
             <div class="row">
                 <div class="col-sm-6">
                     <label for="name">Name:</label>
-                    <input type="text" style="color:black; background-color: #f6f6f6" class="form-control" name="name" value="{{$order->name}}" required/><br>
+                    <input type="text" style="color:black; background-color: #def7e2; class="form-control" name="name" value="{{$order->name}}" required/><br>
                 </div>
                 <div class="col-sm-6">
                     <label for="contact_number">Contact Number:</label>
-                    <input type="text"  style="color:black; background-color: #f6f6f6" class="form-control" name="contact_number"
+                    <input type="text"  style="color:black; background-color: #def7e2" class="form-control" name="contact_number"
                            value="{{$order->contact_number}}" required/><br>
                 </div>
             </div>
@@ -44,21 +53,21 @@
             <div class="row">
                 <div class="col-sm-6">
                     <label for="email">Email:</label>
-                    <input type="email" style="color:black; background-color: #f6f6f6" class="form-control" name="email" value="{{$order->email}}" required/><br>
+                    <input type="email" style="color:black; background-color: #def7e2" class="form-control" name="email" value="{{$order->email}}" required/><br>
                 </div>
                 <div class="col-sm-6">
                     <label for="address">Address:</label>
-                    <input type="text" style="color:black; background-color: #f6f6f6" class="form-control" name="address" value="{{$order->address}}" required/><br>
+                    <input type="text" style="color:black; background-color: #def7e2" class="form-control" name="address" value="{{$order->address}}" required/><br>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-3">
                     <label for="zip_code">Zip code:</label>
-                    <input type="text" style="color:black; background-color: #f6f6f6" class="form-control" name="zip_code" value="{{$order->zip_code}}" required/><br>
+                    <input type="text" style="color:black; background-color: #def7e2" class="form-control" name="zip_code" value="{{$order->zip_code}}" required/><br>
                 </div>
                 <div class="col-sm-3">
                     <label for="city">City:</label>
-                    <input type="text" style="color:black; background-color: #f6f6f6" class="form-control" name="city" value="{{$order->city}}" required/><br>
+                    <input type="text" style="color:black; background-color: #def7e2" class="form-control" name="city" value="{{$order->city}}" required/><br>
                 </div>
 
     
@@ -72,5 +81,9 @@
             
         </fieldset>
     </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 @endsection
