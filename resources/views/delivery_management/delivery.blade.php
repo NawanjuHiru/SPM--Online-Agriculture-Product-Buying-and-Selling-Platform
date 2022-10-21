@@ -105,8 +105,12 @@
                                     placeholder="Address" style="height: 80px; padding-bottom: 80px;margin-top: 30px"
                                     required>
                             </div>
-                            <div class="form-group"><button class="btn btn-block" type="submit"
-                                    style="background-color:#6EBD6C; color: white;">Confirm Delivery</button>
+                            <div class="form-group">
+                                <button class="btn btn-block" type="submit" style="background-color:#6EBD6C; color: white;"
+                                    onclick="myFunction()">Confirm Delivery</button>
+                                <a href="/review"class="btn btn-block" style=" background-color:#0883e7; color: white;">
+                                    <center>Rate our Service</center>
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -1282,6 +1286,11 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+        <script>
+            function myFunction() {
+                echo "Delivery Details Submitted";
+            }
+        </script>
     </body>
 
     </html>

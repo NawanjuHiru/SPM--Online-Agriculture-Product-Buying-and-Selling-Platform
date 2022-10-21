@@ -32,17 +32,22 @@
 <body style="overflow-x:hidden">
     <!-- Nav bar-->
     <nav class="topnav-right" style="background-color: #6EBD6C; height:60px">
+
+        <li class="nav-item" type="none" style="float:left; margin-left: 20px">
+            <a href="/" style="text-decoration: none">
+                <h2 style="color: white;margin-top:10px">Agri Online</h2>
+            </a>
+        </li>
+
         <ul class="nav justify-content-end" style="">
-            <li class="nav-item" style="margin-right:800px;">
-                <a href="/" style="text-decoration: none">
-                    <h2 style="color: white;margin-top:10px">Agri Online</h2>
-                </a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link active" href="/" style="color: white;margin-top:10px">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/product/list" style="color: white;margin-top:10px">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/refund" style="color: white;margin-top:10px">Refund Inquiry</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/aboutus" style="color: white;margin-top:10px">About Us</a>

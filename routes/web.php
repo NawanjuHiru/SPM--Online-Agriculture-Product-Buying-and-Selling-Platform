@@ -35,7 +35,6 @@ Route::get('/contactus', function () {
 });
 
 
-
 //user management
 
 Route::group(['middleware' => ['AuthCheck']], function(){

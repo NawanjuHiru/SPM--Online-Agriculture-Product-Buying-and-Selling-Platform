@@ -1,5 +1,5 @@
 @extends('order_management.layout')
-@section('title', 'check out')
+@section('title', 'Update Delivery Details')
 @section('content')
     <br><br>
     <button style="margin-left:-150px;" class="btn btn1" onclick="history.back()"><i class="fa fa-arrow-left fa-2xl back_icon "
