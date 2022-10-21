@@ -4,6 +4,16 @@ use App\Http\Controllers\order_management\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\product_management\productController;
 use App\Http\Controllers\product_management\adminproductController;
+use App\Http\Controllers\user_management\UserController;
+use App\Http\Controllers\user_management\AdminController;
+use App\Http\Controllers\user_management\ProfileController;
+use App\Http\Controllers\reviewController;
+use App\Http\Controllers\contactusController;
+use App\Http\Controllers\deliveryController;
+use App\Http\Controllers\refundController;
+use App\Http\Controllers\order_management\ShoppingCartController;
+use App\Http\Controllers\order_management\StripeController;
+use App\Http\Controllers\order_management\AdminOrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,17 +97,6 @@ Route::get('/productlist/view', function () {
 
 
 Route::get('/productReport', [adminproductController::class, 'productReport']);
-
-use App\Http\Controllers\user_management\UserController;
-use App\Http\Controllers\user_management\AdminController;
-use App\Http\Controllers\user_management\ProfileController;
-use App\Http\Controllers\reviewController;
-use App\Http\Controllers\contactusController;
-use App\Http\Controllers\deliveryController;
-use App\Http\Controllers\refundController;
-use App\Http\Controllers\order_management\ShoppingCartController;
-use App\Http\Controllers\order_management\StripeController;
-use App\Http\Controllers\order_management\AdminOrderController;
 
 Route::get('/', function () {
     return view('order_management.layout');
