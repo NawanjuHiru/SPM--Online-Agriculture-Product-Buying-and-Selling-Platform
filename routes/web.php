@@ -33,9 +33,6 @@ Route::get('/aboutus', function () {
 Route::get('/contactus', function () {
     return view('contactUs.contactUs');
 });
-Route::get('/userhome', function () {
-    return view('userhome');
-});
 
 
 //user management
