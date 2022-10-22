@@ -85,19 +85,34 @@
         <center>
             <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
                 <div class="row g-3">
-                    <div class="col">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
+                    <div class="col"><br>
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li type="none">
+                                            <center>{{ $error }}</center>
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </div>
                         @endif
+
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">x</button>
+                                <strong>{{ $message }}</strong>
+                            </div>
+                        @endif
+
+
                         <form method="post" style="width: 100%" action="/review">
                             @csrf
                             <h2 class="text-left">Rate Our Service</h2>
                             <p class="text-left">Leave a comment to improve our service.</p>
 
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="username" placeholder="Username" required maxlength="45">
+                                    name="username" placeholder="Username" maxlength="45">
                             </div>
                             <div class="form-group"><input class="form-control" type="text" name="comments"
                                     placeholder="Leave a comment" style="height: 150px; padding-bottom: 150px;"
