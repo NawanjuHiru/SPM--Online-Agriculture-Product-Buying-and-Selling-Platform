@@ -69,8 +69,9 @@ class productController extends Controller
         ]);
 
         if(!$validator->passes()){
-            //return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
-            return response()->Json(['status' => 'error', 'msg' => 'validation failed']);
+            //return $request->input();
+            return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
+            //return response()->Json(['status' => 'error', 'msg' => 'validation failed']);
         }else{
             $path = "files/";
             $file = $request->file('image');
