@@ -1,4 +1,4 @@
-@extends('order_management.layout')
+@extends('initial_home_layout')
 @section('title','Sign In')
 @section('content')
 
