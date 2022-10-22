@@ -86,6 +86,7 @@
             <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
                 <div class="row g-3">
                     <div class="col">
+
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
                                 <ul>
@@ -104,6 +105,7 @@
                                 <strong>{{ $message }}</strong>
                             </div>
                         @endif
+
                         <form method="post" action="/delivery" style="width: 100%">
                             @csrf
                             <h2 class="text-left">Delivery Details</h2>
