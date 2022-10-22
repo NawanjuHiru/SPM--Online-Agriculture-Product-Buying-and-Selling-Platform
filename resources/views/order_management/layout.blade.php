@@ -56,11 +56,10 @@
                 <a class="nav-link" href="/contactus" style="color: white;margin-top:10px">Contact Us</a>
             </li>
             <li class="nav-item" style="margin-right: 10px">
-                <button type="button" class="btn "
-                    style="margin-top: 12px; margin-right:25px; background-color:white; color:#6EBD6C;">
-                    <i class="fas fa-user-alt" style="margin-right:2px; color:#6EBD6C"></i>
-                    <span>Sign In</span>
-                </button>
+                <a href="/auth/login"class="btn" style="margin-top: 12px; margin-right:25px; width:110px; background-color:white; color:#6EBD6C;">
+                    <i class="fas fa-user-alt" style="float:left; margin-top:4px; margin-right: 4px; color:#6EBD6C"></i> 
+                <center>Sign In</center>
+            </a>
             </li>
         </ul>
     </nav>

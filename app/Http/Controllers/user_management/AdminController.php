@@ -49,7 +49,7 @@ class AdminController extends Controller
           } else {
               //check password
               if (Hash::check($request -> password, $adminInfo -> password)) {
-                  $request -> session() -> put('LoggedUser', $adminInfo -> admin_id);
+                //   $request -> session() -> put('LoggedUser', $adminInfo -> admin_id);
                   return redirect('/auth/userList');
               } else {
                   return back() -> with('fail','Incorrect password.');
