@@ -69,8 +69,9 @@ class productController extends Controller
         ]);
 
         if(!$validator->passes()){
-            //return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
-            return response()->Json(['status' => 'error', 'msg' => 'validation failed']);
+            //return $request->input();
+            return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
+            //return response()->Json(['status' => 'error', 'msg' => 'validation failed']);
         }else{
             $path = "files/";
             $file = $request->file('image');
@@ -117,8 +118,8 @@ class productController extends Controller
         return DataTables::of($products)
             ->addColumn('action', function ($products) {
                 return '<div>
-                <a href="' . url('/products/update' . $products->product_id . '/edit') . '" class="btn btn" style="background-color:#81D8D0!important;color:white;" >Edit</a>
-               <a href="' . url('/product/delete' . $products->product_id . '/delete') . '" class="btn btn" style="background-color:#81D8D0!important;color:white;" >Delete</a>
+                <a href="' . url('/products/update' . $products->product_id . '/edit') .'" class="btn btn" style="background-color:#09560D!important;color:white;width:45px" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+               <a href="' . url('/product/delete' . $products->product_id . '/delete') . '" class="btn btn" style="background-color:#CF0808!important;color:white;width:45px;margin-top: 0px;"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
            </div>  ';
             })

@@ -16,31 +16,35 @@
                 @endforeach
 
                 <form method="POST" action="{{ route('insert.product') }}" enctype="multipart/form-data" style="width: 100%" id="productForm">
-                    {{csrf_field()}}
+
                     <h2 class="text-left">Add Products</h2>
                     <p class="text-left">Enter your product details here.</p>
 
+                    @csrf
                     <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
                             name="proname" placeholder="Product Name">
-                            @error('Product Name')
-                            <span class="text-danger">{{$message}}</span>
-                            @enderror
+                            {{-- @error('proname') --}}
+                            <span style="color: red">@error('proname'){{$message}}@enderror</span>
+
                     </div>
                     <div class="form-group" style="margin-top: 10px; ">
                         <select name="procategory" class="form-group"
                             placeholder="Product Category">
+                            <span class="text-danger">@error('procategory'){{$message}}@enderror</span>
                             <option value = "hidden"  style="margin-top: 10px; " disabled selected >Select Product Category</option>
                             <option value = "Vegetables"> Vegetables </option>
                             <option value = "Fruits"> Fruits </option>
                             <option value = "Fertilizer"> Fertilizer </option>
                             <option value = "Equipment"> Equipment </option>
                         </select>
-                        <span class="text-danger error-text procategory_error"></span>
+                        {{-- <span class="text-danger error-text procategory_error"></span> --}}
 
                     </div>
                     <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
                             name="proprice" placeholder="Product Price">
-                            <span class="text-danger error-text proprice_error"></span>
+                            {{-- <span class="text-danger error-text proprice_error"></span> --}}
+                            <span class="text-danger">@error('proprice'){{$message}}@enderror</span>
+
                     </div>
                     <div class="form-group"><input class="form-control" type="text"
                             name="prodesc" placeholder="Description" style="margin-top: 10px; height: 80px; padding-bottom: 80px; ">
@@ -87,6 +91,14 @@
 @section('javaScript')
         <script src="{{ asset('jquery.min.js') }}"></script>
         <script>
+
+
+
+
+
+
+
+
             $(function(){
 
                 $('#form').on('submit', function(e){

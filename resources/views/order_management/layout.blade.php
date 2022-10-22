@@ -44,7 +44,7 @@
                 <a class="nav-link active" href="/home" style="color: white;margin-top:10px">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/product/list" style="color: white;margin-top:10px">Products</a>
+                <a class="nav-link" href="/product/view" style="color: white;margin-top:10px">My Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/refund" style="color: white;margin-top:10px">Refund Inquiry</a>
