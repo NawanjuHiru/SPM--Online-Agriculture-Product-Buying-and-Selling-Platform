@@ -26,7 +26,7 @@
 
                             <div class="row pb-3">
                                 <div class="col-4 text-center">
-                                    <img src="{{ asset($product->product_image ?? '') }}" alt="" height="100px"
+                                    <img src="{{ asset('storage/files/'.$product->product_image ?? '') }}" alt="" height="100px"
                                          width="100px">
                                 </div>
                                 <div class="col-4 text-center" style="margin-top: 30px;">
