@@ -86,9 +86,23 @@
             <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
                 <div class="row g-3">
                     <div class="col">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
+                        <br>
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li type="none">
+                                            <center>{{ $error }}</center>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">x</button>
+                                <strong>{{ $message }}</strong>
                             </div>
                         @endif
                         <form method="post" action="/contactus" style="width: 100%">
@@ -96,11 +110,11 @@
                             <h2 class="text-left">Contact Us</h2>
                             <p class="text-left">Reach us at anytime.</p>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="name" placeholder="Name" pattern="[A-Za-z]{}" title=""required>
+                                    name="name" placeholder="Name" pattern="[A-Za-z]{}" title="">
                             </div>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="email"
                                     name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                                    title="Enter a valid email" required>
+                                    title="Enter a valid email">
                             </div>
                             <div class="form-group"><input class="form-control" type="text" name="message"
                                     placeholder="Message" style="height: 80px; padding-bottom: 80px;">

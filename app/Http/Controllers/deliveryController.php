@@ -10,12 +10,21 @@ class deliveryController extends Controller
 {
     public function store(Request $request)
     {
+
+$input = $request->all();
+
+        $request->validate([
+            'username' => 'required',
+            'telno' => 'required|min:10',
+            'address' => 'required|max:255',
+        ]);
+
         $post = new Delivery;
         $post->username = $request->username;
         $post->telno = $request->telno;
         $post->address = $request->address;
         $post->save();
-        return redirect('delivery');
+        return redirect('delivery')->with('success','Successfully posted delivery details');
     }
 
     public function view()

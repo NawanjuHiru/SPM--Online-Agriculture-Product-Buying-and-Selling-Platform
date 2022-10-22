@@ -9,12 +9,18 @@ class reviewController extends Controller
 {
     public function store(Request $request)
     {
+        $input = $request->all();
+
+        $request->validate([
+            'username' => 'required',
+        ]);
+
         $post = new ReviewRating;
         $post->username = $request->username;
         $post->comments = $request->comments;
         $post->star_rating = $request->star_rating;
         $post->save();
-        return redirect('review');
+        return redirect('review')->with('success','Successfully posted a review');
     }
 
     public function view()

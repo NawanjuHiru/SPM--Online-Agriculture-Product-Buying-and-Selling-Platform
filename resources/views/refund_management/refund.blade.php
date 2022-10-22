@@ -85,10 +85,23 @@
         <center>
             <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
                 <div class="row g-3">
-                    <div class="col">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
+                    <div class="col"><br>
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li type="none">
+                                            <center>{{ $error }}</center>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">x</button>
+                                <strong>{{ $message }}</strong>
                             </div>
                         @endif
                         <form method="post" action="/refund" style="width: 100%">
@@ -96,13 +109,13 @@
                             <h2 class="text-left">Return & Refund Inquiry</h2>
                             <p class="text-left">Log a inquiry here.</p>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="username" placeholder="Username" required>
+                                    name="username" placeholder="Username">
                             </div>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="orderno" placeholder="Order Number" required>
+                                    name="orderno" placeholder="Order Number">
                             </div>
                             <div class="form-group"><input class="form-control" type="text" name="address"
-                                    placeholder="Address" style="height: 80px; padding-bottom: 80px;" required>
+                                    placeholder="Address" style="height: 80px; padding-bottom: 80px;">
                             </div>
                             <div class="form-group"><button class="btn btn-block" type="submit"
                                     style="background-color:#6EBD6C; color: white;">Log Inquiry</button>
