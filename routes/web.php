@@ -37,10 +37,12 @@ Route::get('/contactus', function () {
 
 //user management
 
-Route::group(['middleware' => ['AuthCheck']], function(){
-    Route::get('/auth/register',[UserController::class, 'register']) -> name('auth.register');
-    Route::get('/auth/login',[UserController::class, 'login']) -> name('auth.login');
-});
+// Route::group(['middleware' => ['AuthCheck']], function(){
+
+// });
+
+Route::get('/auth/register',[UserController::class, 'register']) -> name('auth.register');
+Route::get('/auth/login',[UserController::class, 'login']) -> name('auth.login');
 
 Route::post('/auth/save',[UserController::class, 'save']) -> name('auth.save');
 Route::post('/auth/check',[UserController::class, 'check']) -> name('auth.check');
@@ -105,7 +107,7 @@ Route::post('/product/insert',[productController::class,'save'])->name('insert.p
 Route::get('/product/fetch',[productController::class,'fetchProducts'])->name('fetch.products');
 Route::post('/get_product_list', [productController::class, 'getProductList']);
 Route::post('/get_adminproduct_list', [adminproductController::class, 'getProductList']);
-Route::get('/products/view', [productController::class, 'show']);
+//Route::get('/products/view', [productController::class, 'show']);
 Route::post('/product/update/{product_id}',[productController::class,'updateProduct']);
 Route::get('/products/update{product_id}/edit',[productController::class,'edit']);
 Route::get('/product/delete{product_id}/delete',[productController::class,'deleteProduct']);

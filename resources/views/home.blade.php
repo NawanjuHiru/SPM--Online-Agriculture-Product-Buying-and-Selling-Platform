@@ -49,7 +49,7 @@
                         <div class="card-body">
                             <h5 class="card-title" style="color:#6EBD6C;">Agricultural Products</h5>
                             <p class="card-text">We provide the client with the best products in agriculture.</p>
-                            <a href="#" class="btn" style="background-color:#6EBD6C; color:white;">Shop
+                            <a href="/product/list" class="btn" style="background-color:#6EBD6C; color:white;">Shop
                                 Now</a>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         <div class="card-body">
                             <h5 class="card-title" style="color:#6EBD6C;">Agricultural Equipments</h5>
                             <p class="card-text">We provide the client with the best equipments in agriculture.</p>
-                            <a href="#" class="btn" style="background-color:#6EBD6C; color:white;">Shop
+                            <a href="/product/list" class="btn" style="background-color:#6EBD6C; color:white;">Shop
                                 Now</a>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                             <p class="card-text">We provide the client with the best platform to sell their
                                 agricultural
                                 products.</p>
-                            <a href="#" class="btn" style="background-color:#6EBD6C; color:white;">Shop
+                            <a href="/product/create" class="btn" style="background-color:#6EBD6C; color:white;">Shop
                                 Now</a>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                             <h5 class="card-title" style="color:#6EBD6C;">Platform to buy your goods</h5>
                             <p class="card-text">We provide the client with the best platform to buys agricultural
                                 products.</p>
-                            <a href="#" class="btn" style="background-color:#6EBD6C; color:white;">Shop
+                            <a href="/product/list" class="btn" style="background-color:#6EBD6C; color:white;">Shop
                                 Now</a>
                         </div>
                     </div>

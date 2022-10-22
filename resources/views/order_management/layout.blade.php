@@ -44,7 +44,7 @@
                 <a class="nav-link active" href="/" style="color: white;margin-top:10px">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/product/list" style="color: white;margin-top:10px">Products</a>
+                <a class="nav-link" href="/product/view" style="color: white;margin-top:10px">My Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/refund" style="color: white;margin-top:10px">Refund Inquiry</a>
@@ -57,7 +57,7 @@
             </li>
             <li class="nav-item" style="margin-right: 10px">
                 <a href="/auth/login"class="btn" style="margin-top: 12px; margin-right:25px; width:110px; background-color:white; color:#6EBD6C;">
-                    <i class="fas fa-user-alt" style="float:left; margin-top:4px; margin-right: 4px; color:#6EBD6C"></i> 
+                    <i class="fas fa-user-alt" style="float:left; margin-top:4px; margin-right: 4px; color:#6EBD6C"></i>
                 <center>Sign In</center>
             </a>
             </li>
