@@ -19,8 +19,14 @@ use App\Http\Controllers\order_management\AdminOrderController;
 
 //Common Routes
 Route::get('/', function () {
+    return view('initial_home');
+});
+
+
+Route::get('/home', function () {
     return view('home');
 });
+
 Route::get('/userlayout', function () {
     return view('order_management.layout');
 });
@@ -38,9 +44,11 @@ Route::get('/contactus', function () {
 //user management
 
 Route::group(['middleware' => ['AuthCheck']], function(){
-    Route::get('/auth/register',[UserController::class, 'register']) -> name('auth.register');
-    Route::get('/auth/login',[UserController::class, 'login']) -> name('auth.login');
+    
 });
+
+Route::get('/auth/register',[UserController::class, 'register']) -> name('auth.register');
+Route::get('/auth/login',[UserController::class, 'login']) -> name('auth.login');
 
 Route::post('/auth/save',[UserController::class, 'save']) -> name('auth.save');
 Route::post('/auth/check',[UserController::class, 'check']) -> name('auth.check');
@@ -147,21 +155,4 @@ Route::get('/download_Pdf', [deliveryController::class, 'downloadPdf']);
 Route::post('/review', [reviewController::class, 'store']);
 Route::post('/delivery', [deliveryController::class, 'store']);
 Route::post('/refund', [refundController::class, 'store']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::post('/contactus', [contactusController::class, 'store']);

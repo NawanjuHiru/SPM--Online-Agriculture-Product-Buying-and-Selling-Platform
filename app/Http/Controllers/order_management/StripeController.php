@@ -28,9 +28,9 @@ class StripeController extends Controller
             "description" => "This payment is tested purpose"
         ]);
 
-        Session::flash('success', 'Payment successful!');
-
-        return back();
+        Session::flash('success', 'Payment successful!')->header( "refresh:5; url=/delivery" );
+       
+        //return redirect('/delivery');
 
     }
 }
