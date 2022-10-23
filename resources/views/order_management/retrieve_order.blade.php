@@ -3,7 +3,7 @@
 @section('content')
     <br><br>
     <button class="btn btn1" onclick="history.back()"><i class="fa fa-arrow-left fa-2xl back_icon "
-            aria-hidden="true"></i></button>
+                                                         aria-hidden="true"></i></button>
 
     <form class="form-group form1" id="orderForm">
 

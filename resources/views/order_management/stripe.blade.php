@@ -46,7 +46,7 @@
                                                 <div class='form-row row'>
                                                     <div class='col-xs-12 form-group required'>
                                                         <label class='control-label'>Name on Card</label> <input
-                                                            class='form-control' size='4' type='text' required />
+                                                            class='form-control' size='4' type='text' required/>
                                                     </div>
                                                 </div>
                                                 <div class='form-row row'>
@@ -56,7 +56,7 @@
                                                             size='20'
                                                             id="number"
                                                             type='text'
-                                                            required />
+                                                            required/>
                                                     </div>
                                                 </div>
                                                 <div class='form-row row'>
@@ -64,26 +64,26 @@
                                                         <label class='control-label'>CVC</label> <input
                                                             autocomplete='off'
                                                             class='form-control card-cvc' placeholder='ex. 311' size='4'
-                                                            type='text' required />
+                                                            type='text' required/>
                                                     </div>
                                                     <div class='col-xs-12 col-md-4 form-group expiration required'>
                                                         <label class='control-label'>Expiration Month</label> <input
                                                             class='form-control card-expiry-month' placeholder='MM'
                                                             size='2'
-                                                            type='text' required />
+                                                            type='text' required/>
                                                     </div>
                                                     <div class='col-xs-12 col-md-4 form-group expiration required'>
                                                         <label class='control-label'>Expiration Year</label> <input
                                                             class='form-control card-expiry-year' placeholder='YYYY'
                                                             size='4'
-                                                            type='text' required />
+                                                            type='text' required/>
                                                     </div>
                                                 </div>
 
                                                 <div class="row">
                                                     <div class="col-xs-12">
                                                         <button class="btn btn-success btn-lg btn-block" type="submit">
-                                                            Pay Now ($100)
+                                                            Pay Now
                                                         </button>
                                                     </div>
                                                 </div>
@@ -170,7 +170,6 @@
             // update the final value in the html input
             $(this).val(newval);
         });
-
 
 
     </script>

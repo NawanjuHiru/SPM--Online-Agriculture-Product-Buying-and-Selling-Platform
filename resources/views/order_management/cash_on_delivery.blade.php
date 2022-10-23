@@ -7,13 +7,13 @@
             <div class="rounded d-flex justify-content-center">
 
                 <div class="col-md-4 d-sm-none shadow-lg d-md-block"
-                    style="border-bottom-left-radius: 25px;border-top-left-radius: 25px">
+                     style="border-bottom-left-radius: 25px;border-top-left-radius: 25px">
                     <img src="{{ asset('images/order_management/cashondelivery.png') }}" class="d-block w-100 img-fluid"
-                        alt="image">
+                         alt="image">
                 </div>
 
                 <div class="col-md-4 col-sm-12 shadow-lg p-5"
-                    style="border-bottom-right-radius: 25px;border-top-right-radius: 25px;background-color: #E5E5E5;">
+                     style="border-bottom-right-radius: 25px;border-top-right-radius: 25px;background-color: #E5E5E5;">
                     <div class="text-center">
                         <h3 class="text-success">Cash On Delivery</h3>
                     </div>
@@ -28,7 +28,7 @@
 
                         <hr>
                         <div class="d-grid col-12 mx-auto">
-                            <a href="/delivery"class="btn btn-success"> Confirm Order </a>
+                            <a href="/delivery" class="btn btn-success"> Confirm Order </a>
                         </div>
                     </div>
                 </div>

@@ -34,8 +34,14 @@
                             <a href="#" class="btn"
                                 style="background-color:#F20505; color:white; width:125px">Buy
                                 Now</a><br>
-                            <a href="/carts" class="btn"
-                                style="background-color:#F3AF00; color:white; margin-top: 10px">Add to cart</a>
+                            <form method="post" action="/carts">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{$item->product_id}}"/>
+                                <button type="submit" class="btn" style="background-color:#F3AF00; color:white; margin-top: 10px">Add to cart</button> 
+                            </form>
+
+                            {{-- <a href="/carts" class="btn"
+                                style="background-color:#F3AF00; color:white; margin-top: 10px">Add to cart</a> --}}
                         </div>
                         <div class="float-right" style="margin-left: 1250px; margin-top:-110px">
                             <i class="bi bi-heart"></i>

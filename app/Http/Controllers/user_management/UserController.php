@@ -72,7 +72,7 @@ class UserController extends Controller
             //check password
             if (Hash::check($request -> password, $userInfo -> password)) {
                 $request -> session() -> put('LoggedUser', $userInfo -> user_id);
-                return redirect('/auth/userList');
+                return redirect('/home');
             } else {
                 return back() -> with('fail','Incorrect password.');
             }
@@ -89,17 +89,18 @@ class UserController extends Controller
         }
 
 
-        /**
+       
+    }
+     /**
          * 
        * @return \Illuminate\Routing\Redirector
         * 
          */
-        function perform(){
+        function logout(){
             Session::flush();
             Auth::logout();
             return redirect('/auth/login');
         }
-    }
 
     function menu(){
         return view('auth.menu');

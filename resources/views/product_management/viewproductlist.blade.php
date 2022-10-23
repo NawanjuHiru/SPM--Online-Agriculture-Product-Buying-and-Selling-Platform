@@ -1,4 +1,4 @@
-@extends('product_management.layout')
+@extends('order_management.layout')
 @section('title', 'Product List')
 @section('content')
 
@@ -103,6 +103,10 @@
 
     <body>
         <center>
+            <br><br>
+            <div>
+                <a  href="/product/create" type="button" style="background-color:#09560D!important;color:white;margin-left:1120;" ><i class="fa fa-plus-circle fa-2xl" aria-hidden="true" style="color: #6EBD6C"; size:50px></i></a>
+            </div>
             <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
                 <h2 class="text-left" style="color: #6EBD6C; margin-top: 10px;">Available Products</h2>
                 <div class="input-group" style="margin-top:-40px; margin-left:750px;">
