@@ -1,4 +1,4 @@
-@extends('initial_home_layout')
+@extends('order_management.layout')
 @section('title', 'About Us')
 @section('content')
 
