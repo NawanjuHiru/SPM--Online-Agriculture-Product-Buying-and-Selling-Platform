@@ -1,4 +1,4 @@
-@extends('order_management.layout')
+@extends('initial_home_layout')
 @section('title','Sign In')
 @section('content')
 
@@ -37,13 +37,13 @@
                 <input type="password" class="form-control" name="password" placeholder="Enter the password" required>
             </div>
             <div class="left">
-                {{-- <a href="{{ route('auth.adminlogin') }}">Admin Login</a> --}}
+                <a  style="text-decoration: none;" href="{{ route('auth.adminlogin') }}">Admin Login</a>
                 <br><br>
                 <center>
                 <button type="submit" class="btn btn-success" style="width:150px;">Sign
                     In</button>
                     <center><br>
-                <P>Not a member? <a href="{{ route('auth.register') }}">SignUp</a>
+                <P>Not a member? <a style="text-decoration: none;" href="{{ route('auth.register') }}">SignUp</a>
             </div>
         </form>
     

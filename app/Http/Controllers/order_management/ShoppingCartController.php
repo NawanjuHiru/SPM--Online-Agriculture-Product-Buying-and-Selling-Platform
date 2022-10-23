@@ -38,7 +38,15 @@ class ShoppingCartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = session()->get('LoggedUser') ?? '0';
+
+        $cart=new ShoppingCart();
+        $cart->user_id = $user;
+        $cart->product_id = $request->product_id;
+        $cart->status=0;
+
+        $cart -> save();
+        return redirect('/carts');
     }
 
     /**
@@ -91,7 +99,7 @@ class ShoppingCartController extends Controller
         $cart = ShoppingCart::with('product')->where('status', '0')->get();
         return DataTables::of($cart)
             ->addColumn('image', function ($cart) {
-                return '<img src="' . asset($cart->product->product_image ?? '') . '" width="50px" height="50px"></img>';
+                return '<img src="' . asset('storage/files/'.$cart->product->product_image ?? '') . '" width="50px" height="50px"></img>';
             })
             ->addColumn('product', function ($cart) {
                 return $cart->product->product_name ?? '';

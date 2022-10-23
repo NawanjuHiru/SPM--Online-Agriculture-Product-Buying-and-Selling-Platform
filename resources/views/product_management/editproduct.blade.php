@@ -1,4 +1,4 @@
-@extends('product_management.layout')
+@extends('order_management.layout')
 @section('title', 'Update Product')
 @section('content')
 

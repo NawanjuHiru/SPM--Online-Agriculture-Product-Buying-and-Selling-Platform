@@ -2,40 +2,41 @@
 @section('title','shopping cart')
 @section('content')
 
-<div class="col-sm-9 card" style="background-color: #F4F7F8; margin-top:40px;margin-left:200px;">
+    <div class="col-sm-9 card" style="background-color: #F4F7F8; margin-top:40px;margin-left:200px;">
 
-    <div class="row g-2" >
-        <div class="col" >
-
-
-<h1 class="text-center" style="font-family:'Trebuchet MS', sans-serif;margin-left:50px; margin-top:20px"> Shopping Cart </h1>
-<br><br>
-<div class="container" style="margin-bottom:20px">
+        <div class="row g-2">
+            <div class="col">
 
 
-                            <table id="carttable" class="display" style="width: 100%; ">
-                                <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Image</th>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                    <th width="60px">Action</th>
-
-                                </tr>
-                                </thead>
-
-                                <tbody>
-                                </tbody>
-
-                            </table>
+                <h1 class="text-center"
+                    style="font-family:'Trebuchet MS', sans-serif;margin-left:50px; margin-top:20px"> Shopping
+                    Cart </h1>
+                <br><br>
+                <div class="container" style="margin-bottom:20px">
 
 
-                        </div>
-                    </div>
+                    <table id="carttable" class="display" style="width: 100%; ">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Image</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th width="60px">Action</th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+
+
                 </div>
             </div>
-       
+        </div>
+    </div>
 
 @endsection
 
