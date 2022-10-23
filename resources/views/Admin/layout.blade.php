@@ -33,7 +33,7 @@
         .sidebar {
             position: absolute;
             width: 252px;
-            height: 100%;
+            height: 1500px;
             background: #111;
             padding-top: 50px;
         }
