@@ -86,9 +86,22 @@
             <div class="col-sm-8 card" style="background-color: #F4F7F8; margin-top:40px">
                 <div class="row g-3">
                     <div class="col">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li type="none">
+                                            <center>{{ $error }}</center>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">x</button>
+                                <strong>{{ $message }}</strong>
                             </div>
                         @endif
                         <form method="post" action="/delivery" style="width: 100%">
@@ -96,14 +109,13 @@
                             <h2 class="text-left">Delivery Details</h2>
                             <p class="text-left">Enter your delivery details here.</p>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="username" placeholder="Username" pattern="[A-Za-z]{}" required>
+                                    name="username" placeholder="Username" pattern="[A-Za-z]{}">
                             </div>
                             <div class="form-group" style="margin-top: 10px"><input class="form-control" type="text"
-                                    name="telno" placeholder="Mobile number" pattern="[0-9]{10}" required>
+                                    name="telno" placeholder="Mobile number" pattern="[0-9]{10}">
                             </div>
                             <div class="form-group"><input class="form-control" type="text" name="address"
-                                    placeholder="Address" style="height: 80px; padding-bottom: 80px;margin-top: 30px"
-                                    required>
+                                    placeholder="Address" style="height: 80px; padding-bottom: 80px;margin-top: 30px">
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-block" type="submit" style="background-color:#6EBD6C; color: white;"
