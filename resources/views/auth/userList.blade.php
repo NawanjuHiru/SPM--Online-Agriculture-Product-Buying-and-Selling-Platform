@@ -143,7 +143,7 @@
                 @csrf
                 <button type="button" class="ibtn6" onclick="closeUpdateForm()"><i class="fa fa-window-close" aria-hidden="true"></i></button><br>
                 <h1>User Form</h1>
-                <input type="text" name="id" id="update-user-id" hidden />
+                <input type="text" name="id" id="uu-user_id" hidden />
                 <input type="text" id="uu-username" class="form-control" name="username" value="" placeholder="Username" required/>
                 <input type="text" id="uu-email" class="form-control" name="email" placeholder="Email" required />
                 <input type="integer" id="uu-mobileNumber" class="form-control" name="mobileNumber" placeholder="Mobile Number" required />
