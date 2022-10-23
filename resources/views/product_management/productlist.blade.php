@@ -37,7 +37,7 @@
                             <form method="post" action="/carts">
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{$item->product_id}}"/>
-                                <button type="submit" class="btn" style="background-color:#F3AF00; color:white; margin-top: 10px">Add to cart</button> 
+                                <button type="submit" class="btn" style="background-color:#F3AF00; color:white; margin-top: 2px">Add to cart</button> 
                             </form>
 
                             {{-- <a href="/carts" class="btn"

@@ -90,7 +90,7 @@
                 <a href="/adminorders" style="color: #f1f1f1"><i class="bi bi-box-fill"></i> Orders</a>
                 <a href="/admin/delivery" style="color: #f1f1f1"><i class="bi bi-cart-check-fill"></i> Delivery Details</a>
                 <a href="review" style="color: #f1f1f1"><i class="bi bi-star-fill"></i> Review & Feedback</a>
-                <a href="/userhome" style="color: #f1f1f1"><i class="bi bi-arrow-left-circle"></i> User View</a>
+                <a href="/home" style="color: #f1f1f1"><i class="bi bi-arrow-left-circle"></i> User View</a>
                 <a href="{{ route('auth.logout') }}" style="color: #f1f1f1; position: absolute; bottom: 0;"><i class="bi bi-power"></i>
                     Logout</a>
             </b>

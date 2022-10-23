@@ -73,8 +73,8 @@
                             <p class="card-text">We provide the client with the best platform to sell their
                                 agricultural
                                 products.</p>
-                            <a href="/product/create" class="btn" style="background-color:#6EBD6C; color:white;">Shop
-                                Now</a>
+                            <a href="/product/create" class="btn" style="background-color:#6EBD6C; color:white;">Sell Goods
+                            </a>
                         </div>
                     </div>
                 </div>
