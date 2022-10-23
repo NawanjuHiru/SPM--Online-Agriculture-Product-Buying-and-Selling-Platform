@@ -73,10 +73,10 @@
                 </a>
             </li>
             <li class="nav-item" style="margin-right: 10px">
-                <button type="button" class="btn "
-                    style="margin-top: 12px; margin-right:25px; background-color:white; color:#6EBD6C;">
+                <button type="button" class="btn " onclick="window.location.href='/auth/logout'""
+                    style="margin-top: 12px; margin-right:25px; background-color:white;">
                     <i class="fas fa-user-alt" style="margin-right:2px; color:#6EBD6C"></i>
-                    <span>Sign In</span>
+                    <span>Sign Out</span>
                 </button>
             </li>
         </ul>

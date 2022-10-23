@@ -122,7 +122,7 @@
                 <center>
                     <h1 class="" style="color:#6EBD6C;">What our clients say about us</h1>
                 </center>
-                <a href="/review">
+                <a href="#">
                     <button type="button"
                         class="btn"style="float:right; background-color:#6EBD6C; color: white;
                         width:200px;">

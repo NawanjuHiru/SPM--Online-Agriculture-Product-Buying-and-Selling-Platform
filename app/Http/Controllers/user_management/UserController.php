@@ -89,17 +89,18 @@ class UserController extends Controller
         }
 
 
-        /**
+       
+    }
+     /**
          * 
        * @return \Illuminate\Routing\Redirector
         * 
          */
-        function perform(){
+        function logout(){
             Session::flush();
             Auth::logout();
             return redirect('/auth/login');
         }
-    }
 
     function menu(){
         return view('auth.menu');
